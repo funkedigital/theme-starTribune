@@ -709,12 +709,17 @@ input {
   font-size: 0;
   margin: 40px 0px; }
   .header .header__weather p {
-    font-family: "Playfair Display", serif;
+    font-family: "Source Sans Pro", sans-serif;
     font-size: 1.4rem;
     margin: 10px 0px; }
     .header .header__weather p img {
       height: 25px;
       margin-right: 15px; }
+  .header .weather-temperature {
+    font-size: 3.5em;
+    font-weight: 100; }
+  .header .weather-place {
+    font-size: 1.15em; }
   .header .header__logo {
     display: block;
     font-size: 1.8rem; }
