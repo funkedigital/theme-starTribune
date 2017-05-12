@@ -121,6 +121,12 @@ input {
 .noBorder {
   border: none !important; }
 
+.leftCol {
+  padding-right: 15px; }
+  .leftCol__item {
+    padding-right: 30px;
+    border-right: 1px dotted #cccccc; }
+
 .accordion {
   overflow: hidden;
   counter-reset: number; }
@@ -440,6 +446,7 @@ input {
   filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.4)); }
 
 .articleGrid .articleGrid__kicker {
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 1.4rem;
   color: #ea545f;
   text-transform: uppercase;
@@ -490,6 +497,7 @@ input {
     color: #98b96a; }
 
 .articleMetadata {
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 1.4rem; }
   .articleMetadata .articleMetadata__byline {
     margin-right: 20px;
@@ -709,12 +717,17 @@ input {
   font-size: 0;
   margin: 40px 0px; }
   .header .header__weather p {
-    font-family: "Playfair Display", serif;
+    font-family: "Source Sans Pro", sans-serif;
     font-size: 1.4rem;
     margin: 10px 0px; }
     .header .header__weather p img {
       height: 25px;
       margin-right: 15px; }
+  .header .weather-temperature {
+    font-size: 3.5em;
+    font-weight: 100; }
+  .header .weather-place {
+    font-size: 1.15em; }
   .header .header__logo {
     display: block;
     font-size: 1.8rem; }
@@ -764,7 +777,6 @@ input {
 
 .mainArticle {
   position: relative;
-  color: #fff;
   margin-bottom: 20px;
   border-bottom: 1px dotted #cccccc;
   padding-bottom: 20px; }
@@ -773,9 +785,6 @@ input {
       margin-bottom: 30px;
       border-bottom: none;
       padding-bottom: 0px; } }
-  @media (min-width: 769px) {
-    .mainArticle p, .mainArticle a {
-      color: #fff; } }
   .mainArticle .mainArticle__image {
     padding-bottom: 51%;
     z-index: 1;
@@ -811,27 +820,19 @@ input {
     font-size: 1.6rem; }
     @media (min-width: 769px) {
       .mainArticle .mainArticle__text {
-        position: absolute;
-        left: 55px;
-        right: 35px;
-        bottom: 30px;
-        max-width: 690px;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); } }
+        max-width: 690px; } }
   .mainArticle .mainArticle__kicker {
+    font-family: "Source Sans Pro", sans-serif;
     font-size: 1.4rem;
-    font-weight: 900;
+    font-weight: 600;
     color: #ea545f;
     display: block;
     text-transform: uppercase;
-    margin-top: 20px; }
-    @media (min-width: 769px) {
-      .mainArticle .mainArticle__kicker {
-        color: #fff;
-        margin-top: 0px; } }
+    margin-top: 10px; }
   .mainArticle .mainArticle__headline {
-    font-size: 3.9rem;
-    font-weight: 900;
-    margin: 12px 0px; }
+    font-size: 3.4rem;
+    font-weight: 600;
+    margin: 10px 0px; }
     .mainArticle .mainArticle__headline--small {
       font-size: 3.2rem; }
 
