@@ -5,29 +5,31 @@
 	<main class="container">
 		<div class="row">
 			<div class="col-md-9 col-sm-12 col-xs-12">
-				{% cache 'frontTop' { time:600 } %}
-				{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') %}
-					{% include 'partials/mainArticle.html.twig' %}
-				{% endgimmelist %}
+						{% cache 'frontTop' { time:600 } %}
 				<div class="row">
 					<div class="col-md-8 col-sm-12 col-xs-12 pull-right">
+						{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') %}
+							{% include 'partials/mainArticle.html.twig' %}
+						{% endgimmelist %}
 						<div class="articleGrid row">
 						{% gimmelist article from articles|start(1)|limit(6)|order('publishedAt','desc') %}
 							{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--twoColumns col-md-6 col-sm-6 col-xs-12'} %}
 						{% endgimmelist %}
-				{% endcache %}
+						{% endcache %}
 						</div>
 					</div>
 
-					<div class="col-md-4 col-sm-12 col-xs-12 pull-right">
-						<div class="greyBackground articleListSmall marginBottom30">
-							<h3 class="sectionHeading">Latest news</h3>
-								{% gimmelist article from articles|start(0)|limit(6)|order('publishedAt','desc')  %}
-									{% include 'partials/articleListSmall__item.html.twig'  %}
-								{% endgimmelist %}
+					<div class="leftCol col-md-4 col-sm-12 col-xs-12 pull-right">
+						<div class="leftCol__item">
+							<div class="articleListSmall marginBottom30">
+								<h3 class="sectionHeading">Latest news</h3>
+									{% gimmelist article from articles|start(0)|limit(6)|order('publishedAt','desc')  %}
+										{% include 'partials/articleListSmall__item.html.twig'  %}
+									{% endgimmelist %}
 
-							{# <a class="button" href="/news">View all</a> #}
+								{# <a class="button" href="/news">View all</a> #}
 
+							</div>
 						</div>
 
 						{% container 'frontLeftSidebar' %}
@@ -35,6 +37,7 @@
 							<img src="{{ asset('theme/img/article_img/ad.png') }}">
 						</div>
 						{% endcontainer %}
+						
 					</div>
 				</div>
 			</div>
