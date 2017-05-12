@@ -114,20 +114,36 @@
 
 {% endcontainer %}
 
+        {# Trending topics is array of first in a row keyword of three latest articles #}
+        {% cache 'subMenu' { time:3600 } %}
+        {% set trendingTopics = [] %}
+        {% set i = 0 %}
+        {% gimmelist article from articles|order('publishedAt','desc')|limit(3) ignoreContext %}
+          {% for keyword in article.keywords %}
+            {% if loop.first and (keyword not in trendingTopics) %}
+            {% set trendingTopics = trendingTopics|merge([keyword]) %}
+            {% endif %}
+          {% endfor %}
+          {% set i = i+1 %}
+        {% endgimmelist %}
+
+
   <div class="trendingTopics">
     <div class="container">
       <div class="okayNav-header">
         <nav role="navigation" id="topics" class="okayNav">
           <ul class="trendingTopics__items">
-            <li>Trending authors</li>
-            <li><a href="{{ url('trending') }}?by=John+Smith">John Smith</a></li>
-            <li><a href="{{ url('trending') }}?by=George+Langsamer">George Langsamer</a></li>
-            <li><a href="{{ url('trending') }}?by=Jane+Stockwriter">Jane Stockwriter</a></li>    
+            <li>Trending topics</li>
+            {% for topic in trendingTopics %}
+            <li><a href="{{ url('trending') }}?topic={{ topic }}">{{ topic }}</a></li>
+            {% endfor %}
           </ul>
         </nav>
       </div>
     </div>
   </div>
+
+      {% endcache %}
 
 {% block body %}{% endblock %}
 
@@ -188,7 +204,8 @@
     $(function() {
       $('.weather-temperature').openWeather({
         key: 'ffccf64d91c2144d8018e8c5fc4a2e0d',
-        city: 'Belgrade',
+        city: 'Minneapolis, MN',
+        units: 'f', 
         descriptionTarget: '.weather-description',
         minTemperatureTarget: '.weather-min-temperature',
         maxTemperatureTarget: '.weather-max-temperature',
