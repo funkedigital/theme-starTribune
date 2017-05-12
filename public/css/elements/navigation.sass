@@ -1,12 +1,10 @@
 .navigation
+  font-family: $fontSansSerif
   text-transform: uppercase
-  box-shadow: 1px 0px 4px rgba(0,0,0,0.1)
-  border-top: 1px solid rgba(0, 0, 0, 0.1)
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1)
   ul
     list-style: none
     padding-left: 0px
-    margin: 14px 0px
+    margin: 14px 40px
     li
       font-size: 2rem
       font-weight: 900
@@ -17,3 +15,7 @@
       &.current 
         a
           color: $colorTheme
+
+.navigation__header
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.1)
+  border: 1px solid rgba(0, 0, 0, 0.1)
