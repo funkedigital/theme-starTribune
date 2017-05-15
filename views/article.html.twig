@@ -22,7 +22,8 @@
     {% if loop.first %}
     {% set articleKicker = keyword %}
     {% endif %}
-  {% endfor %}				
+  {% endfor %}
+
 					{% if articleKicker %}<span class="article__kicker">{{ articleKicker }}</span>{% endif %}
 					<h2 class="article__headline marginBottom30"> {{ gimme.article.title }}</h2>
 
