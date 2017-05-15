@@ -507,6 +507,10 @@ input {
   .articleListSmall .articleListSmall__headline:hover a {
     color: #98b96a; }
 
+@media (min-width: 1290px) {
+  .articleListSmall .articleMetadata {
+    margin-left: 110px; } }
+
 .articleListSmall--latestNews .articleListSmall__image {
   float: none; }
   @media (min-width: 1290px) {
@@ -745,19 +749,26 @@ input {
 
 .header {
   font-size: 0;
-  margin: 40px 0px; }
-  .header .header__weather p {
+  margin: 20px 0px 40px 0px; }
+  .header .header__weather {
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.4rem;
-    margin: 10px 0px; }
-    .header .header__weather p img {
+    margin: 10px 0px;
+    display: flex;
+    align-items: center; }
+    .header .header__weather img {
       height: 25px;
       margin-right: 15px; }
+  .header .header__weather__info {
+    margin: 0px 10px; }
   .header .weather-temperature {
     font-size: 3.5em;
     font-weight: 200; }
   .header .weather-place {
     font-size: 1.15em; }
+  .header .weather-description {
+    font-size: 1.15em;
+    text-transform: capitalize; }
   .header .header__logo {
     display: block;
     font-size: 1.8rem; }
@@ -1076,7 +1087,8 @@ input {
 
 .trendingTopics {
   font-family: "Source Sans Pro", sans-serif;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin-bottom: 20px; }
   .trendingTopics ul {
     list-style: none;
     padding-left: 0px;
