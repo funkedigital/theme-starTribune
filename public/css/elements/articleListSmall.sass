@@ -24,12 +24,16 @@
 
 .articleListSmall--latestNews
   .articleListSmall__image
-    float: none
+    float: left
+    +md
+      float: none
     +lg
       float: left
       width: 90px
     img
-      width: 100%
+      width: 90px
+      +md
+        width: 100%
       +lg
         width: auto
   .articleListSmall__headline
