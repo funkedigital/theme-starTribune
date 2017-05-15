@@ -19,11 +19,16 @@
 .noBorder
   border: none !important
 
+@mixin letterSpacing()
+  letter-spacing: 0.2px
+
+
 .leftCol
-  padding-right: 15px
-  &__item
-    padding-right: 30px
-    border-right: 1px dotted #cccccc
+  +md
+    padding-right: 15px
+    &__item
+      padding-right: 30px
+      border-right: 1px dotted #cccccc
 
 @mixin mobileBorder()
   margin-bottom: 20px

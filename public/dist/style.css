@@ -23,7 +23,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display", serif;
-  line-height: 110%;
+  line-height: 120%;
   font-weight: 400; }
 
 h1 {
@@ -55,15 +55,18 @@ h3 {
 
 h4 {
   font-size: 2rem;
-  font-weight: 500; }
+  font-weight: 500;
+  line-height: 125%; }
 
 h5 {
   font-size: 1.5rem;
-  font-weight: 500; }
+  font-weight: 500;
+  line-height: 125%; }
 
 h6 {
   font-size: 1rem;
-  font-weight: 300; }
+  font-weight: 300;
+  line-height: 125%; }
 
 a {
   color: #333333;
@@ -121,11 +124,12 @@ input {
 .noBorder {
   border: none !important; }
 
-.leftCol {
-  padding-right: 15px; }
-  .leftCol__item {
-    padding-right: 30px;
-    border-right: 1px dotted #cccccc; }
+@media (min-width: 992px) {
+  .leftCol {
+    padding-right: 15px; }
+    .leftCol__item {
+      padding-right: 30px;
+      border-right: 1px dotted #cccccc; } }
 
 .accordion {
   overflow: hidden;
@@ -171,6 +175,7 @@ input {
     .accordion .accordion__sectionItem:last-child {
       border-bottom: none; }
   .accordion .accordion__sectionHeadline {
+    letter-spacing: 0.2px;
     font-size: 1.8rem;
     font-weight: 700;
     margin-top: 0px;
@@ -458,6 +463,7 @@ input {
       margin: 15px 0px 5px 0px; } }
 
 .articleGrid .articleGrid__headline {
+  letter-spacing: 0.2px;
   font-size: 2.1rem;
   font-weight: 700;
   margin: 5px 0px 10px 0px;
@@ -489,12 +495,40 @@ input {
   margin-right: 20px; }
 
 .articleListSmall .articleListSmall__headline {
+  letter-spacing: 0.2px;
   font-size: 1.8rem;
   font-weight: 700;
   margin-top: 0px;
   margin-bottom: 10px; }
+  @media (min-width: 1290px) {
+    .articleListSmall .articleListSmall__headline {
+      margin-top: 0px;
+      margin-left: 110px; } }
   .articleListSmall .articleListSmall__headline:hover a {
     color: #98b96a; }
+
+@media (min-width: 1290px) {
+  .articleListSmall .articleMetadata {
+    margin-left: 110px; } }
+
+.articleListSmall--latestNews .articleListSmall__image {
+  float: none; }
+  @media (min-width: 1290px) {
+    .articleListSmall--latestNews .articleListSmall__image {
+      float: left;
+      width: 90px; } }
+  .articleListSmall--latestNews .articleListSmall__image img {
+    width: 100%; }
+    @media (min-width: 1290px) {
+      .articleListSmall--latestNews .articleListSmall__image img {
+        width: auto; } }
+
+.articleListSmall--latestNews .articleListSmall__headline {
+  margin-top: 10px; }
+  @media (min-width: 1290px) {
+    .articleListSmall--latestNews .articleListSmall__headline {
+      margin-top: 0px;
+      margin-left: 110px; } }
 
 .articleMetadata {
   font-family: "Source Sans Pro", sans-serif;
@@ -715,19 +749,26 @@ input {
 
 .header {
   font-size: 0;
-  margin: 40px 0px; }
-  .header .header__weather p {
+  margin: 20px 0px 40px 0px; }
+  .header .header__weather {
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.4rem;
-    margin: 10px 0px; }
-    .header .header__weather p img {
+    margin: 10px 0px;
+    display: flex;
+    align-items: center; }
+    .header .header__weather img {
       height: 25px;
       margin-right: 15px; }
+  .header .header__weather__info {
+    margin: 0px 10px; }
   .header .weather-temperature {
     font-size: 3.5em;
-    font-weight: 100; }
+    font-weight: 200; }
   .header .weather-place {
     font-size: 1.15em; }
+  .header .weather-description {
+    font-size: 1.15em;
+    text-transform: capitalize; }
   .header .header__logo {
     display: block;
     font-size: 1.8rem; }
@@ -805,17 +846,6 @@ input {
     .mainArticle .mainArticle__image a {
       position: relative;
       display: block; }
-      .mainArticle .mainArticle__image a:after {
-        background-image: linear-gradient(0deg, rgba(0, 15, 20, 0.6) 15%, rgba(0, 15, 20, 0.15) 52%, rgba(0, 15, 20, 0) 70%);
-        display: none;
-        content: " ";
-        height: 240px;
-        width: 100%;
-        position: absolute;
-        bottom: 0px; }
-        @media (min-width: 769px) {
-          .mainArticle .mainArticle__image a:after {
-            display: block; } }
   .mainArticle .mainArticle__text {
     font-size: 1.6rem; }
     @media (min-width: 769px) {
@@ -830,6 +860,7 @@ input {
     text-transform: uppercase;
     margin-top: 10px; }
   .mainArticle .mainArticle__headline {
+    letter-spacing: 0.2px;
     font-size: 3.4rem;
     font-weight: 600;
     margin: 10px 0px; }
@@ -925,6 +956,7 @@ input {
     border-color: transparent #7d4864 transparent transparent; }
 
 .opinions .opinionsItem__headline {
+  letter-spacing: 0.2px;
   font-size: 2.3rem;
   font-weight: 700;
   margin-top: 0px;
@@ -1055,7 +1087,8 @@ input {
 
 .trendingTopics {
   font-family: "Source Sans Pro", sans-serif;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin-bottom: 20px; }
   .trendingTopics ul {
     list-style: none;
     padding-left: 0px;
