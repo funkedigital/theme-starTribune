@@ -21,7 +21,7 @@
 
 					<div class="leftCol col-md-4 col-sm-12 col-xs-12 pull-right">
 						<div class="leftCol__item">
-							<div class="articleListSmall marginBottom30">
+							<div class="articleListSmall articleListSmall--latestNews marginBottom30">
 								<h3 class="sectionHeading">Latest news</h3>
 									{% gimmelist article from articles|start(0)|limit(6)|order('publishedAt','desc')  %}
 										{% include 'partials/articleListSmall__item.html.twig'  %}
@@ -65,12 +65,12 @@
 
 		<div class="row">
 			<div class="col-xs-12">
-				<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('politics') }}">Politics</a></h3>
+				<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('local') }}">Local</a></h3>
 			</div>
 
 			<div class="articleGrid">
 
-				{% gimmelist article from articles|start(0)|limit(4)|order('publishedAt','desc') with {'route': '/politics'}  %}
+				{% gimmelist article from articles|start(0)|limit(4)|order('publishedAt','desc') with {'route': '/local'}  %}
 					{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns col-md-3 col-sm-6 col-xs-12'} %}
 				{% endgimmelist %}
 
@@ -110,12 +110,12 @@
 
 		<div class="row">
 			<div class="col-xs-12">
-				<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('scitech') }}">Sci/Tech</a></h3>
+				<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('opinion') }}">Opinion</a></h3>
 			</div>
 
 			<div class="articleGrid">
 
-				{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/scitech'}  %}
+				{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/opinion'}  %}
 					{% if loop.index == 1 %}
 						{% include 'partials/mainArticle.html.twig' with {'class' : 'col-md-6 col-sm-12 col-xs-12', 'image':'small', 'deck': 'none'} %}
 					{% else %}
@@ -126,7 +126,7 @@
 			</div>
 		</div>
 
-		{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/health'}  %}
+		{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/variety'}  %}
 
 		{% set rend1250 = "/public/img/article_img/1250x600.png" %}
 		{% gimmelist media from articleMedia|limit(1) with {'article': article} %}
@@ -143,7 +143,7 @@
 		<div class="row">
 			<div class="gallery marginTop30 marginBottom30 col-xs-12">
 				<figure class="gallery__image">
-					<a class="gallery__strip" href="{{ path('health') }}">Health</a>
+					<a class="gallery__strip" href="{{ path('variety') }}">Variety</a>
 					<a href="{{ path(article) }}">
 						<img src="{{ rend1250 }}" alt="{{ imgCaption|striptags }}">
 					</a>
@@ -174,15 +174,15 @@
 			</div>
 
 			<div class="col-md-6 col-sm-12 col-xs-12">
-				<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('entertainment') }}">Entertainment</a></h3>
+				<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('autos') }}">Autos</a></h3>
 				<div class="row">
 					<div class="articleGrid col-md-6 col-sm-6 col-xs-12">
-						{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/entertainment'}  %}
+						{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/autos'}  %}
 								{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns'} %}
 						{% endgimmelist %}
 					</div>
 					<div class="articleListSmall col-md-6 col-sm-6 col-xs-12">
-						{% gimmelist article from articles|start(1)|limit(3)|order('publishedAt','desc') with {'route': '/entertainment'}  %}
+						{% gimmelist article from articles|start(1)|limit(3)|order('publishedAt','desc') with {'route': '/autos'}  %}
 								{% include 'partials/articleListSmall__item.html.twig'  %}
 						{% endgimmelist %}
 					</div>

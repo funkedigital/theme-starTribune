@@ -35,9 +35,17 @@
               </a>
 
             </figure>
+
+  {% set articleKicker = null %}
+  {% for keyword in article.keywords %}
+    {% if loop.first %}
+    {% set articleKicker = keyword %}
+    {% endif %}
+  {% endfor %}
+
           <div class="mainArticle__text ">
             <a href="{{ url(article) }}">
-              <span class="mainArticle__kicker">Lorem ipsum</span>
+              {% if articleKicker %}<span class="mainArticle__kicker">{{ articleKicker }}</span>{% endif %}
               <h2 class="mainArticle__headline">{{ article.title }}</h2>
             </a>
             {% if deck!='none' %}

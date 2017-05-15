@@ -17,7 +17,13 @@
 
 			<div class="article col-md-9 col-sm-12 col-xs-12">
 				<article>
-					<span class="article__kicker">Lorem ipsum</span>
+  {% set articleKicker = null %}
+  {% for keyword in gimme.article.keywords %}
+    {% if loop.first %}
+    {% set articleKicker = keyword %}
+    {% endif %}
+  {% endfor %}				
+					{% if articleKicker %}<span class="article__kicker">{{ articleKicker }}</span>{% endif %}
 					<h2 class="article__headline marginBottom30"> {{ gimme.article.title }}</h2>
 
 					<div class="article__lead">

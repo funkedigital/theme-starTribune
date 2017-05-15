@@ -22,8 +22,6 @@
                     {% set start = 0 %}
               {% endif %}
 
-
-
             {# List all articles from current route and limit them to `itemsPerPage` value starting from `start` value #}
             {% cache 'newsList'~app.environment~currentPage {time: 600} %}
               {% gimmelist article from articles|start(start)|limit(itemsPerPage)|order('publishedAt','desc') %}

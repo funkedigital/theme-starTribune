@@ -21,8 +21,16 @@
       <img src="{{ rend610 }}" alt="{{ imgCaption }}" />
     </figure>
   </a>
+
+  {% set articleKicker = null %}
+  {% for keyword in article.keywords %}
+    {% if loop.first %}
+    {% set articleKicker = keyword %}
+    {% endif %}
+  {% endfor %}
+
   <a href="{{ url(article) }}">
-    <span class="articleGrid__kicker">Lorem ipsum</span>
+    {% if articleKicker %}<span class="articleGrid__kicker">{{ articleKicker }}</span>{% endif %}
     <h3 class="articleGrid__headline">{{ article.title }}</h3>
   </a>
   <p class="articleGrid__text">{% if foo is empty %}
