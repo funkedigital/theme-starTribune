@@ -119,7 +119,7 @@
 					{% if loop.index == 1 %}
 						{% include 'partials/mainArticleList.html.twig' with {'class' : 'col-md-6 col-sm-12 col-xs-12', 'image':'small', 'deck': 'none'} %}
 					{% else %}
-						{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--threeColumns col-md-3 col-sm-6 col-xs-12'} %}
+						{% include 'partials/articleGrid__item.html.twig' with {'class' : 'col-md-3 col-sm-6 col-xs-12'} %}
 					{% endif %}
 				{% endgimmelist %}
 
