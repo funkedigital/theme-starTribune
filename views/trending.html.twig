@@ -5,7 +5,7 @@
   <main class="container">
     <div class="row">
 
-      {% set trendingTopic = app.request.get('topic') %}
+      {% set trendingTopic = app.request.get('topic')|toUpperCase %}
 
       <div class="col-md-9 col-sm-12 col-xs-12">
         <div class="row">
@@ -27,8 +27,6 @@
             {% cache 'trendingList'~app.environment~currentPage {time: 600} %}
 
               {% gimmelist article from articles|start(start)|limit(itemsPerPage)|order('publishedAt','desc') with {keywords: [trendingTopic]} %}
-
-{{ dump(article) }}
 
               {% if loop.first %}
 
