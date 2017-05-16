@@ -17,7 +17,7 @@
 
 			<div class="article col-md-9 col-sm-12 col-xs-12">
 				<article>
-				
+
   {% set articleKicker = null %}
   {% for keyword in gimme.article.keywords %}
     {% if loop.first %}
@@ -174,20 +174,7 @@ s.setAttribute('data-timestamp', +new Date());
         		{% endcontainer %}
 
 			</div>
-
-{# PREV / NEXT #}
-
-{% set currArt = gimme.article.id %}
-{% set artArray = [] %}
-
-{# cache 'prevNextArticle' { time:600 } %}
-{% gimmelist article from articles|order('publishedAt','desc') %}
-{% set artArray = artArray|merge(article.id) %}
-{% endgimmelist %}
-{% endcache %}
-
-{{ dump(artArray) #}
-
+{#
 			<div class="article__arrows">
 				<a class="article__arrowItem article__arrowItem--prev" href="#">
 					<div class="article__arrow">
@@ -213,6 +200,7 @@ s.setAttribute('data-timestamp', +new Date());
 					</div>
 				</a>
 			</div>
+#}
 
 		</div>
 
