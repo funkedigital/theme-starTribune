@@ -1,0 +1,63 @@
+<article class="mainArticle row {{class}}">
+
+  {% set articleKicker = null %}
+  {% for keyword in article.keywords %}
+    {% if loop.first %}
+    {% set articleKicker = keyword %}
+    {% endif %}
+  {% endfor %}
+
+          <div class="mainArticle__text col-md-8 col-sm-6 col-xs-12">
+            <a href="{{ url(article) }}">
+              {% if articleKicker %}<span class="mainArticle__kicker">{{ articleKicker }}</span>{% endif %}
+              <h2 class="mainArticle__headline">{{ article.title }}</h2>
+            </a>
+            
+            <div class="mainArticle__teaser">
+              <p>{{ article.lead|striptags|safeTruncate(200,"...") }}</p>
+            </div>
+          
+            <div class="articleMetadata">
+              <span class="articleMetadata__byline">by <a href="#">{{article.metadata.byline}}</a></span>
+              <a class="articleMetadata__shares articleMetadata__info" href="#">240</a>
+              <a class="articleMetadata__comments articleMetadata__info" href="#">20</a>
+            </div>
+          </div>
+
+          <figure class="col-md-4 col-sm-6 col-xs-12 {% if image =='small' %}mainArticle__image--small{% endif %} ">
+
+            {% set imgCaption = "" %}
+            {% set rend610 = "/public/img/article_img/610x380.png" %}
+            {% set rend1250 = "/public/img/article_img/1250x600.png" %}
+
+              {% if article.featureMedia %}
+                {% gimme rendition with { 'media': article.featureMedia, 'name': '610x380' } %}
+                  {% set rend610 = path(rendition) %}
+                  {% set imgCaption = article.featureMedia.description %}
+                {% endgimme %}
+                {% gimme rendition with { 'media': article.featureMedia, 'name': '1250x600' } %}
+                  {% set rend610 = path(rendition) %}
+                {% endgimme %}
+              {% else %}
+                {% gimmelist media from articleMedia|limit(1) with {'article': article} %}
+                  {% set imgCaption = media.body %}
+                  {% gimme rendition with { media: media, 'name': '610x380' } %}
+                       {% set rend610 = path(rendition) %}
+                  {% endgimme %}
+                  {% gimme rendition with {media: media,  'name': '1250x600' } %}
+                       {% set rend610 = path(rendition) %}
+                  {% endgimme %}
+                {% endgimmelist %}
+              {% endif %}
+
+              <a href="{{ url(article) }}">
+                {% if image=='small' %}
+                  <img src="{{ rend610 }}" alt="{{ imgCaption }}"  }}">
+                {% else %}
+                  <img src="{{ rend610 }}" alt="{{ imgCaption }}" }}">
+                {% endif %}
+              </a>
+
+            </figure>
+
+        </article>
