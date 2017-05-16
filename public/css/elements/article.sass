@@ -1,9 +1,20 @@
 .article
+  font-family: $fontSerif
+  font-size: 1.8rem
+  font-weight: 300
+  line-height: 170%
   max-width: 830px
   p
     font-size: 1.8rem
     line-height: 170%
     margin-bottom: 20px
+  img
+    height: auto
+  figcaption
+    font-family: $fontSansSerif
+    font-size: 1.6rem
+    color: #888888
+    margin-top: 10px
   blockquote
     margin: 40px 0px 40px 0px
     position: relative
@@ -28,6 +39,7 @@
       font-weight: 700
       font-style: normal
   .article__kicker
+    font-family: $fontSansSerif
     font-size: 1.6rem
     color: #ea545f
     text-transform: uppercase
@@ -35,6 +47,7 @@
     display: block
     margin-top: 10px
   .article__headline
+    @include letterSpacing()
     font-size: 4rem
     font-weight: 900
     margin-top: 20px
@@ -105,9 +118,12 @@
       margin-right: 0px
 
   .article__keywords
+    font-family: $fontSansSerif
+    font-weight: 400
     list-style: none
     margin: 0
     padding: 0
+    overflow: hidden
     min-height: 1px
     li
       float: left
@@ -118,6 +134,7 @@
           border-bottom: 1px solid #00a9e1
 
 .article__arrows
+  font-family: $fontSansSerif
   .article__arrowItem
     display: block
     max-width: 56px
@@ -188,3 +205,6 @@
 .article--noMargin
   blockquote
     margin: 40px 0px 40px 0px
+
+#disqus_thread
+  margin: 40px 0px
