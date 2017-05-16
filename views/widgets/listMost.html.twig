@@ -1,6 +1,12 @@
+{% set accordionIndex = contentList.id - 6 %}
+{# This is because accordion script doesn't work properly if initial active tab is not having index #1. Our content lists here (Star Tribune) have ids #7, #8 and #9 #}
+
   <div class="accordion__section">
-    <a class="accordion__sectionTitle {#active#}" href="#accordion-{{ contentList.id }}">{{ contentList.name }}</a>
-    <div id="accordion-{{ contentList.id }}" class="accordion__sectionContent">
+    <a class="accordion__sectionTitle {% if accordionIndex == 1 %}active{% endif %}" href="#accordion-{{ accordionIndex }}">{{ contentList.name }}</a>
+    
+    {# dump(contentList) #}
+
+    <div id="accordion-{{ accordionIndex }}" class="accordion__sectionContent">
 
 {% cache 'contentlist' ~ contentList.id { time: contentList.cacheLifeTime ?: 0 } %}
     {% for item in contentList.items|slice(start, 5) %}

@@ -5,13 +5,12 @@
   <main class="container">
     <div class="row">
 
-      {% set trendingAuthor = app.request.get('by') %}
-      {% set trendingKeyword = app.request.get('kw') %}
+      {% set trendingTopic = app.request.get('topic') %}
 
       <div class="col-md-9 col-sm-12 col-xs-12">
         <div class="row">
           <div class="col-xs-12">
-            <h3 class="sectionHeadingBold marginTop10 noBorder">{% if trendingAuthor %}Author {{ trendingAuthor }}{% elseif trendingKeyword %}Keyword '{{ trendingKeyword }}'{% endif %}</h3>
+            <h3 class="sectionHeadingBold marginTop10 noBorder">Topic '{{ trendingTopic }}'</h3>
           </div>
         </div>
 
@@ -27,7 +26,9 @@
             {# List all articles from current route and limit them to `itemsPerPage` value starting from `start` value #}
             {% cache 'trendingList'~app.environment~currentPage {time: 600} %}
 
-              {% gimmelist article from articles|start(start)|limit(itemsPerPage)|order('publishedAt','desc') with {keyword: trendingKeyword, metadata: {byline: trendingAuthor }} %}
+              {% gimmelist article from articles|start(start)|limit(itemsPerPage)|order('publishedAt','desc') with {keywords: [trendingTopic]} %}
+
+{{ dump(article) }}
 
               {% if loop.first %}
 
@@ -38,7 +39,6 @@
               {% endif %}
 
               {% cache 'trendingArticle' {gen: article} %}
-              
               {% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--threeColumns col-md-4 col-sm-6 col-xs-12'} %}
 
               {% endcache %}

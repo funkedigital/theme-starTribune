@@ -26,15 +26,13 @@
             {% cache 'newsList'~app.environment~currentPage {time: 600} %}
               {% gimmelist article from articles|start(start)|limit(itemsPerPage)|order('publishedAt','desc') %}
 
-
             {% if loop.first and currentPage == 1 %}
 
-              {# cache 'newsArticle' {gen: article} #}
+              {% cache 'newsArticle' {gen: article} %}
 
               {% include 'partials/mainArticle.html.twig' with {'class' : ''} %}
 
-
-              {# endcache #}
+              {% endcache %}
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 pull-right">
