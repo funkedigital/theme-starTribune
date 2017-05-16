@@ -812,6 +812,17 @@ input {
         margin: 0px; } }
     .header .header__logo img {
       max-width: 400px; }
+    .header .header__logo--section {
+      max-width: 170px;
+      margin: 0 auto !important; }
+  .header .header__sectionName {
+    font-family: "Merriweather", serif;
+    font-size: 4rem;
+    color: #758d99;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 0px; }
   .header .header__search {
     font-family: "Merriweather", serif;
     font-size: 3.6rem;
