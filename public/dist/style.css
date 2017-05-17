@@ -194,15 +194,21 @@ input {
   line-height: 170%;
   max-width: 830px; }
   .article p {
-    font-size: 1.8rem;
-    line-height: 170%;
-    margin-bottom: 20px; }
-  .article img {
+    font-family: "Merriweather", serif !important;
+    font-size: 1.8rem !important;
+    font-weight: 300 !important;
+    line-height: 170% !important;
+    font-size: 1.8rem !important;
+    line-height: 170% !important;
+    margin-bottom: 20px !important; }
+  .article figure img {
+    width: 100%;
     height: auto; }
   .article figcaption {
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.6rem;
     color: #888888;
+    line-height: 140%;
     margin-top: 10px; }
   .article blockquote {
     margin: 40px 0px 40px 0px;
@@ -393,6 +399,10 @@ input {
 
 .article--noMargin blockquote {
   margin: 40px 0px 40px 0px; }
+
+.blueimp-gallery > .title {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.6rem; }
 
 #disqus_thread {
   margin: 40px 0px; }
@@ -1152,12 +1162,12 @@ input {
         font-size: 2.8rem; }
 
 .sidebarMenu {
-  font-family: "Source Sans Pro", sans-serif;
   overflow: hidden;
   border-left: 2px solid #e6e6e6;
   padding: 40px 0px 40px 60px; }
 
 .sidebarMenu__headline {
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 2rem;
   font-weight: 400;
   float: left;
@@ -1165,10 +1175,10 @@ input {
   margin-top: 0px;
   margin-bottom: 15px; }
   .sidebarMenu__headline a:hover {
-    color: #019bce; }
+    color: #547688; }
 
 .sidebarMenu__headline--active {
-  border-bottom: 1px solid #98b96a; }
+  border-bottom: 2px solid #98b96a; }
 
 .stripBox .stripBox__title {
   font-family: "Merriweather", serif;
