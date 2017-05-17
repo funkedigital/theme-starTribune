@@ -14,7 +14,7 @@
 We are not ready yet for manual content list widget on frontpage - ordering is random, and images are not ready to work with
 {% endcontainer #}
 
-						{% cache 'frontTop' { time:600 } %}
+						{% cache 'frontTop' { time:0 } %}
 						{% set topArt = null %}
 						{% gimmelist article from articles|start(0)|limit(7)|order('publishedAt','desc') %}
 						{% if loop.first %}

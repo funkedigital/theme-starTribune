@@ -124,7 +124,7 @@
 {% endcontainer %}
 
         {# Trending topics is array of first in a row keyword of three latest articles #}
-        {% cache 'subMenu' { time:3600 } %}
+        {% cache 'subMenu' { time:0 } %}
         {% set trendingTopics = [] %}
         {% set i = 0 %}
         {% gimmelist article from articles|order('publishedAt','desc')|limit(3) ignoreContext %}
@@ -135,7 +135,6 @@
           {% endfor %}
           {% set i = i+1 %}
         {% endgimmelist %}
-
 
   <div class="trendingTopics">
     <div class="container">
