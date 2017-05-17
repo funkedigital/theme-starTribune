@@ -30,33 +30,21 @@
             {% set rend610 = "/public/img/article_img/610x380.png" %}
             {% set rend1250 = "/public/img/article_img/1250x600.png" %}
 
-              {% if article.featureMedia %}
-                {% gimme rendition with { 'media': article.featureMedia, 'name': '610x380' } %}
-                  {% set rend610 = path(rendition) %}
-                  {% set imgCaption = article.featureMedia.description %}
-                {% endgimme %}
-                {% gimme rendition with { 'media': article.featureMedia, 'name': '1250x600' } %}
-                  {% set rend610 = path(rendition) %}
-                {% endgimme %}
-              {% else %}
-                {% gimmelist media from articleMedia|limit(1) with {'article': article} %}
-                  {% set imgCaption = media.body %}
-                  {% gimme rendition with { media: media, 'name': '610x380' } %}
-                       {% set rend610 = path(rendition) %}
-                  {% endgimme %}
-                  {% gimme rendition with {media: media,  'name': '1250x600' } %}
-                       {% set rend610 = path(rendition) %}
-                  {% endgimme %}
-                {% endgimmelist %}
-              {% endif %}
+            {% gimme rendition with { 'media': article.featureMedia, 'name': '610x380' } %}
+              {% set rend610 = path(rendition) %}
+              {% set imgCaption = article.featureMedia.description %}
+            {% endgimme %}
+            {% gimme rendition with { 'media': article.featureMedia, 'name': '1250x600' } %}
+              {% set rend1250 = path(rendition) %}
+            {% endgimme %}
 
-              <a href="{{ url(article) }}">
-                {% if image=='small' %}
-                  <img src="{{ rend610 }}" alt="{{ imgCaption }}"  }}">
-                {% else %}
-                  <img src="{{ rend610 }}" alt="{{ imgCaption }}" }}">
-                {% endif %}
-              </a>
+            <a href="{{ url(article) }}">
+              {% if image=='small' %}
+                <img src="{{ rend610 }}" alt="{{ imgCaption }}"  }}">
+              {% else %}
+                <img src="{{ rend610 }}" alt="{{ imgCaption }}" }}">
+              {% endif %}
+            </a>
 
             </figure>
 
