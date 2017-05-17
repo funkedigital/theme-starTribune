@@ -784,7 +784,11 @@ input {
     align-items: center; }
     .header .header__weather img {
       height: 25px;
-      margin-right: 15px; }
+      margin-right: 15px;
+      opacity: 0.6;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: -webkit-optimize-contrast;
+      -ms-interpolation-mode: nearest-neighbor; }
   .header .header__weather__info {
     margin: 0px 10px; }
     .header .header__weather__info br {
