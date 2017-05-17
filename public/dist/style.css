@@ -1152,6 +1152,7 @@ input {
         font-size: 2.8rem; }
 
 .sidebarMenu {
+  font-family: "Source Sans Pro", sans-serif;
   overflow: hidden;
   border-left: 2px solid #e6e6e6;
   padding: 40px 0px 40px 60px; }
@@ -1167,7 +1168,7 @@ input {
     color: #019bce; }
 
 .sidebarMenu__headline--active {
-  border-bottom: 4px solid #00a9e1; }
+  border-bottom: 1px solid #98b96a; }
 
 .stripBox .stripBox__title {
   font-family: "Merriweather", serif;
@@ -1204,6 +1205,7 @@ input {
   margin-bottom: 5px; }
 
 .topBar {
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 1.4rem;
   color: #333333; }
   .topBar p, .topBar a {
@@ -1216,12 +1218,12 @@ input {
       .topBar .topBar__links {
         display: block; } }
     .topBar .topBar__links ul {
-      text-align: right;
+      text-align: left;
       list-style: none;
       padding-left: 0px; }
       .topBar .topBar__links ul li {
         display: inline-block;
-        padding: 0px 15px; }
+        padding-right: 10px; }
   .topBar .topBar__social ul {
     text-align: left;
     list-style: none;
