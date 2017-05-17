@@ -55,11 +55,7 @@
     <div class="container">
       <div class="row">
 
-        <div class="col-sm-3 col-md-3 col-xs-6">
-          <p>All sections</p>
-        </div>
-
-        <div class="topBar__links col-sm-6 col-md-7 col-xs-12">
+        <div class="topBar__links col-sm-9 col-md-8 col-xs-12">
           <ul>
             {% gimmelist article from articles with {'route' : '/about' } %}
             <li><a href="{{ url(article) }}">{{ article.title }}</a></li>
@@ -67,7 +63,7 @@
           </ul>
         </div>
 
-        <div class="topBar__social col-sm-3 col-md-2 col-xs-6">
+        <div class="topBar__social col-sm-3 col-md-4 col-xs-12">
           <ul>
             <li><a href="https://www.facebook.com/Superdesk/"><img src="{{ asset('theme/img/social-fb.svg') }}"></a></li>
             <li><a href="https://twitter.com/Sourcefabric"><img src="{{ asset('theme/img/social-tw.svg') }}"></a></li>
