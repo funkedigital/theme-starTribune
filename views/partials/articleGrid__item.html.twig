@@ -33,11 +33,9 @@
     {% if articleKicker %}<span class="articleGrid__kicker">{{ articleKicker }}</span>{% endif %}
     <h3 class="articleGrid__headline">{{ article.title }}</h3>
   </a>
-  <p class="articleGrid__text">{% if foo is empty %}
-      {{ article.body|striptags|safeTruncate(160,"...") }}
-    {%else%}
+  <p class="articleGrid__text">
       {{ article.lead|striptags|safeTruncate(160,"...") }}
-    {%endif%}</p>
+  </p>
   <div class="articleMetadata">
     <span class="articleMetadata__byline">by <a href="{{ url(article) }}">{{article.metadata.byline}}</a></span>
     <a class="articleMetadata__shares articleMetadata__info" href="#">240</a>

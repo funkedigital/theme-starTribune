@@ -5,9 +5,16 @@
 	<main class="container">
 		<div class="row">
 			<div class="col-md-9 col-sm-12 col-xs-12">
-						{% cache 'frontTop' { time:600 } %}
 				<div class="row">
 					<div class="col-md-8 col-sm-12 col-xs-12 pull-right">
+
+{# container 'topStories' with {
+	'cssClass': 'col-md-8 col-sm-12 col-xs-12 pull-right'
+} %}
+We are not ready yet for manual content list widget on frontpage - ordering is random, and images are not ready to work with
+{% endcontainer #}
+
+						{% cache 'frontTop' { time:600 } %}
 						{% set topArt = null %}
 						{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {route: 28} %}
 							{% include 'partials/mainArticle.html.twig' %}
@@ -19,6 +26,7 @@
 						{% endgimmelist %}
 						{% endcache %}
 						</div>
+
 					</div>
 
 					<div class="leftCol col-md-4 col-sm-12 col-xs-12 pull-right">
@@ -63,6 +71,7 @@
 				{% endcontainer %}
 
 			</div>
+
 		</div>
 
 		<div class="row">
