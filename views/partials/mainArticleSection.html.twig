@@ -1,4 +1,4 @@
-<article class="mainArticle row {{class}}">
+<article class="mainArticle mainArticle--section row {{class}}">
 
   {% set articleKicker = null %}
   {% for keyword in article.keywords %}
@@ -9,7 +9,7 @@
 
           <div class="mainArticle__text col-md-8 col-sm-6 col-xs-12">
             <a href="{{ url(article) }}">
-              {% if articleKicker %}<span class="mainArticle__kicker">{{ articleKicker }}</span>{% endif %}
+              {% if articleKicker %}<span class="mainArticle__kicker mainArticle__kicker--section">{{ articleKicker }}</span>{% endif %}
               <h2 class="mainArticle__headline">{{ article.title }}</h2>
             </a>
             
