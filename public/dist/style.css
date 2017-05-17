@@ -181,7 +181,7 @@ input {
     margin-top: 0px;
     margin-bottom: 5px; }
     .accordion .accordion__sectionHeadline:hover a {
-      color: #658da2; }
+      color: #547688; }
   .accordion .accordion__sectionCount {
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.4rem;
@@ -484,7 +484,7 @@ input {
   margin: 5px 0px 10px 0px;
   transition: 0.2s color; }
   .articleGrid .articleGrid__headline:hover {
-    color: #658da2; }
+    color: #547688; }
 
 .articleListSmall .articleListSmall__item {
   overflow: hidden;
@@ -519,7 +519,7 @@ input {
       margin-top: 0px;
       margin-left: 110px; } }
   .articleListSmall .articleListSmall__headline:hover a {
-    color: #658da2; }
+    color: #547688; }
 
 @media (min-width: 1290px) {
   .articleListSmall .articleMetadata {
@@ -734,9 +734,21 @@ input {
     font-family: "Merriweather", serif;
     font-size: 2rem !important; }
   .gallery .gallery__image {
-    padding-bottom: 48%;
+    position: relative;
+    padding-bottom: 48.2%;
     height: 0px; }
+    .gallery .gallery__image:after {
+      background-image: linear-gradient(0deg, rgba(0, 15, 20, 0.6) 15%, rgba(0, 15, 20, 0.15) 52%, rgba(0, 15, 20, 0) 70%);
+      display: block;
+      content: " ";
+      height: 240px;
+      width: 100%;
+      position: absolute;
+      bottom: 0px; }
+    .gallery .gallery__image img {
+      width: 100%; }
   .gallery .gallery__strip {
+    font-family: "Source Sans Pro", sans-serif;
     font-size: 1.7rem;
     font-weight: 700;
     color: #fff;
@@ -745,18 +757,7 @@ input {
     background: #98b96a;
     padding: 4px 18px;
     top: 20px;
-    right: 6px; }
-    .gallery .gallery__strip:after {
-      content: " ";
-      display: block;
-      position: absolute;
-      bottom: -9px;
-      right: 0px;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 9px 9px 0 0;
-      border-color: #007aa3 transparent transparent transparent; }
+    right: 20px; }
   @media (min-width: 769px) {
     .gallery .gallery__text {
       position: absolute;
@@ -914,7 +915,7 @@ input {
     font-weight: 600;
     margin: 10px 0px; }
     .mainArticle .mainArticle__headline:hover {
-      color: #658da2; }
+      color: #547688; }
     .mainArticle .mainArticle__headline--small {
       font-size: 3.2rem; }
 
@@ -1093,7 +1094,7 @@ input {
   margin-bottom: 15px;
   transition: 0.2s color; }
   .opinions .opinionsItem__headline:hover {
-    color: #658da2; }
+    color: #547688; }
 
 .opinions .opinionsItem--small {
   text-align: left; }
