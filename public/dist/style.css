@@ -876,6 +876,8 @@ input {
       margin-bottom: 30px;
       border-bottom: none;
       padding-bottom: 0px; } }
+  .mainArticle--section {
+    padding-bottom: 30px; }
   .mainArticle .mainArticle__image {
     padding-bottom: 51%;
     z-index: 1;
@@ -909,6 +911,8 @@ input {
     display: block;
     text-transform: uppercase;
     margin-top: 10px; }
+    .mainArticle .mainArticle__kicker--section {
+      margin-top: 0px; }
   .mainArticle .mainArticle__headline {
     letter-spacing: 0.2px;
     font-size: 3.4rem;
@@ -1116,6 +1120,7 @@ input {
   margin-bottom: 0px; }
 
 .pagination {
+  font-family: "Source Sans Pro", sans-serif;
   display: inline-block;
   width: 100%;
   margin: 50px 0px; }
