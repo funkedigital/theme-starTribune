@@ -16,16 +16,16 @@ We are not ready yet for manual content list widget on frontpage - ordering is r
 
 						{% cache 'frontTop' { time:600 } %}
 						{% set topArt = null %}
-						{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {route: 28} %}
-							{% include 'partials/mainArticle.html.twig' %}
-							{% set topArt = article.id %}
-						{% endgimmelist %}
+						{% gimmelist article from articles|start(0)|limit(7)|order('publishedAt','desc') %}
+						{% if loop.first %}
+						{% include 'partials/mainArticle.html.twig' %}
 						<div class="articleGrid row">
-						{% gimmelist article from articles|start(0)|limit(6)|order('publishedAt','desc') if id != topArt %}
-							{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--twoColumns col-md-6 col-sm-6 col-xs-12'} %}
+						{% else %}
+						{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--twoColumns col-md-6 col-sm-6 col-xs-12'} %}
+						{% endif %}
 						{% endgimmelist %}
-						{% endcache %}
 						</div>
+						{% endcache %}
 
 					</div>
 
