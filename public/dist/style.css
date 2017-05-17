@@ -834,7 +834,6 @@ input {
     text-align: right;
     font-style: italic; }
     .header .header__search input {
-      font-size: 3.6rem;
       max-width: 270px;
       text-align: right;
       padding-right: 10px;
@@ -881,7 +880,12 @@ input {
       border-bottom: none;
       padding-bottom: 0px; } }
   .mainArticle--section {
-    padding-bottom: 30px; }
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column-reverse; }
+    @media only screen and (min-width: 768px) {
+      .mainArticle--section {
+        display: block; } }
   .mainArticle .mainArticle__image {
     padding-bottom: 51%;
     z-index: 1;
@@ -1249,7 +1253,10 @@ input {
       font-size: 1.8rem;
       font-weight: 600;
       display: inline-block;
-      margin-right: 40px; }
+      margin-right: 10px; }
+      @media (min-width: 769px) {
+        .trendingTopics ul li {
+          margin-right: 40px; } }
       .trendingTopics ul li a:hover {
         color: #98b96a; }
 
