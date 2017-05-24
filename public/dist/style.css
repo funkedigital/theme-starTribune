@@ -19,7 +19,8 @@ body {
   font-size: 1.8em;
   font-weight: 400;
   color: #333333;
-  padding-top: 0px; }
+  padding-top: 0px;
+  overflow: auto !important; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display", serif;
