@@ -7,7 +7,7 @@
   Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>{% block title %}Star Theme for Superdesk Publisher{% endblock %}</title>
+  <title>{% block title %}The Tribune Theme for Superdesk Publisher{% endblock %}</title>
   <meta name="author" content="Sourcefabric">
 
   <meta name="description" content="Superdesk Publisher is state of the art publishing system.">
@@ -95,7 +95,7 @@
 
         {% block logo %}
         <div class="verticalMiddle col-md-4 col-sm-4 col-xs-12">
-          <a class="header__logo" href="{{ url('home') }}"><img src="{{ asset('theme/img/logo.png') }}"></a>
+          <a class="header__logo" href="{{ url('home') }}"><img src="/public/img/logo.png"></a>
         </div>
         {% endblock %}
 
@@ -159,9 +159,9 @@
   <div class="container">
     <div class="row">
 
-      <div class="footer__logo col-md-3 col-sm-3 col-xs-12">
+      <!--div class="footer__logo col-md-3 col-sm-3 col-xs-12">
         <a href="{{ url('home') }}"><img src="{{ asset('theme/img/logo-white.svg') }}"></a>
-      </div>
+      </div-->
 
 {% container 'footerNav' %}
 
@@ -210,8 +210,8 @@
     $(function() {
       $('.weather-temperature').openWeather({
         key: 'ffccf64d91c2144d8018e8c5fc4a2e0d',
-        city: 'Minneapolis, MN',
-        units: 'f', 
+        city: 'Belgrade',
+        units: 'c', 
         descriptionTarget: '.weather-description',
         minTemperatureTarget: '.weather-min-temperature',
         maxTemperatureTarget: '.weather-max-temperature',
