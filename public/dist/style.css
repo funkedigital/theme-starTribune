@@ -808,7 +808,7 @@ input {
         .header .header__weather__info br {
           display: block; } }
   .header .weather-temperature {
-    font-size: 2.5em;
+    font-size: 1.15em;
     font-weight: 200; }
     @media (min-width: 769px) {
       .header .weather-temperature {
@@ -827,7 +827,8 @@ input {
       .header .header__logo {
         margin: 0px; } }
     .header .header__logo img {
-      max-width: 400px; }
+      width: 100%;
+      max-width: 333px; }
     .header .header__logo--section {
       max-width: 170px;
       margin: 0 auto !important; }
@@ -861,6 +862,8 @@ input {
       border: none;
       text-indent: -9999px;
       vertical-align: sub; }
+    .header .header__search .gsc-search-box-tools .gsc-search-box input.gsc-input {
+      background-size: 0px !important; }
     .header .header__search .gsc-input-box {
       border: none;
       height: auto; }
@@ -869,12 +872,9 @@ input {
       box-shadow: none; }
     .header .header__search td.gsc-search-button {
       background: url("../img/search.svg") no-repeat center;
-      width: 27px;
-      height: 49px;
-      display: block; }
+      width: 27px; }
     .header .header__search .cse input.gsc-search-button, .header .header__search input.gsc-search-button {
-      width: 27px;
-      height: 49px; }
+      height: 27px; }
     .header .header__search .cse input.gsc-search-button:hover, .header .header__search input.gsc-search-button:hover {
       background: none; }
     .header .header__search .gsc-input-box-focus {
@@ -1023,7 +1023,10 @@ input {
   .navigation ul {
     list-style: none;
     padding-left: 0px;
-    margin: 14px 40px; }
+    margin: 14px 20px; }
+    @media (min-width: 769px) {
+      .navigation ul {
+        margin: 14px 40px; } }
     .navigation ul li {
       font-size: 2rem;
       font-weight: 900;
