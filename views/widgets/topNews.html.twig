@@ -1,16 +1,16 @@
 {% cache 'contentlist' ~ contentList.id { time: contentList.cacheLifeTime ?: 0 } %}
 {# dump(contentList) #}
-    {% for item in contentList.items %}
+
+{% gimmelist item from contentListItems|limit(7) with {contentListName: "Top articles"} %}
     {% if loop.first %}
         {% include 'partials/mainArticle.html.twig' with { 'article': item.content } %}
         <div class="articleGrid row">
     {% else %}
-        {# dump(item.content) #}
         {% include 'partials/articleGrid__item.html.twig' with { 'article' : item.content, 'class' : 'articleGrid__item--twoColumns col-md-6 col-sm-6 col-xs-12' } %}
-        
     {% endif %}
     {% if loop.last %}
         </div>
     {% endif %}
-    {% endfor %}
+{% endgimmelist %}
+
 {% endcache %}
