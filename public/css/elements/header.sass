@@ -23,7 +23,7 @@
       +sm
         display: block
   .weather-temperature
-    font-size: 2.5em
+    font-size: 1.15em
     font-weight: 200
     +sm
       font-size: 3.5em
@@ -41,7 +41,8 @@
     +sm
       margin: 0px
     img
-      max-width: 400px
+      width: 100%
+      max-width: 333px
     &--section
       max-width: 170px
       margin: 0 auto !important
@@ -75,6 +76,8 @@
       border: none
       text-indent: -9999px
       vertical-align: sub
+    .gsc-search-box-tools .gsc-search-box input.gsc-input
+      background-size: 0px !important
     .gsc-input-box
       border: none
       height: auto
@@ -84,11 +87,8 @@
     td.gsc-search-button
       background: url('../img/search.svg') no-repeat center
       width: 27px
-      height: 49px
-      display: block
     .cse input.gsc-search-button, input.gsc-search-button
-      width: 27px
-      height: 49px
+      height: 27px
     .cse input.gsc-search-button:hover, input.gsc-search-button:hover
       background: none
     .gsc-input-box-focus
