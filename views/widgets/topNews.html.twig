@@ -1,7 +1,7 @@
 {% cache 'contentlist' ~ contentList.id { time: contentList.cacheLifeTime ?: 0 } %}
 {# dump(contentList) #}
 
-{% gimmelist item from contentListItems|limit(7) with {contentListName: "Top articles"} %}
+{% gimmelist item from contentListItems|limit(7) with {contentListName: "Top news"} %}
     {% if loop.first %}
         {% include 'partials/mainArticle.html.twig' with { 'article': item.content } %}
         <div class="articleGrid row">
