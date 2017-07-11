@@ -8,13 +8,19 @@
 				<div class="row">
 					<div class="col-md-8 col-sm-12 col-xs-12 pull-right">
 
-{% container 'topStories' with {
-	'cssClass': 'col-md-8 col-sm-12 col-xs-12 pull-right'
-} %}
-
-<!-- Widget in this container is rendered using template widgets/topNews.html.twig -->
-
-{% endcontainer %}
+					{% cache 'front' { time:600 } %}
+					{% gimmelist item from contentListItems|limit(7) with {contentListName: "Top news"} %}
+    					{% if loop.first %}
+        				{% include 'partials/mainArticle.html.twig' with { 'article': item.content } %}
+        				<div class="articleGrid row">
+    					{% else %}
+        				{% include 'partials/articleGrid__item.html.twig' with { 'article' : item.content, 'class' : 'articleGrid__item--twoColumns col-md-6 col-sm-6 col-xs-12' } %}
+    					{% endif %}
+    					{% if loop.last %}
+        				</div>
+    					{% endif %}
+					{% endgimmelist %}
+					{% endcache %}
 
 					</div>
 
@@ -65,12 +71,12 @@
 
 		<div class="row">
 			<div class="col-xs-12">
-				<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('local') }}">Local</a></h3>
+				<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('politics') }}">Politics</a></h3>
 			</div>
 
 			<div class="articleGrid">
 
-				{% gimmelist article from articles|start(0)|limit(4)|order('publishedAt','desc') with {'route': '/local'}  %}
+				{% gimmelist article from articles|start(0)|limit(4)|order('publishedAt','desc') with {'route': '/politics'}  %}
 					{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns col-md-3 col-sm-6 col-xs-12'} %}
 				{% endgimmelist %}
 
@@ -126,7 +132,7 @@
 			</div>
 		</div>
 
-		{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/variety'}  %}
+		{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/style'}  %}
 
 		{% set rend1250 = "/public/img/article_img/1250x600.png" %}
 		{% gimmelist media from articleMedia|limit(1) with {'article': article} %}
@@ -143,7 +149,7 @@
 		<div class="row">
 			<div class="gallery marginTop30 marginBottom30 col-xs-12">
 				<figure class="gallery__image">
-					<a class="gallery__strip" href="{{ path('variety') }}">Variety</a>
+					<a class="gallery__strip" href="{{ path('style') }}">Style</a>
 					<a href="{{ path(article) }}">
 						<img src="{{ rend1250 }}" alt="{{ imgCaption|striptags }}">
 					</a>
@@ -174,15 +180,15 @@
 			</div>
 
 			<div class="col-md-6 col-sm-12 col-xs-12">
-				<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('autos') }}">Autos</a></h3>
+				<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('travel') }}">Travel</a></h3>
 				<div class="row">
 					<div class="articleGrid col-md-6 col-sm-6 col-xs-12">
-						{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/autos'}  %}
+						{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/travel'}  %}
 								{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns'} %}
 						{% endgimmelist %}
 					</div>
 					<div class="articleListSmall col-md-6 col-sm-6 col-xs-12">
-						{% gimmelist article from articles|start(1)|limit(3)|order('publishedAt','desc') with {'route': '/autos'}  %}
+						{% gimmelist article from articles|start(1)|limit(3)|order('publishedAt','desc') with {'route': '/travel'}  %}
 								{% include 'partials/articleListSmall__item.html.twig'  %}
 						{% endgimmelist %}
 					</div>
