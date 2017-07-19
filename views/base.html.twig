@@ -1,4 +1,4 @@
-{% set version = '1495027581136' %}
+{% set version = '1500461914878' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,16 +53,34 @@
   })();
 </script>
 
+{% include 'partials/login-popup.html.twig' %}
+
+{% include 'partials/register-popup.html.twig' %}
+
+{% include 'partials/user-profile.html.twig' %}
+
   <div class="topBar">
     <div class="container">
       <div class="row">
 
         <div class="topBar__links col-sm-9 col-md-8 col-xs-12">
-          <ul>
+          <ul class="pull-left">
             {% gimmelist article from articles with {'route' : '/about' } %}
             <li><a href="{{ url(article) }}">{{ article.title }}</a></li>
             {% endgimmelist %}
           </ul>
+
+          <ul class="pull-right">          
+          {% if app.user %}
+            <li><a href="#" class="open_user_profile" data-toggle="modal" data-target="#userProfile">Hello {{ app.user.username }}</a></li>
+            <li>|</li>
+            <li><a href="{{ url('security_logout') }}">Logout</a></li>
+          {% else %}
+            <li><a href="#" class="open_user_profile" data-toggle="modal" data-target="#loginPopup">Sign in</a></li>
+            <li>|</li>
+            <li><a href="#" class="open_user_profile" data-toggle="modal" data-target="#registerPopup">Sign up</a></li>
+          {% endif %}
+          </ul>          
         </div>
 
         <div class="topBar__social col-sm-3 col-md-4 col-xs-12">
