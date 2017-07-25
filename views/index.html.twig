@@ -28,12 +28,9 @@
 						<div class="leftCol__item">
 							<div class="articleListSmall articleListSmall--latestNews marginBottom30">
 								<h3 class="sectionHeading">Latest news</h3>
-									{% gimmelist article from articles|start(0)|limit(6)|order('publishedAt','desc')  %}
-										{% include 'partials/articleListSmall__item.html.twig'  %}
-									{% endgimmelist %}
-
-								{# <a class="button" href="/news">View all</a> #}
-
+								{% gimmelist article from articles|start(0)|limit(6)|order('publishedAt','desc')  %}
+									{% include 'partials/articleListSmall__item.html.twig'  %}
+								{% endgimmelist %}
 							</div>
 						</div>
 
