@@ -175,8 +175,8 @@ $('#topics').okayNav();
         var head = document.createElement("h5");
         var nodeH5 = document.createTextNode( "Your user profile was successfuly saved." );
         head.appendChild(nodeH5);
-        var element = document.getElementById("editProfileResult");
-        element.appendChild(head);
+        //var element = document.getElementById("editProfileResult");
+        $( "#editProfileResult" ).empty().append( head ); 
       },
       error : function(jqXHR, textStatus, errorThrown) {
         var para = document.createElement("p");
