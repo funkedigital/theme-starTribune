@@ -1,6 +1,7 @@
-{% set accordionIndex = listId %}
+{% set accordionIndex = listId + 4 %}
 {# This is because accordion script doesn't work properly if initial active tab is not having index #1. Our content lists here can have ids ie. #7, #8 and #9 and numbers need to be decreased by 6 #}
 
+{% gimme contentList with {'contentListId': listId} %}
   <div class="accordion__section">
     <a class="accordion__sectionTitle {% if accordionIndex == 1 %}active{% endif %}" href="#accordion-{{ accordionIndex }}">{{ contentList.name }}</a>
 
@@ -19,3 +20,4 @@
 
     </div>
   </div>
+{% endgimme %}
