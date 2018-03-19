@@ -1,4 +1,4 @@
-{% set version = '1502100164570' %}
+{% set version = '1521461634608' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,6 +28,63 @@
 
   <link rel="stylesheet" href="/public/dist/style.css" />
 
+  {% if themeSetting('primary_color') %}
+    <style>
+      .article .article__text a {
+        border-bottom-color: {{ themeSetting('primary_color') }};
+      }
+
+      .article .article__entrefilet {
+        background: {{ themeSetting('primary_color') }};
+      }
+
+      .articleMetadata .articleMetadata__updated {
+        background: {{ themeSetting('primary_color') }};
+      }
+
+      .button--color {
+        background: {{ themeSetting('primary_color') }};
+      }
+
+      .editorialComment {
+        background-color: {{ themeSetting('primary_color') }};
+      }
+
+      .gallery .gallery__strip {
+        background: {{ themeSetting('primary_color') }};
+      }
+
+      .navigation ul li a:hover {
+        color: {{ themeSetting('primary_color') }};
+      }
+
+      .navigation ul li.current a {
+        color: {{ themeSetting('primary_color') }};
+      }
+
+      .okayNav__menu-toggle.icon--active span {
+        background: {{ themeSetting('primary_color') }};
+      }
+
+      .pagination ul li.active {
+        border-bottom-color: {{ themeSetting('primary_color') }};
+      }
+      .pagination ul li.active a {
+        color: {{ themeSetting('primary_color') }};
+      }
+
+      .sidebarMenu__headline--active {
+        border-bottom-color: {{ themeSetting('primary_color') }};
+      }
+      .trendingTopics ul.trendingTopics__items li:first-child {
+        background: {{ themeSetting('primary_color') }};
+      }
+      .trendingTopics ul li a:hover {
+        color: {{ themeSetting('primary_color') }};
+      }
+
+    </style>
+  {% endif %}
 </head>
 <body>
 
@@ -69,7 +126,7 @@
             {% endgimmelist %}
           </ul>
 
-          <ul class="pull-right">          
+          <ul class="pull-right">
           {% if app.user %}
             <li><a href="#" class="open_user_profile" data-toggle="modal" data-target="#userProfile">Hello {{ app.user.username }}</a></li>
             <li>|</li>
@@ -79,7 +136,7 @@
             <li>|</li>
             <li><a href="#" class="open_user_profile" data-toggle="modal" data-target="#registerPopup">Sign up</a></li>
           {% endif %}
-          </ul>          
+          </ul>
         </div>
 
         <div class="topBar__social col-sm-3 col-md-4 col-xs-12">
@@ -112,17 +169,17 @@
 
         {% block logo %}
         <div class="verticalMiddle col-md-4 col-sm-4 col-xs-12">
-          <a class="header__logo" href="{{ url('home') }}"><img src="/public/img/logo.png"></a>
+          <a class="header__logo" href="{{ url('home') }}"><img src="{{ themeLogo(asset('/public/img/logo.png')) }}"></a>
         </div>
         {% endblock %}
 
         <div class="header__search verticalMiddle col-sm-4 col-md-4 col-xs-12">
-        
+
           <!--form id="search" name="search_articles" method="GET" action="/search">
             <input type="text" name="q" placeholder="search" value="">
-            <button type="submit">Submit</button>           
+            <button type="submit">Submit</button>
           </form-->
-        
+
         <gcse:searchbox-only></gcse:searchbox-only>
         </div>
 
@@ -177,14 +234,14 @@
     <div class="row">
 
       <div class="footer__logo col-md-3 col-sm-3 col-xs-12">
-        <a href="{{ url('home') }}"><img src="/public/img/logo-white.png"></a>
+        <a href="{{ url('home') }}"><img src="{{ themeLogo(asset('/public/img/logo-white.png')) }}"></a>
       </div>
 
 {% container 'footerNav' %}
 
 <!-- Content of this container is defined by menu widget which is linked to it. Template used for this menu is widgets/menu2.html.twig -->
 
-{% endcontainer %}      
+{% endcontainer %}
 
       <div class="footer__section col-sm-2 col-md-2 col-xs-12">
         <h4 class="footer__sectionHeadline">Social</h4>
@@ -228,7 +285,7 @@
       $('.weather-temperature').openWeather({
         key: 'ffccf64d91c2144d8018e8c5fc4a2e0d',
         city: 'Belgrade',
-        units: 'c', 
+        units: 'c',
         descriptionTarget: '.weather-description',
         minTemperatureTarget: '.weather-min-temperature',
         maxTemperatureTarget: '.weather-max-temperature',
@@ -242,7 +299,7 @@
           console.log("These aren't the droids you're looking for.");
         }
       });
-      
+
     });
 </script>
 

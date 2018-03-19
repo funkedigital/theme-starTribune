@@ -9,5 +9,262 @@
             "homepage": "https://www.sourcefabric.org",
             "role": "Organization"
         }
-    ]
+    ],
+    "settings": {
+        "primary_color": {
+            "label": "Primary Color",
+            "value": "#98b96a",
+            "type": "string"
+        }
+    },
+
+    "generatedData": {
+        "routes": [
+            {
+                "name": "About",
+                "slug": "about",
+                "type": "collection",
+                "templateName": "page.html.twig",
+                "articlesTemplateName": "page.html.twig",
+                "numberOfArticles": 2
+            },
+            {
+                "name": "Business",
+                "slug": "business",
+                "type": "collection",
+                "numberOfArticles": 4
+            },
+            {
+                "name": "Opinion",
+                "slug": "opinion",
+                "type": "collection",
+                "numberOfArticles": 4
+            },
+            {
+                "name": "Politics",
+                "slug": "politics",
+                "type": "collection",
+                "numberOfArticles": 16
+            },
+            {
+                "name": "Sports",
+                "slug": "sports",
+                "type": "collection",
+                "numberOfArticles": 4
+            },
+            {
+                "name": "Style",
+                "slug": "style",
+                "type": "collection",
+                "numberOfArticles": 4
+            },
+            {
+                "name": "Travel",
+                "slug": "travel",
+                "type": "collection",
+                "numberOfArticles": 4
+            },
+            {
+                "name": "Home",
+                "slug": "home",
+                "type": "content",
+                "templateName": "index.html.twig"
+            },
+            {
+                "name": "Trending",
+                "slug": "trending",
+                "type": "content",
+                "templateName": "trending.html.twig"
+            }
+        ],
+        "menus": [
+            {
+                "name": "mainNavigation",
+                "label": "Main Navigation",
+                "children": [
+                    {
+                        "name": "home",
+                        "label": "Home",
+                        "route": "Home"
+                    },
+                    {
+                        "name": "politics",
+                        "label": "Politics",
+                        "route": "Politics"
+                    },
+                    {
+                        "name": "business",
+                        "label": "Business",
+                        "route": "Business"
+                    },
+                    {
+                        "name": "opinion",
+                        "label": "Opinion",
+                        "route": "Opinion"
+                    },
+                    {
+                        "name": "sports",
+                        "label": "Sports",
+                        "route": "Sports"
+                    },
+                    {
+                        "name": "style",
+                        "label": "Style",
+                        "route": "Style"
+                    },
+                    {
+                        "name": "travel",
+                        "label": "Travel",
+                        "route": "Travel"
+                    }
+                ]
+            },
+            {
+                "name": "footerPrim",
+                "label": "Footer Navigation",
+                "children": [
+                    {
+                        "name": "politics",
+                        "label": "Politics",
+                        "route": "Politics"
+                    },
+                    {
+                        "name": "business",
+                        "label": "Business",
+                        "route": "Business"
+                    },
+                    {
+                        "name": "opinion",
+                        "label": "Opinion",
+                        "route": "Opinion"
+                    },
+                    {
+                        "name": "sports",
+                        "label": "Sports",
+                        "route": "Sports"
+                    },
+                    {
+                        "name": "style",
+                        "label": "Style",
+                        "route": "Style"
+                    },
+                    {
+                        "name": "travel",
+                        "label": "Travel",
+                        "route": "Travel"
+                    }
+                ]
+            }
+        ],
+        "contentLists": [
+            {
+                "name": "Most commented",
+                "description": null,
+                "type": "automatic",
+                "cacheLifeTime": 0,
+                "limit": null
+            },
+            {
+                "name": "Most shared",
+                "description": null,
+                "type": "automatic",
+                "cacheLifeTime": 0,
+                "limit": null
+            },
+            {
+                "name": "Most read",
+                "description": null,
+                "type": "automatic",
+                "cacheLifeTime": 0,
+                "limit": null
+            },
+            {
+                "name": "Top news",
+                "description": null,
+                "type": "manual",
+                "cacheLifeTime": 0,
+                "limit": null
+            }
+        ],
+        "containers": [
+            {
+                "name": "footerNav"
+            },
+            {
+                "name": "mainNav"
+            },
+            {
+                "name": "frontSidebar"
+            },
+            {
+                "name": "frontLeftSidebar"
+            },
+            {
+                "name": "listMost",
+                "cssClass": "accordion marginBottom30"
+            }
+
+        ],
+        "widgets": [
+            {
+                "type": "SWP\\Bundle\\TemplatesSystemBundle\\Widget\\MenuWidgetHandler",
+                "name": "mainNav",
+                "visible": true,
+                "parameters": {
+                    "menu_name": "Main navigation",
+                    "template_name": "menu1.html.twig"
+                },
+                "containers": ["mainNav"]
+            },
+            {
+                "type": "SWP\\Bundle\\CoreBundle\\Widget\\ContentListWidget",
+                "name": "mostShared",
+                "visible": true,
+                "parameters": {
+                    "list_name": "Most shared",
+                    "template_name": "listMost.html.twig"
+                },
+                "containers": ["listMost"]
+            },
+            {
+                "type": "SWP\\Bundle\\CoreBundle\\Widget\\ContentListWidget",
+                "name": "mostRead",
+                "visible": true,
+                "parameters": {
+                    "list_name": "Most read",
+                    "template_name": "listMost.html.twig"
+                },
+                "containers": ["listMost"]
+            },
+            {
+                "type": "SWP\\Bundle\\CoreBundle\\Widget\\ContentListWidget",
+                "name": "mostCommented",
+                "visible": true,
+                "parameters": {
+                "list_name": "Most commented",
+                "template_name": "listMost.html.twig"
+                },
+                "containers": ["listMost"]
+            },
+            {
+                "type": "SWP\\Bundle\\TemplatesSystemBundle\\Widget\\MenuWidgetHandler",
+                "name": "footerPrim",
+                "visible": true,
+                "parameters": {
+                    "menu_name": "footerPrim"
+                },
+                "containers": ["footerNav"]
+            },
+            {
+                "type": "SWP\\Bundle\\TemplatesSystemBundle\\Widget\\MenuWidgetHandler",
+                "name": "footerNaved2",
+                "visible": true,
+                "parameters": {
+                "menu_name": "mainNavigation",
+                    "template_name": "menu2.html.twig"
+                },
+                "containers": ["footerNav"]
+            }
+        ]
+    }
 }
