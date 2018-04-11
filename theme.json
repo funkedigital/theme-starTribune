@@ -1,6 +1,6 @@
 {
     "name": "swp/daily-theme",
-    "title": "Star Theme",
+    "title": "The Tribune",
     "description": "Superdesk Publisher Star theme",
     "authors": [
         {
@@ -8,6 +8,12 @@
             "email": "contact@sourcefabric.org",
             "homepage": "https://www.sourcefabric.org",
             "role": "Organization"
+        }
+    ],
+    "screenshots": [
+        {
+            "path": "screenshot.png",
+            "title": "The Tribune"
         }
     ],
     "settings": {
