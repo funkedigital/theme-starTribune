@@ -38,36 +38,42 @@
                 "name": "Business",
                 "slug": "business",
                 "type": "collection",
+                "articlesTemplateName": "article.html.twig",
                 "numberOfArticles": 4
             },
             {
                 "name": "Opinion",
                 "slug": "opinion",
                 "type": "collection",
+                "articlesTemplateName": "article.html.twig",
                 "numberOfArticles": 4
             },
             {
                 "name": "Politics",
                 "slug": "politics",
                 "type": "collection",
+                "articlesTemplateName": "article.html.twig",
                 "numberOfArticles": 16
             },
             {
                 "name": "Sports",
                 "slug": "sports",
                 "type": "collection",
+                "articlesTemplateName": "article.html.twig",
                 "numberOfArticles": 4
             },
             {
                 "name": "Style",
                 "slug": "style",
                 "type": "collection",
+                "articlesTemplateName": "article.html.twig",
                 "numberOfArticles": 4
             },
             {
                 "name": "Travel",
                 "slug": "travel",
                 "type": "collection",
+                "articlesTemplateName": "article.html.twig",
                 "numberOfArticles": 4
             },
             {
@@ -274,3 +280,4 @@
         ]
     }
 }
+
