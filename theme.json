@@ -21,37 +21,6 @@
             "label": "Primary Color",
             "value": "#98b96a",
             "type": "string"
-        },
-
-        "primary_font_family": {
-            "label": "Primary Font Family",
-            "value": "Roboto",
-            "type": "string",
-            "help": "The primary font",
-            "options": [
-                {"value": "Roboto", "label": "Roboto"},
-                {"value": "Lato", "label": "Lato"},
-                {"value": "Oswald", "label": "Oswald"}
-            ]
-        },
-        "secondary_font_family": {
-            "value": "Roboto",
-            "type": "string",
-            "options": [
-                {"value": "Roboto", "label": "Roboto"},
-                {"value": "Lato", "label": "Lato"},
-                {"value": "Oswald", "label": "Oswald"}
-            ]
-        },
-        "body_font_size": {
-            "label": "Body Font Size",
-            "value": 14,
-            "type": "integer",
-            "options": [
-                {"value": 14, "label": "14px"},
-                {"value": 16, "label": "16px"},
-                {"value": 18, "label": "18px"}
-            ]
         }
     },
 
