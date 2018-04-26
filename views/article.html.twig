@@ -32,10 +32,19 @@
 			</div>
 
 			<div class="articleMetadata marginBottom30">
-				<span class="articleMetadata__byline">
-					<figure class="articleMetadata__image"><a href="#"><img src="{{asset('theme/img/article_img/140x140.png')}}"></a></figure>
-					by <a href="#">{{gimme.article.metadata.byline}}</a>
+
+
+              {% if article.authors %}
+                {% for author in article.authors %}
+                <span class="articleMetadata__byline">
+					<figure class="articleMetadata__image"><a href="#"><img src="{{ author.avatarUrl }}"></a></figure>
+					by <a href="#">{{ author.name }}</a>
 				</span>
+                {% endfor %}
+              {% elseif article.metadata.byline %}
+              <span class="articleMetadata__byline">by <a href="#">{{ article.metadata.byline }}</a></span>
+              {% endif %}
+
 
 				<time class="articleMetadata__info hidden-xs" datetime="{{ gimme.article.publishedAt|date("c") }}">{{ gimme.article.publishedAt|date("d F Y, H:i \\h") }}</time>
 

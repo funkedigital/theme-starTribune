@@ -17,12 +17,16 @@
         }
     ],
     "settings": {
+        "sidebar_switch": {
+            "label": "Turn on/off sidebar element",
+            "value": true,
+            "type": "boolean"
+        },
         "primary_color": {
             "label": "Primary Color",
             "value": "#98b96a",
             "type": "string"
         },
-
         "primary_font_family": {
             "label": "Primary Font Family",
             "value": "Roboto",
@@ -102,12 +106,6 @@
                 "numberOfArticles": 4
             },
             {
-                "name": "Home",
-                "slug": "home",
-                "type": "content",
-                "templateName": "index.html.twig"
-            },
-            {
                 "name": "Trending",
                 "slug": "trending",
                 "type": "content",
@@ -122,7 +120,7 @@
                     {
                         "name": "home",
                         "label": "Home",
-                        "route": "Home"
+                        "route": "homepage"
                     },
                     {
                         "name": "politics",
