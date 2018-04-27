@@ -9,7 +9,6 @@
 				<div class="row">
 					<div class="col-md-8 col-sm-12 col-xs-12 pull-right">
 
-					{% cache 'front' { time:600 } %}
 					{% gimmelist item from contentListItems|limit(7) with {contentListName: "Top news"} %}
     					{% if loop.first %}
         				{% include 'partials/mainArticle.html.twig' with { 'article': item.content } %}
@@ -21,7 +20,6 @@
         				</div>
     					{% endif %}
 					{% endgimmelist %}
-					{% endcache %}
 
 					</div>
 

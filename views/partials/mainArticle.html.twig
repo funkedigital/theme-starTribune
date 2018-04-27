@@ -1,3 +1,4 @@
+{% cache 'mainArticle'~class {gen: article} %}
 <article class="mainArticle {{class}}">
             <figure class="mainArticle__image {% if image =='small' %}mainArticle__image--small{% endif %} ">
 
@@ -65,3 +66,4 @@
             </div>
           </div>
         </article>
+{% endcache %}

@@ -1,3 +1,4 @@
+{% cache 'listsmallItem'~class {gen: article} %}
 <article class="articleListSmall__item">
 
   {% set imgCaption = "Default image" %}
@@ -30,3 +31,4 @@
                 {% endif %}
                 </div>
               </article>
+{% endcache %}

@@ -1,3 +1,4 @@
+{% cache 'opinionItemSmall'~class {gen: article} %}
 <article class="opinionsItem opinionsItem--small {{ class }}">
             <a class="opinionsItem__image opinionsItem__image--small" href="{{ url(article) }}">
               <figure>
@@ -17,3 +18,4 @@
               <h3 class="opinionsItem__headline opinionsItem__headline--small">{{ article.title }}</h3>
             </a>
           </article>
+{% endcache %}

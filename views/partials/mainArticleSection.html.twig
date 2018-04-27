@@ -1,3 +1,5 @@
+{% cache 'mainArtSection'~class {gen: article} %}
+
 <article class="mainArticle mainArticle--section row {{class}}">
 
   {% set articleKicker = null %}
@@ -55,3 +57,4 @@
             </figure>
 
         </article>
+{% endcache %}
