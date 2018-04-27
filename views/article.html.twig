@@ -17,6 +17,7 @@
 		<div class="article col-md-9 col-sm-12 col-xs-12">
 			<article>
 
+{% cache 'newsArticle' {gen: article} %}
   			{% set articleKicker = null %}
   			{% for keyword in gimme.article.keywords %}
     			{% if loop.first %}
@@ -120,7 +121,7 @@
 				})();
 			</script>
 			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
+{% endcache %}
 		</article>
 
 		<div class="row">

@@ -1,3 +1,5 @@
+{% cache 'gridItem'~class {gen: article} %}
+
 {% set imgCaption = "Default image" %}
 {% set rend610 = "/public/img/article_img/610x380.png" %}
 
@@ -48,3 +50,5 @@
     <a class="articleMetadata__comments articleMetadata__info" href="#">20</a>
   </div>
 </article>
+
+{% endcache %}
