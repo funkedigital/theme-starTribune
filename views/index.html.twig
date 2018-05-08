@@ -75,14 +75,14 @@
 				{% if themeSetting('sidebar_switch') %}
 					{% gimmelist author from authors|limit(1) with { role: ["featured"] } %}
 					<div class="authorBox">
-					<h2>Featured author</h2>
-					<div class="authorMetadata">       
-          				<figure class="authorMetadata__image"><a href="{{ url(author.name) }}"><img src="{{ author.avatarUrl }}"></a></figure>
-          				<div class="authorMetadata__infoWrap">
-            				<h3>{{ author.name }}</h3>
-            				<p>{{ author.biography }}</p>
-            			</div>
-            		</div>
+						<h3 class="authorBox__headline">Featured author</h3>
+						<div class="authorBox__wrap">       
+							<figure class="authorBox__image"><a href="{{ url(author.name) }}"><img src="{{ author.avatarUrl }}"></a></figure>
+							<div class="authorBox__info">
+								<h4 class="authorBox__authorName">{{ author.name }}</h4>
+								<p class="authorBox__authorBio">{{ author.biography }}</p>
+							</div>
+						</div>
             		</div>
 					{% endgimmelist %}
 				{% endif %}
