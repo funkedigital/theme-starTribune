@@ -1,9 +1,6 @@
 {% cache 'listsmallItem'~class {gen: article} %}
 <article class="articleListSmall__item">
 
-  {% set imgCaption = "Default image" %}
-  {% set rend610 = "/public/img/article_img/610x380.png" %}
-
   {% if article.featureMedia %}
     {% gimme rendition with { 'media': article.featureMedia, 'name': '610x380' } %}
       {% set rend610 = path(rendition) %}
@@ -18,8 +15,9 @@
     {% endgimmelist %}
   {% endif %}
 
+                {% if rend610 %}
                 <a class="articleListSmall__image" href="{{ url(article) }}"><img src="{{ rend610 }}" alt="{{ imgCaption }}" width="90"  /></a>
-
+                {% endif %}
                 <h4 class="articleListSmall__headline"><a href="{{ url(article) }}">{{ article.title }}</a></h4>
                 <div class="articleMetadata">
                 {% if article.authors %}

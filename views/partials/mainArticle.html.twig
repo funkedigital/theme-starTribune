@@ -2,10 +2,6 @@
 <article class="mainArticle {{class}}">
             <figure class="mainArticle__image {% if image =='small' %}mainArticle__image--small{% endif %} ">
 
-{% set imgCaption = "" %}
-{% set rend610 = "/public/img/article_img/610x380.png" %}
-{% set rend1250 = "/public/img/article_img/1250x600.png" %}
-
   {% if article.featureMedia %}
     {% gimme rendition with { 'media': article.featureMedia, 'name': '610x380' } %}
       {% set rend610 = path(rendition) %}

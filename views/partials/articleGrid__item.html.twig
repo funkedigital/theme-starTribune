@@ -1,8 +1,5 @@
 {% cache 'gridItem'~class {gen: article} %}
 
-{% set imgCaption = "Default image" %}
-{% set rend610 = "/public/img/article_img/610x380.png" %}
-
 {% if article.featureMedia %}
   {% gimme rendition with { 'media': article.featureMedia, 'name': '610x380' } %}
     {% set rend610 = path(rendition) %}

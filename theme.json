@@ -22,6 +22,11 @@
             "value": true,
             "type": "boolean"
         },
+        "breakingNews_switch": {
+            "label": "Turn on/off breaking news layout",
+            "value": true,
+            "type": "boolean"
+        },        
         "primary_color": {
             "label": "Primary Color",
             "value": "#98b96a",

@@ -4,22 +4,47 @@
 
 	<main class="container">
 
+	{% if themeSetting('breakingNews_switch') %}
+		{% set brNews = true %}
+		{% set listLength = 8 %}
+	{% else %}	
+		{% set brNews = false %}
+		{% set listLength = 7 %}
+	{% endif %}
+
+	{% gimmelist item from contentListItems|limit(listLength) with {contentListName: "Top news"} %}
+
+    {% if loop.first %}
+
+		{% if brNews %}
+		{% include 'partials/breaking-news.html.twig' with { 'article': item.content } %}
+			<div class="row">
+				<div class="col-md-9 col-sm-12 col-xs-12">
+					<div class="row">
+						<div class="col-md-8 col-sm-12 col-xs-12 pull-right">	
+		{% else %}
 		<div class="row">
 			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="row">
 					<div class="col-md-8 col-sm-12 col-xs-12 pull-right">
-
-					{% gimmelist item from contentListItems|limit(7) with {contentListName: "Top news"} %}
-    					{% if loop.first %}
         				{% include 'partials/mainArticle.html.twig' with { 'article': item.content } %}
         				<div class="articleGrid row">
-    					{% else %}
-        				{% include 'partials/articleGrid__item.html.twig' with { 'article' : item.content, 'class' : 'articleGrid__item--twoColumns col-md-6 col-sm-6 col-xs-12' } %}
-    					{% endif %}
-    					{% if loop.last %}
-        				</div>
-    					{% endif %}
-					{% endgimmelist %}
+		{% endif %}        		
+
+	{% else %}
+
+		{% if brNews and (loop.index == 2) %}
+		{% include 'partials/mainArticle.html.twig' with { 'article': item.content } %}
+			<div class="articleGrid row">
+		{% else %}
+        	{% include 'partials/articleGrid__item.html.twig' with { 'article' : item.content, 'class' : 'articleGrid__item--twoColumns col-md-6 col-sm-6 col-xs-12' } %}
+		{% endif %}
+
+    {% endif %}
+    {% if loop.last %}
+    	</div>
+    {% endif %}
+	{% endgimmelist %}
 
 					</div>
 
@@ -48,7 +73,18 @@
 				{% include 'elements/most.html.twig' with {'class' : 'marginBottom30'} %}
 
 				{% if themeSetting('sidebar_switch') %}
-					<h1>It works and is set to true</h1>
+					{% gimmelist author from authors|limit(1) with { role: ["featured"] } %}
+					<div class="authorBox">
+					<h2>Featured author</h2>
+					<div class="authorMetadata">       
+          				<figure class="authorMetadata__image"><a href="{{ url(author.name) }}"><img src="{{ author.avatarUrl }}"></a></figure>
+          				<div class="authorMetadata__infoWrap">
+            				<h3>{{ author.name }}</h3>
+            				<p>{{ author.biography }}</p>
+            			</div>
+            		</div>
+            		</div>
+					{% endgimmelist %}
 				{% endif %}
 
 				{% container 'frontSidebar' %}

@@ -1,4 +1,4 @@
-{% set version = '1524819210176' %}
+{% set version = '1525686278948' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -203,11 +203,12 @@
           {% for keyword in article.keywords %}
             {% if loop.first and (keyword not in trendingTopics) %}
             {% set trendingTopics = trendingTopics|merge([keyword]) %}
+            {% set i = i+1 %}
             {% endif %}
           {% endfor %}
-          {% set i = i+1 %}
         {% endgimmelist %}
 
+{% if i > 0 %}
   <div class="trendingTopics">
     <div class="container">
       <div class="okayNav-header">
@@ -222,6 +223,7 @@
       </div>
     </div>
   </div>
+{% endif %}  
 
       {% endcache %}
 
