@@ -17,7 +17,7 @@
 		<div class="article col-md-9 col-sm-12 col-xs-12">
 			<article>
 
-{% cache 'newsArticle' {gen: article} %}
+{% cache 'newsArticle'~gimme.article.id {gen: gimme.article} %}
   			{% set articleKicker = null %}
   			{% for keyword in gimme.article.keywords %}
     			{% if loop.first %}
@@ -58,8 +58,6 @@
 
 			<figure>
 
-			{% set imgCaption = "Default image" %}
-			{% set rend1250 = "/public/img/article_img/1250x600.png" %}
 			{% if gimme.article.featureMedia %}
 			  	{% gimme rendition with { 'media': gimme.article.featureMedia, 'name': '1250x600', 'fallback': 'original' } %}
 			    	{% set rend1250 = path(rendition) %}
