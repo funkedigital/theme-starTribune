@@ -57,7 +57,7 @@
             <div class="articleMetadata">
                 {% if article.authors %}
                   {% for author in article.authors %}
-                  <span class="articleMetadata__byline articleMetadata__byline--white">by <a href="#">{{ author.name }}</a></span>
+                  <span class="articleMetadata__byline articleMetadata__byline--white">by <a href="{{ url('Authors', { 'authorSlug' : author.slug }) }}">{{ author.name }}</a></span>
                   {% endfor %}
                 {% elseif article.metadata.byline %}
                 <span class="articleMetadata__byline articleMetadata__byline--white">by <a href="#">{{ article.metadata.byline }}</a></span>
