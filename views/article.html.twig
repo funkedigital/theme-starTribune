@@ -18,6 +18,7 @@
 			<article>
 
 {% cache 'newsArticle'~gimme.article.id {gen: gimme.article} %}
+
   			{% set articleKicker = null %}
   			{% for keyword in gimme.article.keywords %}
     			{% if loop.first %}
@@ -28,23 +29,25 @@
 			{% if articleKicker %}<span class="article__kicker">{{ articleKicker }}</span>{% endif %}
 			<h2 class="article__headline marginBottom30"> {{ gimme.article.title }}</h2>
 
+		      {% for author in gimme.article.authors %} 
+
+		      <div class="authorMetadata">		      
+		          <figure class="authorMetadata__image">
+		            <a href="{{ url('Authors', { 'authorSlug' : author.slug }) }}"><img alt="{{ author.name }}" src="{{ author.avatarUrl }}" /></a>
+		          </figure>
+		          <div class="authorMetadata__infoWrap">                                    
+		            <h3><a href="{{ url('Authors', { 'authorSlug' : author.slug }) }}">{{ author.name }}</a></h3>
+		            <p>{{ author.biography }}</p> 
+		          </div>
+		      </div>
+
+		      {% endfor %}
+
 			<div class="article__lead">
 				<p>{{ gimme.article.lead|raw }}</p>
 			</div>
 
 			<div class="articleMetadata marginBottom30">
-
-
-              {% if article.authors %}
-                {% for author in article.authors %}
-                <span class="articleMetadata__byline">
-					<figure class="articleMetadata__image"><a href="#"><img src="{{ author.avatarUrl }}"></a></figure>
-					by <a href="#">{{ author.name }}</a>
-				</span>
-                {% endfor %}
-              {% elseif article.metadata.byline %}
-              <span class="articleMetadata__byline">by <a href="#">{{ article.metadata.byline }}</a></span>
-              {% endif %}
 
 
 				<time class="articleMetadata__info hidden-xs" datetime="{{ gimme.article.publishedAt|date("c") }}">{{ gimme.article.publishedAt|date("d F Y, H:i \\h") }}</time>

@@ -2,7 +2,7 @@
 	<div class="authorBox">
 		<h3 class="authorBox__headline">Featured author</h3>
 		<div class="authorBox__wrap">       
-			<figure class="authorBox__image"><a href="{{ url(author.name) }}"><img src="{{ author.avatarUrl }}"></a></figure>
+			<figure class="authorBox__image"><a href="{{ url('Authors', { 'authorSlug' : author.slug }) }}"><img src="{{ author.avatarUrl }}"></a></figure>
 			<div class="authorBox__info">
 				<h4 class="authorBox__authorName">{{ author.name }}</h4>
 				<p class="authorBox__authorBio">{{ author.biography }}</p>

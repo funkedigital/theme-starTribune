@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% block logo %}
+    <div class="verticalMiddle col-md-4 col-sm-4 col-xs-12">
+      <a class="header__logo header__logo--section" href="/"><img src="/public/img/logo.png"></a>
+      <h3 class="header__sectionName marginTop10">{{ gimme.route.name|capitalize }}</h3>
+    </div>
+{% endblock %}
+
+{% block body %}
+
+  <main class="container">
+    <div class="row">
+
+      <div class="col-md-9 col-sm-12 col-xs-12">
+        {% gimme author with { slug: app.request.attributes.get('authorSlug') } %}
+        {% set currentAuthor = author %} 
+
+        <div class="authorMetadata marginTop30 marginBottom30">       
+          <figure class="authorMetadata__image"><img src="{{ author.avatarUrl }}"></figure>
+          <div class="authorMetadata__infoWrap">
+            <h2>{{ author.name }}</h2>
+            <p>{{ author.biography }}</p>
+            <span id="articlesNo"></span>
+          </div>
+        </div>
+
+        {% endgimme %}
+    </div>
+
+    {# Setup list and pagination parameters #}
+    {% set defaultItemsPerPage, itemsPerPage, currentPage = 21, 21, app.request.get('page', 1) %}
+
+    {% set start = ((currentPage-1) * itemsPerPage) +1 %}
+
+    {% if currentPage == 1 %}
+      {% set start = 0 %}
+    {% endif %}
+
+    {# List all articles for current author and limit them to `itemsPerPage` value starting from `start` value #}
+
+    {% gimmelist article from articles|start(start)|limit(itemsPerPage)|order('publishedAt','desc') with { 'author': currentAuthor.name, 'route' : 'Authors' } ignoreContext %}
+
+    {% if loop.first %}
+    <script type="text/javascript">
+      document.getElementById("articlesNo").innerHTML = "{{ loop.length }} articles";
+    </script>
+    <div class="col-md-9 col-sm-12 col-xs-12">
+    
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 pull-right">
+            <div class="articleGrid row">
+
+        {% endif %}
+
+        {% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--threeColumns col-md-4 col-sm-6 col-xs-12', 'article': article} %}
+        {# Render pagination only at end of list #}
+        {% if loop.last  %}
+
+        </div>
+      </div>
+
+      {#
+        Use provided by default pagination template
+        Parameters:
+        * currentFilters (array) : associative array that contains the current route-arguments
+        * currentPage (int) : the current page you are in
+        * paginationPath (Meta|string) : the route name (or supported by router Meta object) to use for links
+        * lastPage (int) : represents the total number of existing pages
+        * showAlwaysFirstAndLast (bool) : Always show first and last link (just disabled)
+      #}
+
+      {% include 'partials/pagination.html.twig' with {
+        currentFilters: {}|merge(app.request.query.all()),
+        currentPage: currentPage,
+        paginationPath: gimme.route,
+        lastPage: (loop.totalLength/defaultItemsPerPage)|round(0, 'ceil')
+      } only %}
+
+      {% endif %}
+
+    {% endgimmelist %}
+
+
+    </div>
+  </div>
+
+  <div class="col-xs-12 col-sm-12 col-md-3">
+
+    {% include 'elements/most.html.twig' with {'class' : 'marginBottom30'} %}
+    {% container 'frontSidebar' %}
+    {% endcontainer %}
+
+  </div>
+</div>
+
+</main>
+
+{% endblock %}

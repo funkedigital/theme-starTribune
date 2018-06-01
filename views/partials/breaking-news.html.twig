@@ -32,7 +32,13 @@
           <h3 class="gallery__headline"><a href="{{ path(article) }}">{{ article.title }}</a></h3>
           <p>{{ article.lead|striptags|safeTruncate(200,"...") }}</p>
           <div class="articleMetadata">
-              <span class="articleMetadata__byline articleMetadata__byline--white">by <a href="#">Sarrah Staffwriter</a></span>
+          {% if article.authors %}
+            {% for author in article.authors %}
+              <span class="articleMetadata__byline articleMetadata__byline--white">by <a href="{{ url('Authors', { 'authorSlug' : author.slug }) }}">{{ author.name }}</a></span>
+            {% endfor %}
+          {% elseif article.metadata.byline %}
+            <span class="articleMetadata__byline articleMetadata__byline--white">by <a href="#">{{ article.metadata.byline }}</a></span>
+          {% endif %}
               <a class="articleMetadata__shares articleMetadata__info articleMetadata__info--white" href="#">240</a>
               <a class="articleMetadata__comments articleMetadata__info articleMetadata__info--white" href="#">20</a>
            </div>
