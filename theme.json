@@ -48,6 +48,7 @@
                 "name": "Business",
                 "slug": "business",
                 "type": "collection",
+                "templateName": "category.html.twig",
                 "articlesTemplateName": "article.html.twig",
                 "numberOfArticles": 4
             },
@@ -55,6 +56,7 @@
                 "name": "Opinion",
                 "slug": "opinion",
                 "type": "collection",
+                "templateName": "category.html.twig",
                 "articlesTemplateName": "article.html.twig",
                 "numberOfArticles": 4
             },
@@ -62,6 +64,7 @@
                 "name": "Politics",
                 "slug": "politics",
                 "type": "collection",
+                "templateName": "category.html.twig",
                 "articlesTemplateName": "article.html.twig",
                 "numberOfArticles": 16
             },
@@ -69,6 +72,7 @@
                 "name": "Sports",
                 "slug": "sports",
                 "type": "collection",
+                "templateName": "category.html.twig",
                 "articlesTemplateName": "article.html.twig",
                 "numberOfArticles": 4
             },
@@ -76,6 +80,7 @@
                 "name": "Style",
                 "slug": "style",
                 "type": "collection",
+                "templateName": "category.html.twig",
                 "articlesTemplateName": "article.html.twig",
                 "numberOfArticles": 4
             },
@@ -83,6 +88,7 @@
                 "name": "Travel",
                 "slug": "travel",
                 "type": "collection",
+                "templateName": "category.html.twig",
                 "articlesTemplateName": "article.html.twig",
                 "numberOfArticles": 4
             },
@@ -91,6 +97,12 @@
                 "slug": "trending",
                 "type": "content",
                 "templateName": "trending.html.twig"
+            },
+            {
+                "name": "rss",
+                "slug": "rss",
+                "type": "content",
+                "templateName": "rss.xml.twig"
             }
         ],
         "menus": [
@@ -178,21 +190,14 @@
                 "description": null,
                 "type": "automatic",
                 "cacheLifeTime": 0,
-                "limit": null
+                "limit": 5
             },
             {
                 "name": "Most shared",
                 "description": null,
                 "type": "automatic",
                 "cacheLifeTime": 0,
-                "limit": null
-            },
-            {
-                "name": "Most read",
-                "description": null,
-                "type": "automatic",
-                "cacheLifeTime": 0,
-                "limit": null
+                "limit": 5
             },
             {
                 "name": "Top news",
@@ -227,10 +232,19 @@
                 "name": "mainNav",
                 "visible": true,
                 "parameters": {
-                    "menu_name": "Main navigation",
+                    "menu_name": "mainNavigation",
                     "template_name": "menu1.html.twig"
                 },
                 "containers": ["mainNav"]
+            },
+            {
+                "type": "SWP\\Bundle\\CoreBundle\\Widget\\TemplateWidgetHandler",
+                "name": "mostPopular",
+                "visible": true,
+                "parameters": {
+                    "template_name": "mostPopularList.html.twig"
+                },
+                "containers": ["listMost"]
             },
             {
                 "type": "SWP\\Bundle\\CoreBundle\\Widget\\ContentListWidget",
@@ -238,16 +252,6 @@
                 "visible": true,
                 "parameters": {
                     "list_name": "Most shared",
-                    "template_name": "listMost.html.twig"
-                },
-                "containers": ["listMost"]
-            },
-            {
-                "type": "SWP\\Bundle\\CoreBundle\\Widget\\ContentListWidget",
-                "name": "mostRead",
-                "visible": true,
-                "parameters": {
-                    "list_name": "Most read",
                     "template_name": "listMost.html.twig"
                 },
                 "containers": ["listMost"]
@@ -267,16 +271,7 @@
                 "name": "footerPrim",
                 "visible": true,
                 "parameters": {
-                    "menu_name": "footerPrim"
-                },
-                "containers": ["footerNav"]
-            },
-            {
-                "type": "SWP\\Bundle\\TemplatesSystemBundle\\Widget\\MenuWidgetHandler",
-                "name": "footerNaved2",
-                "visible": true,
-                "parameters": {
-                "menu_name": "mainNavigation",
+                    "menu_name": "footerPrim",
                     "template_name": "menu2.html.twig"
                 },
                 "containers": ["footerNav"]

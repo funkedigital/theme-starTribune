@@ -33,20 +33,31 @@
           </div>
 
           <figure class="col-md-4 col-sm-6 col-xs-12 {% if image =='small' %}mainArticle__image--small{% endif %} ">
-
-            {% gimme rendition with { 'media': article.featureMedia, 'name': '610x380' } %}
-              {% set rend610 = path(rendition) %}
-              {% set imgCaption = article.featureMedia.description %}
-            {% endgimme %}
-            {% gimme rendition with { 'media': article.featureMedia, 'name': '1250x600' } %}
-              {% set rend1250 = path(rendition) %}
-            {% endgimme %}
+            {% if article.featureMedia %}
+              {% gimme rendition with { 'media': article.featureMedia, 'name': '610x380', 'fallback': 'original' } %}
+                {% set rend610 = path(rendition) %}
+                {% set imgCaption = article.featureMedia.description %}
+              {% endgimme %}
+              {% gimme rendition with { 'media': article.featureMedia, 'name': '1250x600', 'fallback': 'original' } %}
+                {% set rend1250 = path(rendition) %}
+              {% endgimme %}
+            {% else %}
+              {% gimmelist media from articleMedia|limit(1) with {'article': article} %}
+                {% set imgCaption = media.body %}
+                {% gimme rendition with { media: media, 'name': '610x380', 'fallback': 'original' } %}
+                     {% set rend610 = path(rendition) %}
+                {% endgimme %}
+                {% gimme rendition with {media: media,  'name': '1250x600', 'fallback': 'original' } %}
+                     {% set rend1250 = path(rendition) %}
+                {% endgimme %}
+              {% endgimmelist %}
+            {% endif %}              
 
             <a href="{{ url(article) }}">
               {% if image=='small' %}
                 <img src="{{ rend610 }}" alt="{{ imgCaption }}"  }}">
               {% else %}
-                <img src="{{ rend610 }}" alt="{{ imgCaption }}" }}">
+                <img src="{{ rend1250 }}" alt="{{ imgCaption }}" }}">
               {% endif %}
             </a>
 

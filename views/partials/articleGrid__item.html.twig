@@ -1,14 +1,14 @@
-{% cache 'gridItem'~class {gen: article} %}
+{# cache 'gridItem'~class {gen: article} #}
 
 {% if article.featureMedia %}
-  {% gimme rendition with { 'media': article.featureMedia, 'name': '610x380' } %}
+  {% gimme rendition with { 'media': article.featureMedia, 'name': '610x380', 'fallback': 'original' } %}
     {% set rend610 = path(rendition) %}
     {% set imgCaption = article.featureMedia.description %}
   {% endgimme %}
 {% else %}
   {% gimmelist media from articleMedia|limit(1) with {'article': article} %}
     {% set imgCaption = media.body %}
-    {% gimme rendition with { media: media, 'name': '610x380' } %}
+    {% gimme rendition with { media: media, 'name': '610x380', 'fallback': 'original' } %}
          {% set rend610 = path(rendition) %}
     {% endgimme %}
   {% endgimmelist %}
@@ -48,4 +48,4 @@
   </div>
 </article>
 
-{% endcache %}
+{# endcache #}
