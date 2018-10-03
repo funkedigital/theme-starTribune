@@ -11,6 +11,7 @@ Thumbs.db
 node_modules/
 sftp-config.json
 .push.settings.json
+.push.settings.jsonc
 .remote-sync.json
 .grunt
 .sass-cache/

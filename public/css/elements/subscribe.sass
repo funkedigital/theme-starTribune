@@ -1,0 +1,35 @@
+.subscribe
+
+.subscribe--banner
+  position: relative
+  text-align: center
+  background: #eee
+  padding: 20px 30px
+  *
+    position: relative
+    z-index: 1
+  &:after
+    position: absolute
+    top: 0px
+    left: 0px
+    right: 0px
+    height: 40%
+    display: block
+    content: " "
+    background: #758d99
+
+.subscribe__headline
+  font-size: 2.4rem
+  color: $colorWhite
+  font-weight: 700
+  margin: 0px
+  &:after
+    display: block
+    background: $colorWhite
+    content: " "
+    width: 70px
+    height: 1px
+    margin: 20px auto
+  
+.subscribe__text
+  margin: 25px 0px
