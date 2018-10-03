@@ -719,6 +719,7 @@ blockquote footer:before, blockquote small:before, blockquote .small:before {
   display: none; }
 
 .button {
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 1.6rem;
   color: #333333;
   font-weight: 600;
@@ -734,6 +735,9 @@ blockquote footer:before, blockquote small:before, blockquote .small:before {
     color: #fff;
     background: #98b96a;
     border: none; }
+    .button--color:hover {
+      color: #fff;
+      background: #a1c175; }
 
 .editorialComment {
   position: relative;
