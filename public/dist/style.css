@@ -678,6 +678,9 @@ a:hover, a:focus {
 .modal input {
   width: 100%; }
 
+.modal-content {
+  border-radius: 2px; }
+
 .modal-header {
   padding: 20px; }
 
@@ -719,6 +722,7 @@ blockquote footer:before, blockquote small:before, blockquote .small:before {
   display: none; }
 
 .button {
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 1.6rem;
   color: #333333;
   font-weight: 600;
@@ -734,6 +738,9 @@ blockquote footer:before, blockquote small:before, blockquote .small:before {
     color: #fff;
     background: #98b96a;
     border: none; }
+    .button--color:hover {
+      color: #fff;
+      background: #a1c175; }
 
 .editorialComment {
   position: relative;
@@ -1363,6 +1370,40 @@ blockquote footer:before, blockquote small:before, blockquote .small:before {
   font-weight: 700;
   margin-top: 0px;
   margin-bottom: 5px; }
+
+.subscribe--banner {
+  position: relative;
+  text-align: center;
+  background: #eee;
+  padding: 20px 30px; }
+  .subscribe--banner * {
+    position: relative;
+    z-index: 1; }
+  .subscribe--banner:after {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 40%;
+    display: block;
+    content: " ";
+    background: #758d99; }
+
+.subscribe__headline {
+  font-size: 2.4rem;
+  color: #fff;
+  font-weight: 700;
+  margin: 0px; }
+  .subscribe__headline:after {
+    display: block;
+    background: #fff;
+    content: " ";
+    width: 70px;
+    height: 1px;
+    margin: 20px auto; }
+
+.subscribe__text {
+  margin: 25px 0px; }
 
 .topBar {
   font-family: "Source Sans Pro", sans-serif;
