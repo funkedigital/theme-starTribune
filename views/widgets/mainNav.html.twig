@@ -2,9 +2,6 @@
 
 {% block list %}
     {% if item.hasChildren and options.depth is not same as(0) and item.displayChildren %}
-        {% for singleItem in item %}
-            Hello {{ item }}!
-        {% endfor %}
         {% import _self as knp_menu %}
         <div class="navigation">        
             <nav class="container">

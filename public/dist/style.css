@@ -908,7 +908,8 @@ blockquote footer:before, blockquote small:before, blockquote .small:before {
     display: flex;
     align-items: center; }
     .header .header__weather img {
-      height: 25px;
+      height: 100%;
+      width: 50px;
       margin-right: 15px;
       opacity: 0.6;
       image-rendering: -moz-crisp-edges;
@@ -926,7 +927,7 @@ blockquote footer:before, blockquote small:before, blockquote .small:before {
     font-weight: 200; }
     @media (min-width: 769px) {
       .header .weather-temperature {
-        font-size: 3.5em; } }
+        font-size: 1.5em; } }
   .header .weather-place {
     font-size: 1.15em; }
   .header .weather-description {

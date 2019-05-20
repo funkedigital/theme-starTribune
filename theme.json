@@ -24,7 +24,7 @@
         },
         "breakingNews_switch": {
             "label": "Turn on/off breaking news layout",
-            "value": true,
+            "value": false,
             "type": "boolean"
         },        
         "primary_color": {
