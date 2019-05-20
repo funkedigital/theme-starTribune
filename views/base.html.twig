@@ -184,13 +184,13 @@
     </div>
 
   </header>
-{#
+
 {% container 'mainNav' %}
 
 Content of this container is defined by menu widget which is linked to it. Template used for this menu is widgets/menu1.html.twig 
 
 {% endcontainer %}
-#}
+
         {# Trending topics is array of first in a row keyword of three latest articles #}
         {% cache 'subMenu' { time:0 } %}
         {% set trendingTopics = [] %}
