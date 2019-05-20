@@ -38,7 +38,7 @@
 		{% include 'partials/mainArticle.html.twig' with { 'article': item.content } %}
 			<div class="articleGrid row">
 		{% else %}
-        	{% include 'partials/articleGrid__item.html.twig' with { 'article' : item.content, 'class' : 'articleGrid__item--twoColumns col-md-6 col-sm-6 col-xs-12' } %}
+        	{% include 'partials/articleGrid__item.html.twig' with { 'article' : item.content, 'class' : 'articleGrid__item--threeColumns col-4' } %}
 		{% endif %}
 
     {% endif %}
