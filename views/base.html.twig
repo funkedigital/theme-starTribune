@@ -109,12 +109,6 @@
   })();
 </script>
 
-{% include 'partials/login-popup.html.twig' %}
-
-{% include 'partials/register-popup.html.twig' %}
-
-{% include 'partials/user-profile.html.twig' %}
-
   <div class="topBar">
     <div class="container">
       <div class="row">
@@ -154,26 +148,28 @@
 
   {# <header class="header"> #}
 
-    <div class="container">
+    <div class="container mb-5">
 
-      <div class="row">
+      <div class="d-flex justify-content-between">
 
-        <div class="verticalMiddle col-md-4 col-sm-4 col-xs-12">
-          <p class="header__weather"><span class="weather-temperature"></span>
-          <span class="header__weather__info">
-            <span class="weather-place"></span> <br>
-            <span class="weather-description"></span>
-          </span>
+        <div class="verticalMiddle col-2">
+          <p class="header__weather row text-center justify-content-center">
+          <div>
+            <span class="weather-temperature col-12"></span>
+            <span class="header__weather__info col-12">
+              <span class="weather-place"></span> <br>
+              <span class="weather-description"></span>
+            </span>
           <img src="" class="weather-icon" alt="Weather Icon" /></p>
         </div>
 
         {% block logo %}
-        <div class="verticalMiddle col-sm-1 col-xs-10">
+        <div class="verticalMiddle verticalMiddle col-2 offset-2">
           <a class="header__logo" href="/"><img src="{{ themeLogo(asset('/public/img/logo.png')) }}"></a>
         </div>
         {% endblock %}
 
-        <div class="header__search verticalMiddle col-sm-4 col-md-4 col-xs-12">
+        <div class="header__search verticalMiddle col-4">
 
           <!--form id="search" name="search_articles" method="GET" action="/search">
             <input type="text" name="q" placeholder="search" value="">
