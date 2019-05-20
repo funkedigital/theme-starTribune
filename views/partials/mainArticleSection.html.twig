@@ -32,7 +32,7 @@
             </div>
           </div>
 
-          <figure class="col-md-4 col-sm-6 col-xs-12 {% if image =='small' %}mainArticle__image--small{% endif %} ">
+          <figure class="col-12 {% if image =='small' %}mainArticle__image--small{% endif %} ">
             {% if article.featureMedia %}
               {% gimme rendition with { 'media': article.featureMedia, 'name': '610x380', 'fallback': 'original' } %}
                 {% set rend610 = path(rendition) %}
