@@ -14,9 +14,7 @@
 
       <div class="col-md-9 col-sm-12 col-xs-12">
         {% gimme author with { slug: app.request.attributes.get('authorSlug') } %}
-        {{ author }}
         {% set currentAuthor = author %} 
-
         <div class="authorMetadata marginTop30 marginBottom30">       
           <figure class="authorMetadata__image"><img src="{{ author.avatarUrl }}"></figure>
           <div class="authorMetadata__infoWrap">
