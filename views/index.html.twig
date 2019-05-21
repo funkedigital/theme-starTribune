@@ -38,7 +38,7 @@
 		{% include 'partials/mainArticle.html.twig' with { 'article': item.content } %}
 			<div class="articleGrid row">
 		{% else %}
-        	{% include 'partials/articleGrid__item.html.twig' with { 'article' : item.content, 'class' : 'articleGrid__item--twoColumns col-md-6 col-sm-6 col-xs-12' } %}
+        	{% include 'partials/articleGrid__item.html.twig' with { 'article' : item.content, 'class' : 'articleGrid__item--threeColumns col-4' } %}
 		{% endif %}
 
     {% endif %}
@@ -49,8 +49,11 @@
 	{% endcache %}
 
 					</div>
+				</div>
+			</div>
 
-					<div class="leftCol col-md-4 col-sm-12 col-xs-12 pull-right">
+			<div class="col-xs-12 col-sm-12 col-md-3">
+					<div class="col-12">
 						<div class="leftCol__item">
 							<div class="articleListSmall articleListSmall--latestNews marginBottom30">
 								<h3 class="sectionHeading">Latest news</h3>
@@ -67,11 +70,6 @@
 						{% endcontainer %}
 						
 					</div>
-				</div>
-			</div>
-
-			<div class="col-xs-12 col-sm-12 col-md-3">
-
 				{% include 'elements/most.html.twig' with {'class' : 'marginBottom30'} %}
 
 				<div class="subscribe subscribe--banner marginBottom30">
