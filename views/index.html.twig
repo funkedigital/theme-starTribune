@@ -121,7 +121,7 @@
 			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="row opinions">
 					<div class="col-xs-12">
-						<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('opinion') }}">Diät</a></h3>
+						<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('opinion') }}">Diat</a></h3>
 					</div>
 
 					{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/diaet-ernaehrung'}  %}
@@ -148,12 +148,12 @@
 
 		<div class="row">
 			<div class="col-xs-12">
-				<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('business') }}">Business</a></h3>
+				<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('business') }}"> GESUNDHEIT</a></h3>
 			</div>
 
 			<div class="articleGrid">
 
-				{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/business'}  %}
+				{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/gesundheit'}  %}
 					{% if loop.index == 1 %}
 						{% include 'partials/mainArticleList.html.twig' with {'class' : 'col-md-6 col-sm-12 col-xs-12', 'image':'small', 'deck': 'none'} %}
 					{% else %}
