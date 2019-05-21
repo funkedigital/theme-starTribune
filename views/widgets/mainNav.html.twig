@@ -1,8 +1,8 @@
 {% extends 'knp_menu.html.twig' %}
 
 {% block list %}
-{% dump list  %}
-{% dump item  %}
+{{ dump() }}
+{{ dump(list) }}
 
     {% if item.hasChildren and options.depth is not same as(0) and item.displayChildren %}
         {% import _self as knp_menu %}
