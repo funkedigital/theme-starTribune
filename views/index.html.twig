@@ -15,10 +15,11 @@
 	{% cache 'contentListTopNews' ~ listId ~ listLength { gen: contentList } %}
 	{% gimmelist item from contentListItems|limit(listLength) with {contentListName: "Top news"} %}
     {% if loop.first %}
-    <p>{{ item.content }}</p>
 		{% if brNews %}
-		{% include 'partials/breaking-news.html.twig' with { 'article': item.content } %}
-			<div class="row">
+		{% include 'partials/breaking-news.html.twig' with { 'article': item.content } %}	
+		{% loop.index %}	
+		{{ loop.index }}
+			<div class="row">s
 				<div class="col-md-9 col-sm-12 col-xs-12">
 					<div class="row">
 						<div class="col-md-8 col-sm-12 col-xs-12 pull-right">	
