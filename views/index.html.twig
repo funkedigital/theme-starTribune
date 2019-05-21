@@ -103,12 +103,12 @@
 
 		<div class="row">
 			<div class="col-xs-12">
-				<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('politics') }}">Politics</a></h3>
+				<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('politics') }}">Kochen &amp; Backen </a></h3>
 			</div>
 
 			<div class="articleGrid">
 
-				{% gimmelist article from articles|start(0)|limit(4)|order('publishedAt','desc') with {'route': '/politics'}  %}
+				{% gimmelist article from articles|start(0)|limit(4)|order('publishedAt','desc') with {'route': '/kochen-backen'}  %}
 					{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns col-md-3 col-sm-6 col-xs-12'} %}
 				{% endgimmelist %}
 
@@ -121,10 +121,10 @@
 			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="row opinions">
 					<div class="col-xs-12">
-						<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('opinion') }}">Opinion</a></h3>
+						<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('opinion') }}">Diät</a></h3>
 					</div>
 
-					{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/opinion'}  %}
+					{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/diaet-ernaehrung'}  %}
 						{% if loop.index == 1 %}
 							{% include 'partials/opinionsItem.html.twig' with {'class' : 'col-sm-8 col-md-8 col-xs-12'} %}
 						{% else %}
