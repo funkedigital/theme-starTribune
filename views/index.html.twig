@@ -16,7 +16,7 @@
 	{% gimmelist item from contentListItems|limit(listLength) with {contentListName: "Top news"} %}
     {% if loop.first %}
 		{% if brNews %}
-		{% include 'partials/breaking-news.html.twig' with { 'article': item.content } %}	
+		{% include 'partials/breaking-news.html.twig' with { 'article': item.content } %}		
 			<div class="row">
 				<div class="col-md-9 col-sm-12 col-xs-12">
 					<div class="row">
@@ -68,10 +68,10 @@
 			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="row opinions">
 					<div class="col-xs-12">
-						<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('opinion') }}">Diät</a></h3>
+						<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('opinion') }}">Opinion</a></h3>
 					</div>
 
-					{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/diaet-ernaehrung'}  %}
+					{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/opinion'}  %}
 						{% if loop.index == 1 %}
 							{% include 'partials/opinionsItem.html.twig' with {'class' : 'col-sm-8 col-md-8 col-xs-12'} %}
 						{% else %}
