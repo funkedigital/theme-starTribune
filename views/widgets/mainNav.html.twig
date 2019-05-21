@@ -3,7 +3,6 @@
 {% block list %}
     {% if item.hasChildren and options.depth is not same as(0) and item.displayChildren %}
     {{ item }}
-    {{ item[0] }}
         {% import _self as knp_menu %}
         <div class="navigation">        
             <nav class="container">
