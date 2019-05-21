@@ -17,9 +17,7 @@
     {% if loop.first %}
 		{% if brNews %}
 		{% include 'partials/breaking-news.html.twig' with { 'article': item.content } %}	
-		{% loop.index %}	
-		{{ loop.index }}
-			<div class="row">s
+			<div class="row">
 				<div class="col-md-9 col-sm-12 col-xs-12">
 					<div class="row">
 						<div class="col-md-8 col-sm-12 col-xs-12 pull-right">	
@@ -70,10 +68,10 @@
 			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="row opinions">
 					<div class="col-xs-12">
-						<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('opinion') }}">Opinion</a></h3>
+						<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('opinion') }}">Diät</a></h3>
 					</div>
 
-					{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/opinion'}  %}
+					{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/diaet-ernaehrung'}  %}
 						{% if loop.index == 1 %}
 							{% include 'partials/opinionsItem.html.twig' with {'class' : 'col-sm-8 col-md-8 col-xs-12'} %}
 						{% else %}
@@ -83,16 +81,6 @@
 
 				</div>
 			</div>
-
-			<div class="stripBox col-md-3 col-sm-12 col-xs-12">
-				<a class="stripBox__title active" href="#">Voting poll</a>
-
-				<div class="votingPoll stripBox__sectionContent">
-					<script type="text/javascript" src="//cdn.playbuzz.com/widget/feed.js"></script>
-					<div class="pb_feed" data-embed-by="50ccef36-6400-449f-9126-95677cd3f996" data-game="/ljubar10/dailynews-example-poll" data-recommend="false" data-game-info="false" data-comments="false" data-shares="false" ></div>
-				</div>
-			</div>
-
 		</div>
 
 		<div class="row">
