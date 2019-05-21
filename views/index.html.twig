@@ -14,9 +14,8 @@
 
 	{% cache 'contentListTopNews' ~ listId ~ listLength { gen: contentList } %}
 	{% gimmelist item from contentListItems|limit(listLength) with {contentListName: "Top news"} %}
-
     {% if loop.first %}
-
+    <p>{{ item.content }}</p>
 		{% if brNews %}
 		{% include 'partials/breaking-news.html.twig' with { 'article': item.content } %}
 			<div class="row">
@@ -38,6 +37,7 @@
 		{% include 'partials/mainArticle.html.twig' with { 'article': item.content } %}
 			<div class="articleGrid row">
 		{% else %}
+		      {% if loop. %}
         	{% include 'partials/articleGrid__item.html.twig' with { 'article' : item.content, 'class' : 'articleGrid__item--threeColumns col-4' } %}
 		{% endif %}
 
