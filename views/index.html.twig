@@ -14,9 +14,11 @@
 
 	{% cache 'contentListTopNews' ~ listId ~ listLength { gen: contentList } %}
 	{% gimmelist item from contentListItems|limit(listLength) with {contentListName: "Top news"} %}
+
     {% if loop.first %}
+
 		{% if brNews %}
-		{% include 'partials/breaking-news.html.twig' with { 'article': item.content } %}		
+		{% include 'partials/breaking-news.html.twig' with { 'article': item.content } %}
 			<div class="row">
 				<div class="col-md-9 col-sm-12 col-xs-12">
 					<div class="row">
@@ -25,7 +27,7 @@
 		<div class="row">
 			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="row">
-					<div class="col-12">
+					<div class="col-md-8 col-sm-12 col-xs-12 pull-right">
         				{% include 'partials/mainArticle.html.twig' with { 'article': item.content } %}
         				<div class="articleGrid row">
 		{% endif %}        		
@@ -36,8 +38,7 @@
 		{% include 'partials/mainArticle.html.twig' with { 'article': item.content } %}
 			<div class="articleGrid row">
 		{% else %}
-		      {% if loop. %}
-        	{% include 'partials/articleGrid__item.html.twig' with { 'article' : item.content, 'class' : 'articleGrid__item--threeColumns col-4' } %}
+        	{% include 'partials/articleGrid__item.html.twig' with { 'article' : item.content, 'class' : 'articleGrid__item--twoColumns col-md-6 col-sm-6 col-xs-12' } %}
 		{% endif %}
 
     {% endif %}
@@ -46,16 +47,70 @@
     {% endif %}
 	{% endgimmelist %}
 	{% endcache %}
+
+					</div>
+
+					<div class="leftCol col-md-4 col-sm-12 col-xs-12 pull-right">
+						<div class="leftCol__item">
+							<div class="articleListSmall articleListSmall--latestNews marginBottom30">
+								<h3 class="sectionHeading">Latest news</h3>
+								{% gimmelist article from articles|start(0)|limit(6)|order('publishedAt','desc')  %}
+									{% include 'partials/articleListSmall__item.html.twig'  %}
+								{% endgimmelist %}
+							</div>
+						</div>
+
+						{% container 'frontLeftSidebar' %}
+						<div class="ad marginBottom30 hidden-xs">
+							<img src="{{ asset('theme/img/article_img/ad.png') }}">
+						</div>
+						{% endcontainer %}
+						
+					</div>
 				</div>
-				<div class="col-12">
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-3">
+
+				{% include 'elements/most.html.twig' with {'class' : 'marginBottom30'} %}
+
+				<div class="subscribe subscribe--banner marginBottom30">
+					<h3 class="subscribe__headline">Subscribe</h3>
+					<a href="#" class="subscribe__image"><img src="{{ asset('theme/img/subscribe.png') }}" alt=""></a>
+					<p class="subscribe__text">Your subscription helps support independent investigative journalism</p>
+					<a href="#" class="button button--color">Subscribe</a>
+				</div>
+
+				{% if themeSetting('sidebar_switch') %}
+					{% include 'partials/featured-author.html.twig'  %}
+				{% endif %}
+
+				{% container 'frontSidebar' %}
+
+				<div class="ad hidden-xs marginTop30 marginBottom30">
+					<img src="{{ asset('theme/img/article_img/ad.png') }}">
+				</div>
+
+				<div class="marginTop30 marginBottom30">
+					{% include 'elements/facebook.html.twig' %}
+				</div>
+
+				{% include 'elements/selectedComment.html.twig' with {'class' : 'marginTop30 marginBottom30'} %}
+
+				{% endcontainer %}
+
+			</div>
+
+		</div>
+
 		<div class="row">
 			<div class="col-xs-12">
-				<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('kochen-backen') }}">Kochen &amp; Backen</a></h3>
+				<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('politics') }}">Politics</a></h3>
 			</div>
 
 			<div class="articleGrid">
 
-				{% gimmelist article from articles|start(0)|limit(4)|order('publishedAt','desc') with {'route': '/kochen-backen'}  %}
+				{% gimmelist article from articles|start(0)|limit(4)|order('publishedAt','desc') with {'route': '/politics'}  %}
 					{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns col-md-3 col-sm-6 col-xs-12'} %}
 				{% endgimmelist %}
 
@@ -175,58 +230,6 @@
 			</div>
 		</div>
 
-				</div>
-				</div>
-			</div>
-
-			<div class="col-xs-12 col-sm-12 col-md-3">
-       					<div class="leftCol col-12">
-						<div class="leftCol__item">
-							<div class="articleListSmall articleListSmall--latestNews marginBottom30">
-								<h3 class="sectionHeading">Latest news</h3>
-								{% gimmelist article from articles|start(0)|limit(6)|order('publishedAt','desc')  %}
-									{% include 'partials/articleListSmall__item.html.twig'  %}
-								{% endgimmelist %}
-							</div>
-						</div>
-
-						{% container 'frontLeftSidebar' %}
-						<div class="ad marginBottom30 hidden-xs">
-							<img src="{{ asset('theme/img/article_img/ad.png') }}">
-						</div>
-						{% endcontainer %}
-						
-					</div>
-				{% include 'elements/most.html.twig' with {'class' : 'marginBottom30'} %}
-
-				<div class="subscribe subscribe--banner marginBottom30">
-					<h3 class="subscribe__headline">Subscribe</h3>
-					<a href="#" class="subscribe__image"><img src="{{ asset('theme/img/subscribe.png') }}" alt=""></a>
-					<p class="subscribe__text">Your subscription helps support independent investigative journalism</p>
-					<a href="#" class="button button--color">Subscribe</a>
-				</div>
-
-				{% if themeSetting('sidebar_switch') %}
-					{% include 'partials/featured-author.html.twig'  %}
-				{% endif %}
-
-				{% container 'frontSidebar' %}
-
-				<div class="ad hidden-xs marginTop30 marginBottom30">
-					<img src="{{ asset('theme/img/article_img/ad.png') }}">
-				</div>
-
-				<div class="marginTop30 marginBottom30">
-					{% include 'elements/facebook.html.twig' %}
-				</div>
-
-				{% include 'elements/selectedComment.html.twig' with {'class' : 'marginTop30 marginBottom30'} %}
-
-				{% endcontainer %}
-
-			</div>
-
-		</div>
 
 	</main>
 	{% endblock %}
