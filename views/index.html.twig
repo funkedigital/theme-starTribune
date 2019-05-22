@@ -75,32 +75,13 @@
 		</div>
 
 		<div class="row">
-			<div class="col-md-9 col-sm-12 col-xs-12">
-				<div class="row opinions">
-					<div class="col-xs-12">
-						<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('opinion') }}">Opinion</a></h3>
-					</div>
-
-					{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/opinion'}  %}
-						{% if loop.index == 1 %}
-							{% include 'partials/opinionsItem.html.twig' with {'class' : 'col-sm-8 col-md-8 col-xs-12'} %}
-						{% else %}
-							{% include 'partials/opinionsItem--small.html.twig' with {'class' : 'col-sm-4 col-md-4 col-xs-12'} %}
-						{% endif %}
-					{% endgimmelist %}
-
-				</div>
-			</div>
-		</div>
-
-		<div class="row">
 			<div class="col-xs-12">
-				<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('business') }}">Business</a></h3>
+				<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('business') }}"> DIÄT </a></h3>
 			</div>
 
 			<div class="articleGrid">
 
-				{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/business'}  %}
+				{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/diaet-ernaehrung'}  %}
 					{% if loop.index == 1 %}
 						{% include 'partials/mainArticleList.html.twig' with {'class' : 'col-md-6 col-sm-12 col-xs-12', 'image':'small', 'deck': 'none'} %}
 					{% else %}
