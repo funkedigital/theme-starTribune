@@ -107,7 +107,7 @@
 		{% endgimmelist %}
 
 		<div class="row">
-			<div class="gallery marginTop30 marginBottom30 col-xs-12">
+			<div class="gallery marginTop30 marginBottom30 col-12">
 				<figure class="gallery__image">
 					<a class="gallery__strip" href="{{ path('gesundheit') }}">Gesundheit</a>
 					<a href="{{ path(article) }}">
@@ -124,15 +124,15 @@
 
 		<div class="row">
 						<div class="col-12">
-												<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('sports') }}">Sports</a></h3>
+												<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('sports') }}">Mode &amp; schoenheit</a></h3>
 											<div class="row">
 															<div class="articleGrid col-md-6 col-sm-6 col-xs-12">
-																{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/sports'}  %}
+																{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/mode-schoenheit'}  %}
 																		{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns'} %}
 																{% endgimmelist %}
 															</div>
 															<div class="articleListSmall col-md-6 col-sm-6 col-xs-12">
-																{% gimmelist article from articles|start(1)|limit(3) with {'route': '/sports'}  %}
+																{% gimmelist article from articles|start(1)|limit(3) with {'route': '/mode-schoenheit'}  %}
 																		{% include 'partials/articleListSmall__item.html.twig'  %}
 																{% endgimmelist %}
 															</div>
