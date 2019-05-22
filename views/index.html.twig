@@ -62,10 +62,7 @@
 				{% endgimmelist %}
        	{% gimmelist item from contentListItems|limit(listLength) with {contentListName: "Top news"} %}
 				
-				    {% if position === 1 %}
 							{{ dump(item) }}
-   				  {% endif %}
-
 				{% endgimmelist %}
 
 			</div>
