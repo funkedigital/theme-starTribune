@@ -41,7 +41,7 @@
 
           <div class="mainArticle__text ">
               {% if articleKicker %}<span class="mainArticle__kicker">{{ articleKicker }}</span>{% endif %}
-              <h2 class="mainArticle__headline">{{ article.title }}</h2>
+              <h2 class="mainArticle__headline"><a>{{ article.title }}</a></h2>
             
             <div class="mainArticle__teaser">
               <p>{{ article.lead|striptags|safeTruncate(200,"...") }}</p>
