@@ -59,11 +59,9 @@
 				{% gimmelist article from articles|start(0)|limit(4)|order('publishedAt','desc') with {'route': '/politics'}  %}
 					{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns col-md-3 col-sm-6 col-xs-12'} %}
 				{% endgimmelist %}
-				<ul>
        	{% gimmelist item from contentListItems|limit(listLength) with {contentListName: "Top news"} %}
-				 {% dump item %}
+				 {{ dump(item) }}
 				{% endgimmelist %}
-         </ul>
 
 			</div>
 
