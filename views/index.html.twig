@@ -25,18 +25,19 @@
 						<div class="col-md-9 col-sm-12 col-xs-12">
 							<div class="row">
 								<div class="col-12">
-																	<div class="articleGrid row">
-
-												{% include 'partials/mainArticleList.html.twig' with { 'article' : item.content } %}
+									{% include 'partials/mainArticle.html.twig' with { 'article': item.content } %}
+									<div class="articleGrid row">
 										{% endif %}
+
 										{% else %}
+
 										{% if brNews and (loop.index == 2) %}
-																				<div class="articleGrid row">
-												{% include 'partials/mainArticleList.html.twig' with { 'article' : item.content } %}
+										{% include 'partials/mainArticle.html.twig' with { 'article': item.content } %}
+										<div class="articleGrid row">
 											{% else %}
 											{% if (item.values.position == 9) or (item.values.position == 18) %}
 											<div class="col-12">
-												{% include 'partials/mainArticleList.html.twig' with { 'article' : item.content } %}
+												{% include 'partials/mainArticle.html.twig' with { 'article' : item.content } %}
 											</div>
 											{% endif %}
 											{% if (item.values.position == 1) or (item.values.position == 2) or (item.values.position == 3) or (item.values.position == 6) or (item.values.position == 7) or (item.values.position == 8) or (item.values.position == 10) or (item.values.position == 11) or (item.values.position == 12) or (item.values.position == 15) or (item.values.position == 16) or (item.values.position == 17) or (item.values.position == 19) or (item.values.position == 20) or (item.values.position == 21) or (item.values.position == 24) or (item.values.position == 25) or (item.values.position == 26) %}
@@ -46,12 +47,14 @@
 											{% include 'partials/articleGrid__item.html.twig' with { 'article' : item.content, 'class' : 'articleGrid__item--twoColumns col-6' } %}
 											{% endif %}
 											{% endif %}
+
 											{% endif %}
 											{% if loop.last %}
 										</div>
 										{% endif %}
 										{% endgimmelist %}
 										{% endcache %}
+
 									</div>
 								</div>
 								<div class="row">
@@ -59,27 +62,36 @@
 										<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('politics') }}">Kochen &amp; Backen</a>
 										</h3>
 									</div>
+
 									<div class="articleGrid d-flex">
+
 										{% gimmelist article from articles|start(0)|limit(4)|order('publishedAt','desc') with {'route': '/kochen-backen'}  %}
 										{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns col-md-3 col-sm-6 col-xs-12'} %}
 										{% endgimmelist %}
 									</div>
+
 								</div>
+
 								<div class="row">
 									<div class="col-xs-12">
 										<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('business') }}"> DIÄT </a></h3>
 									</div>
-									<div class="articleGrid row">
+
+									<div class="articleGrid">
+
 										{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/diaet-ernaehrung'}  %}
 										{% if loop.index == 1 %}
-										{% include 'partials/mainArticleList.html.twig' with {'class' : 'col-12', 'image':'small', 'deck': 'none'} %}
+										{% include 'partials/mainArticleList.html.twig' with {'class' : 'col-md-6 col-sm-12 col-xs-12', 'image':'small', 'deck': 'none'} %}
 										{% else %}
 										{% include 'partials/articleGrid__item.html.twig' with {'class' : 'col-md-3 col-sm-6 col-xs-12'} %}
 										{% endif %}
 										{% endgimmelist %}
+
 									</div>
 								</div>
+
 								{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/gesundheit'}  %}
+
 								{% set rend1250 = "/public/img/article_img/1250x600.png" %}
 								{% gimmelist media from articleMedia|limit(1) with {'article': article} %}
 								{% set imgCaption = media.body %}
@@ -91,6 +103,7 @@
 								{% endfor %}
 								{% endif %}
 								{% endgimmelist %}
+
 								<div class="row">
 									<div class="gallery marginTop30 marginBottom30 col-12">
 										<figure class="gallery__image">
@@ -106,6 +119,7 @@
 									</div>
 								</div>
 								{% endgimmelist %}
+
 								<div class="row">
 									<div class="col-12">
 										<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('sports') }}">Mode &amp; schoenheit</a>
@@ -125,6 +139,7 @@
 									</div>
 								</div>
 								<div class="row">
+
 									<div class="col-12">
 										<h3 class="sectionHeadingBold marginTop30"><a
 												href="{{ url('spass-unterhaltung/spiele') }}">Spiele</a></h3>
@@ -143,6 +158,7 @@
 									</div>
 								</div>
 							</div>
+
 							<div class="col-xs-12 col-sm-12 col-md-3">
 								<div class="col-12">
 									<div class="leftCol__item">
@@ -153,30 +169,39 @@
 											{% endgimmelist %}
 										</div>
 									</div>
+
 									{% container 'frontLeftSidebar' %}
 									<div class="ad marginBottom30 hidden-xs">
 										<img src="{{ asset('theme/img/article_img/ad.png') }}">
 									</div>
 									{% endcontainer %}
+
 								</div>
 								{% include 'elements/most.html.twig' with {'class' : 'marginBottom30'} %}
+
 								<div class="subscribe subscribe--banner marginBottom30">
 									<h3 class="subscribe__headline">Subscribe</h3>
 									<a href="#" class="subscribe__image"><img src="{{ asset('theme/img/subscribe.png') }}" alt=""></a>
 									<p class="subscribe__text">Your subscription helps support independent investigative journalism</p>
 									<a href="#" class="button button--color">Subscribe</a>
 								</div>
+
 								{% if themeSetting('sidebar_switch') %}
 								{% include 'partials/featured-author.html.twig'  %}
 								{% endif %}
+
 								{% container 'frontSidebar' %}
+
 								<div class="ad hidden-xs marginTop30 marginBottom30">
 									<img src="{{ asset('theme/img/article_img/ad.png') }}">
 								</div>
+
 								<div class="marginTop30 marginBottom30">
 									{% include 'elements/facebook.html.twig' %}
 								</div>
+
 								{% include 'elements/selectedComment.html.twig' with {'class' : 'marginTop30 marginBottom30'} %}
+
 								{% endcontainer %}
 							</div>
 						</div>
