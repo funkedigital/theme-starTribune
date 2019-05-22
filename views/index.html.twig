@@ -25,13 +25,14 @@
 						<div class="col-md-9 col-sm-12 col-xs-12">
 							<div class="row">
 								<div class="col-12">
+																	<div class="articleGrid row">
+
 												{% include 'partials/mainArticleList.html.twig' with { 'article' : item.content } %}
-									<div class="articleGrid row">
 										{% endif %}
 										{% else %}
 										{% if brNews and (loop.index == 2) %}
+																				<div class="articleGrid row">
 												{% include 'partials/mainArticleList.html.twig' with { 'article' : item.content } %}
-										<div class="articleGrid row">
 											{% else %}
 											{% if (item.values.position == 9) or (item.values.position == 18) %}
 											<div class="col-12">
