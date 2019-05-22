@@ -232,7 +232,7 @@
                 "name": "mainNav",
                 "visible": true,
                 "parameters": {
-                    "menu_name": "mainNavigation2",
+                    "menu_name": "mainNavigation",
                     "template_name": "menu1.html.twig"
                 },
                 "containers": ["mainNav"]
