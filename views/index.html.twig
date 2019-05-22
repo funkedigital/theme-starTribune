@@ -92,7 +92,7 @@
 			</div>
 		</div>
 
-		{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/style'}  %}
+		{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/gesundheit'}  %}
 
 		{% set rend1250 = "/public/img/article_img/1250x600.png" %}
 		{% gimmelist media from articleMedia|limit(1) with {'article': article} %}
@@ -109,7 +109,7 @@
 		<div class="row">
 			<div class="gallery marginTop30 marginBottom30 col-xs-12">
 				<figure class="gallery__image">
-					<a class="gallery__strip" href="{{ path('style') }}">Style</a>
+					<a class="gallery__strip" href="{{ path('gesundheit') }}">Gesundheit</a>
 					<a href="{{ path(article) }}">
 						<img src="{{ rend1250 }}" alt="{{ imgCaption|striptags }}">
 					</a>
