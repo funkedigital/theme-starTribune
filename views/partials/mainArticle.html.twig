@@ -40,15 +40,13 @@
   {% endfor %}
 
           <div class="mainArticle__text ">
-            <a href="{{ url(article) }}">
               {% if articleKicker %}<span class="mainArticle__kicker">{{ articleKicker }}</span>{% endif %}
               <h2 class="mainArticle__headline">{{ article.title }}</h2>
-            </a>
             
             <div class="mainArticle__teaser">
               <p>{{ article.lead|striptags|safeTruncate(200,"...") }}</p>
             </div>
-           
+           {#
             <div class="articleMetadata">
               {% if article.authors %}
                 {% for author in article.authors %}
@@ -60,6 +58,7 @@
               <a class="articleMetadata__shares articleMetadata__info" href="#">240</a>
               <a class="articleMetadata__comments articleMetadata__info" href="#">20</a>
             </div>
+            #}
           </div>
         </article>
 {% endcache %}
