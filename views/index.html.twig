@@ -39,11 +39,9 @@
 			<div class="articleGrid row">
 		{% else %}
 				{% if (item.values.position == 9) or (item.values.position == 18) %}
-				 <div class="row">
 						<div class="col-12">
 								{% include 'partials/mainArticle.html.twig' with { 'article' : item.content } %}
 						</div>
-					</div>
 				{% endif %}
 				{% if (item.values.position == 1) or (item.values.position == 2) or (item.values.position == 3) or (item.values.position == 6) or (item.values.position == 7) or (item.values.position == 8) or (item.values.position == 10) or (item.values.position == 11) or (item.values.position == 12) or (item.values.position == 15) or (item.values.position == 16) or (item.values.position == 17) or (item.values.position == 19) or (item.values.position == 20) or (item.values.position == 21) or (item.values.position == 24) or (item.values.position == 25) or (item.values.position == 26) %}
 				  {% include 'partials/articleGrid__item.html.twig' with { 'article' : item.content, 'class' : 'articleGrid__item--threeColumns col-4' } %}
@@ -73,9 +71,7 @@
 					{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns col-md-3 col-sm-6 col-xs-12'} %}
 				{% endgimmelist %}
        	{% gimmelist item from contentListItems|limit(listLength) with {contentListName: "Top news"} %}
-				    {% if (item.values.position == 2) or (item.values.position == 4) %}
 							{{ dump(item) }}
-						{% endif %}
 				{% endgimmelist %}
 
 			</div>
