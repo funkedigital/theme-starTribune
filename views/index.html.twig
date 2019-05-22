@@ -38,7 +38,15 @@
 		{% include 'partials/mainArticle.html.twig' with { 'article': item.content } %}
 			<div class="articleGrid row">
 		{% else %}
-        	{% include 'partials/articleGrid__item.html.twig' with { 'article' : item.content, 'class' : 'articleGrid__item--threeColumns col-4' } %}
+				{% if (item.values.position == 9) or (item.values.position == 18) %}
+        	{% include 'partials/mainArticle.html.twig' with { 'article' : item.content } %}
+				{% endif %}
+				{% if (item.values.position == 1) or (item.values.position == 2) or (item.values.position == 3) or (item.values.position == 6) or (item.values.position == 7) or (item.values.position == 8) or (item.values.position == 10) or (item.values.position == 11) or (item.values.position == 12) or (item.values.position == 15) or (item.values.position == 16) or (item.values.position == 17) or (item.values.position == 19) or (item.values.position == 20) or (item.values.position == 21) or (item.values.position == 24) or (item.values.position == 25) or (item.values.position == 26) %}
+				  {% include 'partials/articleGrid__item.html.twig' with { 'article' : item.content, 'class' : 'articleGrid__item--threeColumns col-4' } %}
+				{% endif %}
+				{% if (item.values.position == 4) or (item.values.position == 5) (item.values.position == 13) (item.values.position == 14) (item.values.position == 22) (item.values.position == 23)  %}
+	        {% include 'partials/articleGrid__item.html.twig' with { 'article' : item.content, 'class' : 'articleGrid__item--twoColumns col-6' } %}
+				{% endif %}
 		{% endif %}
 
     {% endif %}
@@ -61,7 +69,7 @@
 					{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns col-md-3 col-sm-6 col-xs-12'} %}
 				{% endgimmelist %}
        	{% gimmelist item from contentListItems|limit(listLength) with {contentListName: "Top news"} %}
-				    {% if (loop.index == 1) or (loop.index == 3) %}
+				    {% if (item.values.position == 2) or (item.values.position == 4) %}
 							{{ dump(item) }}
 						{% endif %}
 				{% endgimmelist %}
