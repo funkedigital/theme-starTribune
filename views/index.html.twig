@@ -61,7 +61,7 @@
 				{% endgimmelist %}
 				<ul>
        	{% gimmelist item from contentListItems|limit(listLength) with {contentListName: "Top news"} %}
-				 <li> {{ item.content }} </li>
+				 {% dump item %}
 				{% endgimmelist %}
          </ul>
 
