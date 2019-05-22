@@ -61,7 +61,7 @@
 					{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns col-md-3 col-sm-6 col-xs-12'} %}
 				{% endgimmelist %}
        	{% gimmelist item from contentListItems|limit(listLength) with {contentListName: "Top news"} %}
-				    {% if (item.values.position == 2) || (item.values.position == 4) %}
+				    {% if (item.values.position == 2) or (item.values.position == 4) %}
 							{{ dump(item) }}
 						{% endif %}
 				{% endgimmelist %}
