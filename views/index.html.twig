@@ -25,17 +25,18 @@
 						<div class="col-md-9 col-sm-12 col-xs-12">
 							<div class="row">
 								<div class="col-12">
-												{% include 'partials/mainArticleList.html.twig' with { 'article' : item.content } %}
 									<div class="articleGrid row">
+										{% include 'partials/mainArticleList.html.twig' with { 'article' : item.content, 'class' : 'col-12' } %}
 										{% endif %}
 										{% else %}
 										{% if brNews and (loop.index == 2) %}
-												{% include 'partials/mainArticleList.html.twig' with { 'article' : item.content } %}
-										<div class="articleGrid row">
+											<div class="articleGrid row">
+												{% include 'partials/mainArticleList.html.twig' with { 'article' : item.content, 'class' : 'col-12'  } %}
 											{% else %}
 											{% if (item.values.position == 9) or (item.values.position == 18) %}
 											<div class="col-12">
-												{% include 'partials/mainArticleList.html.twig' with { 'article' : item.content } %}
+												<div class="articleGrid row">
+												{% include 'partials/mainArticleList.html.twig' with { 'article' : item.content, 'class' : 'col-12' } %}
 											</div>
 											{% endif %}
 											{% if (item.values.position == 1) or (item.values.position == 2) or (item.values.position == 3) or (item.values.position == 6) or (item.values.position == 7) or (item.values.position == 8) or (item.values.position == 10) or (item.values.position == 11) or (item.values.position == 12) or (item.values.position == 15) or (item.values.position == 16) or (item.values.position == 17) or (item.values.position == 19) or (item.values.position == 20) or (item.values.position == 21) or (item.values.position == 24) or (item.values.position == 25) or (item.values.position == 26) %}
@@ -68,7 +69,7 @@
 									<div class="col-xs-12">
 										<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('business') }}"> DIÄT </a></h3>
 									</div>
-									<div class="articleGrid">
+									<div class="articleGrid row">
 										{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/diaet-ernaehrung'}  %}
 										{% if loop.index == 1 %}
 										{% include 'partials/mainArticleList.html.twig' with {'class' : 'col-md-6 col-sm-12 col-xs-12', 'image':'small', 'deck': 'none'} %}
