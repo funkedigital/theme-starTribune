@@ -50,8 +50,7 @@
 
 					</div>
 				</div>
-			</div>
-		<div class="row">
+					<div class="row">
 			<div class="col-xs-12">
 				<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('politics') }}">Politics</a></h3>
 			</div>
@@ -145,21 +144,21 @@
 		{% endgimmelist %}
 
 		<div class="row">
-							<div class="col-md-6 col-sm-12 col-xs-12">
-													<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('sports') }}">Sports</a></h3>
-												<div class="row">
-																<div class="articleGrid col-md-6 col-sm-6 col-xs-12">
-																	{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/sports'}  %}
-																			{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns'} %}
-																	{% endgimmelist %}
-																</div>
-																<div class="articleListSmall col-md-6 col-sm-6 col-xs-12">
-																	{% gimmelist article from articles|start(1)|limit(3) with {'route': '/sports'}  %}
-																			{% include 'partials/articleListSmall__item.html.twig'  %}
-																	{% endgimmelist %}
-																</div>
-												</div>
-							</div>
+						<div class="col-md-6 col-sm-12 col-xs-12">
+												<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('sports') }}">Sports</a></h3>
+											<div class="row">
+															<div class="articleGrid col-md-6 col-sm-6 col-xs-12">
+																{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/sports'}  %}
+																		{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns'} %}
+																{% endgimmelist %}
+															</div>
+															<div class="articleListSmall col-md-6 col-sm-6 col-xs-12">
+																{% gimmelist article from articles|start(1)|limit(3) with {'route': '/sports'}  %}
+																		{% include 'partials/articleListSmall__item.html.twig'  %}
+																{% endgimmelist %}
+															</div>
+											</div>
+						</div>
 
 							<div class="col-md-6 col-sm-12 col-xs-12">
 											<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('travel') }}">Travel</a></h3>
@@ -177,6 +176,9 @@
 												</div>
 							</div>
 		</div>
+
+			</div>
+
 			<div class="col-xs-12 col-sm-12 col-md-3">
        								<div class="col-12">
 										<div class="leftCol__item">
@@ -221,7 +223,20 @@
 				{% include 'elements/selectedComment.html.twig' with {'class' : 'marginTop30 marginBottom30'} %}
 
 				{% endcontainer %}
+
 			</div>
+
 		</div>
+
+
+
+
+
+
+	
+
+
+
+
 	</main>
 	{% endblock %}
