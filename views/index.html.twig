@@ -11,6 +11,7 @@
 		{% set brNews = false %}
 		{% set listLength = 20 %}
 	{% endif %}
+				 {{ dump() }}
 
 	{% cache 'contentListTopNews' ~ listId ~ listLength { gen: contentList } %}
 	{% gimmelist item from contentListItems|limit(listLength) with {contentListName: "Top news"} %}
@@ -60,7 +61,6 @@
 					{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns col-md-3 col-sm-6 col-xs-12'} %}
 				{% endgimmelist %}
        	{% gimmelist item from contentListItems|limit(listLength) with {contentListName: "Top news"} %}
-				 {{ dump(item) }}
 				{% endgimmelist %}
 
 			</div>
