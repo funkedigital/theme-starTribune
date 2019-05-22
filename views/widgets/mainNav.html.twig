@@ -1,4 +1,6 @@
 {% extends 'knp_menu.html.twig' %}
+{% block list %}
+<p>123</p>
     {% if item.hasChildren and options.depth is not same as(0) and item.displayChildren %}
         {% import _self as knp_menu %}
         <div class="navigation">        
@@ -13,3 +15,4 @@
             </nav> 
         </div>
     {% endif %}
+{% endblock %}
