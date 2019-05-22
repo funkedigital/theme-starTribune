@@ -30,7 +30,7 @@
 										{% endif %}
 										{% else %}
 										{% if brNews and (loop.index == 2) %}
-										{% include 'partials/mainArticle.html.twig' with { 'article': item.content } %}
+												{% include 'partials/mainArticleList.html.twig' with { 'article' : item.content } %}
 										<div class="articleGrid row">
 											{% else %}
 											{% if (item.values.position == 9) or (item.values.position == 18) %}
