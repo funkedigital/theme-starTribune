@@ -28,7 +28,7 @@
 										{% endif %}
 										{% else %}
 										{% if brNews and (loop.index == 2) %}
-										{{ dump(item) }}
+										{% dump %}
 										{% include 'partials/mainArticle.html.twig' with { 'article': item.content } %}
 										<div class="articleGrid row">
 											{% else %}
