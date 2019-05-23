@@ -12,9 +12,9 @@
 	{% set listLength = 20 %}
 	{% endif %}
 	{% cache 'contentListTopNews' ~ listId ~ listLength { gen: contentList } %}
+	{{ dump(contentListItems) }}
 	{% gimmelist item from contentListItems|limit(listLength) with {contentListName: "Top news"} %}
 	{% if loop.first %}
-
 	{% if brNews %}
 	{% include 'partials/breaking-news.html.twig' with { 'article': item.content } %}
 	<div class="row">
@@ -29,9 +29,7 @@
 									{% include 'partials/mainArticle.html.twig' with { 'article': item.content } %}
 									<div class="articleGrid row">
 										{% endif %}
-
 										{% else %}
-
 										{% if brNews and (loop.index == 2) %}
 										{% include 'partials/mainArticle.html.twig' with { 'article': item.content } %}
 										<div class="articleGrid row">
@@ -55,7 +53,6 @@
 										{% endif %}
 										{% endgimmelist %}
 										{% endcache %}
-
 									</div>
 								</div>
 								<div class="row">
@@ -63,23 +60,17 @@
 										<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('politics') }}">Kochen &amp; Backen</a>
 										</h3>
 									</div>
-
 									<div class="articleGrid d-flex">
-
 										{% gimmelist article from articles|start(0)|limit(4)|order('publishedAt','desc') with {'route': '/kochen-backen'}  %}
 										{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns col-md-3 col-sm-6 col-xs-12'} %}
 										{% endgimmelist %}
 									</div>
-
 								</div>
-
 								<div class="row">
 									<div class="col-xs-12">
 										<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('business') }}"> DIÄT </a></h3>
 									</div>
-
 									<div class="articleGrid row">
-
 										{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/diaet-ernaehrung'}  %}
 										{% if loop.index == 1 %}
 										{% include 'partials/mainArticleList.html.twig' with {'class' : 'col-12', 'image':'small', 'deck': 'none'} %}
@@ -90,9 +81,7 @@
 
 									</div>
 								</div>
-
 								{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/gesundheit'}  %}
-
 								{% set rend1250 = "/public/img/article_img/1250x600.png" %}
 								{% gimmelist media from articleMedia|limit(1) with {'article': article} %}
 								{% set imgCaption = media.body %}
@@ -104,7 +93,6 @@
 								{% endfor %}
 								{% endif %}
 								{% endgimmelist %}
-
 								<div class="row">
 									<div class="gallery marginTop30 marginBottom30 col-12">
 										<figure class="gallery__image">
@@ -120,7 +108,6 @@
 									</div>
 								</div>
 								{% endgimmelist %}
-
 								<div class="row">
 									<div class="col-12">
 										<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('sports') }}">Mode &amp; schoenheit</a>
