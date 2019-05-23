@@ -39,9 +39,9 @@
     {% endif %}
   {% endfor %}
  #}
-          <div class="mainArticle__text ">
+          <div class="mainArticle__text">
               {# {% if articleKicker %}<span class="mainArticle__kicker">{{ articleKicker }}</span>{% endif %} #}
-                <div class="mainArticle__teaser">
+                <div class="mainArticle__teaser d-none d-md-block">
                   <p class="m-0">{{ article.featureMedia.body|striptags|upper|safeTruncate(200,"...") }}</p>
                 </div>
                   <h2 class="mainArticle__headline"><a href="{{ url(article) }}">{{ article.title }}</a></h2>
