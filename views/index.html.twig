@@ -14,12 +14,12 @@
 	{% if loop.first %}
 	{% if brNews %}
 	{% include 'partials/breaking-news.html.twig' with { 'article': item.content } %}
-   {{ dump(item) }}
 	<div class="row">
 		<div class="col-12 col-lg-8">
 			<div class="row">
 				<div class="col-12">
 					{% else %}
+					   {{ dump(item) }}
 					<div class="row">
 						<div class="col-12 col-lg-8">
 							<div class="row">
