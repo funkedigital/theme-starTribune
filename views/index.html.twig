@@ -24,16 +24,17 @@
 							<div class="row">
 								<div class="col-12">
 									{% include 'partials/mainArticle.html.twig' with { 'article': item.content } %}
+									{{ dump(article }}
 									<div class="articleGrid row">
 										{% endif %}
 										{% else %}
 										{% if brNews and (loop.index == 2) %}
-										{% dump %}
 										{% include 'partials/mainArticle.html.twig' with { 'article': item.content } %}
 										<div class="articleGrid row">
 											{% else %}
 											{% if (item.values.position == 9) or (item.values.position == 18) %}
 											<div class="col-12">
+											   {{ dump(article }}
 												{% include 'partials/mainArticle.html.twig' with { 'article' : item.content } %}
 											</div>
 											{% endif %}
