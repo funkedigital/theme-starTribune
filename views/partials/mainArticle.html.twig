@@ -31,16 +31,16 @@
               </a>
 
             </figure>
-
+{#
   {% set articleKicker = null %}
   {% for keyword in article.keywords %}
     {% if loop.first %}
     {% set articleKicker = keyword %}
     {% endif %}
   {% endfor %}
-
+ #}
           <div class="mainArticle__text ">
-              {% if articleKicker %}<span class="mainArticle__kicker">{{ articleKicker }}</span>{% endif %}
+              {# {% if articleKicker %}<span class="mainArticle__kicker">{{ articleKicker }}</span>{% endif %} #}
                 <div class="mainArticle__teaser">
                   <p class="m-0">{{ article.featureMedia.body|striptags|upper|safeTruncate(200,"...") }}</p>
                 </div>
