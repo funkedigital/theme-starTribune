@@ -24,7 +24,6 @@
 							<div class="row">
 								<div class="col-12">
 									{% include 'partials/mainArticle.html.twig' with { 'article': item.content } %}
-									{{ dump(item) }}
 									<div class="articleGrid row">
 										{% endif %}
 										{% else %}
@@ -34,7 +33,6 @@
 											{% else %}
 											{% if (item.values.position == 9) or (item.values.position == 18) %}
 											<div class="col-12">
-											   {{ dump(item) }}
 												{% include 'partials/mainArticle.html.twig' with { 'article' : item.content } %}
 											</div>
 											{% endif %}
