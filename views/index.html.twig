@@ -99,10 +99,12 @@
 										<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('/kochen-backen') }}">Kochen &amp; Backen</a>
 										</h3>
 									</div>
-									<div class="articleGrid row d-flex">
-										{% gimmelist article from articles|start(0)|limit(4)|order('publishedAt','desc') with {'route': '/kochen-backen'}  %}
-										{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns col-md-3 col-sm-6 col-xs-12'} %}
-										{% endgimmelist %}
+									<div class="col-12">
+										<div class="articleGrid row d-flex">
+											{% gimmelist article from articles|start(0)|limit(4)|order('publishedAt','desc') with {'route': '/kochen-backen'}  %}
+											{% include 'partials/articleGrid__item.html.twig' with {'class' : 'col-3'} %}
+											{% endgimmelist %}
+										</div>
 									</div>
 								</div>
 								<div class="row">
