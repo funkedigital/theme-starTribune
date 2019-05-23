@@ -2,7 +2,6 @@
 
 {% block body %}
 <main class="container">g
-{% dump %}
 	{% if themeSetting('breakingNews_switch') %}
 	{% set brNews = true %}
 	{% set listLength = 21 %}
@@ -13,6 +12,7 @@
 	{% cache 'contentListTopNews' ~ listId ~ listLength { gen: contentList } %}
 	{% dump %}
 	{% gimmelist item from contentListItems|limit(listLength) with {contentListName: "Top news"} %}
+	{{ dump(item) }}
 	{% if loop.first %}
 	{% if brNews %}
 	{% include 'partials/breaking-news.html.twig' with { 'article': item.content } %}
