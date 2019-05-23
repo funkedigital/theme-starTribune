@@ -30,7 +30,7 @@
   #}
   <a href="{{ url(article) }}">
       <p class="articleGrid__kicker">
-      {{ article.lead|striptags|upper|safeTruncate(160,"...") }}
+      {{ article.featureMedia.body|striptags|upper|safeTruncate(160,"...") }}
       </p>
       <h3 class="articleGrid__headline">{{ article.title }}</h3>
   </a>
