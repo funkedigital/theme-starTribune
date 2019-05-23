@@ -10,9 +10,7 @@
 	{% set listLength = 20 %}
 	{% endif %}
 	{% cache 'contentListTopNews' ~ listId ~ listLength { gen: contentList } %}
-	{% dump %}
 	{% gimmelist item from contentListItems|limit(listLength) with {contentListName: "Top news"} %}
-	{{ dump(item) }}
 	{% if loop.first %}
 	{% if brNews %}
 	{% include 'partials/breaking-news.html.twig' with { 'article': item.content } %}
@@ -67,7 +65,7 @@
 								</div>
 								<div class="row">
 									<div class="col-xs-12">
-										<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('business') }}"> DIÄT </a></h3>
+										<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('diaet-ernaehrung') }}"> DIÄT </a></h3>
 									</div>
 									<div class="articleGrid row">
 										{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/diaet-ernaehrung'}  %}
