@@ -36,8 +36,9 @@
       max-width: 690px;
       text-shadow: 1px 1px 1px rgba(0,0,0,.8), -1px -1px 4px rgba(0,0,0,.8);
       max-width: 690px
-    a
-      color: #fff;
+      @media only screen and (min-width: 768px)
+        a
+          color: #fff;
 
   .mainArticle__kicker
     font-family: $fontSansSerif
@@ -57,9 +58,6 @@
     text-transform: uppercase
     margin: 12px 0;
     text-shadow: 1px 1px 1px #000;
-    @media only screen and (min-width: 768px)
-      a
-        color: #fff;
     &:hover
       color: $colorGrey
     &--small
