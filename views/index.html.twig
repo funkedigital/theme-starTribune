@@ -52,59 +52,61 @@
 										{% endcache %}
 									</div>
 								</div>
-							<div class="col-12 col-lg-4">
-								<div class="col-12">
-									<div class="leftCol__item">
-										<div class="articleListSmall articleListSmall--latestNews marginBottom30">
-											<h3 class="sectionHeading">Latest news</h3>
-											{% gimmelist article from articles|start(0)|limit(6)|order('publishedAt','desc')  %}
-											{% include 'partials/articleListSmall__item.html.twig'  %}
-											{% endgimmelist %}
+								<div class="col-12 col-lg-4">
+									<div class="col-12">
+										<div class="leftCol__item">
+											<div class="articleListSmall articleListSmall--latestNews marginBottom30">
+												<h3 class="sectionHeading">Latest news</h3>
+												{% gimmelist article from articles|start(0)|limit(6)|order('publishedAt','desc')  %}
+												{% include 'partials/articleListSmall__item.html.twig'  %}
+												{% endgimmelist %}
+											</div>
 										</div>
+
+										{% container 'frontLeftSidebar' %}
+										<div class="ad marginBottom30 hidden-xs">
+											<img src="{{ asset('theme/img/article_img/ad.png') }}">
+										</div>
+										{% endcontainer %}
+
+									</div>
+									{% include 'elements/most.html.twig' with {'class' : 'marginBottom30'} %}
+
+									<div class="subscribe subscribe--banner marginBottom30">
+										<h3 class="subscribe__headline">Subscribe</h3>
+										<a href="#" class="subscribe__image"><img
+												src="{{ asset('theme/img/subscribe.png') }}" alt=""></a>
+										<p class="subscribe__text">Your subscription helps support independent
+											investigative journalism</p>
+										<a href="#" class="button button--color">Subscribe</a>
 									</div>
 
-									{% container 'frontLeftSidebar' %}
-									<div class="ad marginBottom30 hidden-xs">
+									{% if themeSetting('sidebar_switch') %}
+									{% include 'partials/featured-author.html.twig'  %}
+									{% endif %}
+
+									{% container 'frontSidebar' %}
+
+									<div class="ad hidden-xs marginTop30 marginBottom30">
 										<img src="{{ asset('theme/img/article_img/ad.png') }}">
 									</div>
+
+									<div class="marginTop30 marginBottom30">
+										{% include 'elements/facebook.html.twig' %}
+									</div>
+
+									{% include 'elements/selectedComment.html.twig' with {'class' : 'marginTop30 marginBottom30'} %}
+
 									{% endcontainer %}
-
 								</div>
-								{% include 'elements/most.html.twig' with {'class' : 'marginBottom30'} %}
-
-								<div class="subscribe subscribe--banner marginBottom30">
-									<h3 class="subscribe__headline">Subscribe</h3>
-									<a href="#" class="subscribe__image"><img src="{{ asset('theme/img/subscribe.png') }}" alt=""></a>
-									<p class="subscribe__text">Your subscription helps support independent investigative journalism</p>
-									<a href="#" class="button button--color">Subscribe</a>
-								</div>
-
-								{% if themeSetting('sidebar_switch') %}
-								{% include 'partials/featured-author.html.twig'  %}
-								{% endif %}
-
-								{% container 'frontSidebar' %}
-
-								<div class="ad hidden-xs marginTop30 marginBottom30">
-									<img src="{{ asset('theme/img/article_img/ad.png') }}">
-								</div>
-
-								<div class="marginTop30 marginBottom30">
-									{% include 'elements/facebook.html.twig' %}
-								</div>
-
-								{% include 'elements/selectedComment.html.twig' with {'class' : 'marginTop30 marginBottom30'} %}
-
-								{% endcontainer %}
 							</div>
 						</div>
-
-	<div class="row">
-		<div class="col-12">
-		
-										<div class="row">
+						<div class="row">
+							<div class="col-12">
+								<div class="row">
 									<div class="col-xs-12">
-										<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('/kochen-backen') }}">Kochen &amp; Backen</a>
+										<h3 class="sectionHeadingBold marginTop30"><a
+												href="{{ url('/kochen-backen') }}">Kochen &amp; Backen</a>
 										</h3>
 									</div>
 									<div class="articleGrid row d-flex">
@@ -114,10 +116,10 @@
 									</div>
 								</div>
 
-
 								<div class="row">
 									<div class="col-xs-12">
-										<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('diaet-ernaehrung') }}"> DIÄT </a></h3>
+										<h3 class="sectionHeadingBold marginTop30"><a
+												href="{{ url('diaet-ernaehrung') }}"> DIÄT </a></h3>
 									</div>
 									<div class="articleGrid row">
 										{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/diaet-ernaehrung'}  %}
@@ -127,11 +129,10 @@
 										{% include 'partials/articleGrid__item.html.twig' with {'class' : 'col-6'} %}
 										{% endif %}
 										{% endgimmelist %}
-
 									</div>
 								</div>
 
-								
+
 								{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/gesundheit'}  %}
 								{% set rend1250 = "/public/img/article_img/1250x600.png" %}
 								{% gimmelist media from articleMedia|limit(1) with {'article': article} %}
@@ -153,17 +154,18 @@
 											</a>
 										</figure>
 										<div class="gallery__text">
-											<h3 class="gallery__headline"><a href="{{ path(article) }}">{{ article.title }}</a></h3>
+											<h3 class="gallery__headline"><a
+													href="{{ path(article) }}">{{ article.title }}</a></h3>
 											<p>{{ article.lead|striptags|safeTruncate(200,"...") }}</p>
 										</div>
 									</div>
 								</div>
 								{% endgimmelist %}
 
-
 								<div class="row">
 									<div class="col-12">
-										<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('sports') }}">Mode &amp; schoenheit</a>
+										<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('sports') }}">Mode
+												&amp; schoenheit</a>
 										</h3>
 										<div class="row">
 											<div class="articleGrid col-md-6 col-sm-6 col-xs-12">
@@ -181,7 +183,7 @@
 								</div>
 
 
-								
+
 								<div class="row">
 
 									<div class="col-12">
@@ -202,8 +204,11 @@
 									</div>
 								</div>
 							</div>
-							
-		</div>
-	</div>
+
+						</div>
+					</div>
+
+					</div>
+					</div>
 </main>
 {% endblock %}
