@@ -20,18 +20,16 @@
       <img src="{{ rend610 }}" alt="{{ imgCaption }}" />
     </figure>
   </a>
-
+ {#
   {% set articleKicker = null %}
   {% for keyword in article.keywords %}
     {% if loop.first %}
     {% set articleKicker = keyword %}
     {% endif %}
   {% endfor %}
-
+  #}
   <a href="{{ url(article) }}">
-   {{ dump(article) }}
-    {% if articleKicker %}<span class="articleGrid__kicker">{{ articleKicker }}</span>{% endif %}
-      <p class="articleGrid__text">
+      <p class="articleGrid__kicker">
       {{ article.featureMedia.body|striptags|upper|safeTruncate(160,"...") }}
       </p>
       <h3 class="articleGrid__headline">{{ article.title }}</h3>
