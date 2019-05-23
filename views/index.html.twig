@@ -129,14 +129,16 @@
 									<div class="col-12">
 										<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('diaet-ernaehrung') }}"> DIÄT </a></h3>
 									</div>
-									<div class="articleGrid row">
-										{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/diaet-ernaehrung'}  %}
-										{% if loop.index == 1 %}
-										{% include 'partials/mainArticleList.html.twig' with {'class' : 'col-6', 'image':'small', 'deck': 'none'} %}
-										{% else %}
-										{% include 'partials/articleGrid__item.html.twig' with {'class' : 'col-3'} %}
-										{% endif %}
-										{% endgimmelist %}
+									<div class="col-12">
+										<div class="articleGrid row">
+											{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/diaet-ernaehrung'}  %}
+											{% if loop.index == 1 %}
+											{% include 'partials/mainArticleList.html.twig' with {'class' : 'col-6', 'image':'small', 'deck': 'none'} %}
+											{% else %}
+											{% include 'partials/articleGrid__item.html.twig' with {'class' : 'col-3'} %}
+											{% endif %}
+											{% endgimmelist %}
+										</div>
 									</div>
 								</div>
 								{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/gesundheit'}  %}
