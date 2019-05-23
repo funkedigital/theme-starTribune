@@ -102,7 +102,7 @@
 									<div class="col-12">
 										<div class="articleGrid row d-flex">
 											{% gimmelist article from articles|start(0)|limit(4)|order('publishedAt','desc') with {'route': '/kochen-backen'}  %}
-											{% include 'partials/articleGrid__item.html.twig' with {'class' : 'col-3'} %}
+											{% include 'partials/articleGrid__item.html.twig' with {'class' : 'col-12 col-md-3'} %}
 											{% endgimmelist %}
 										</div>
 									</div>
