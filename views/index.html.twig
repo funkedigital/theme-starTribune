@@ -4,13 +4,14 @@
 <main class="container">
 	{% if themeSetting('breakingNews_switch') %}
 	{% set brNews = true %}
-	{% set listLength = 27 %}
+	{% set listLength = 28 %}
 	{% else %}
 	{% set brNews = false %}
-	{% set listLength = 26 %}
+	{% set listLength = 27 %}
 	{% endif %}
 	{% cache 'contentListTopNews' ~ listId ~ listLength { gen: contentList } %}
 	{% gimmelist item from contentListItems|limit(listLength) with {contentListName: "Top news"} %}
+	{% dump %}
 	{% if loop.first %}
 	{% if brNews %}
 	{% include 'partials/breaking-news.html.twig' with { 'article': item.content } %}
