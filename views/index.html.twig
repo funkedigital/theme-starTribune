@@ -1,8 +1,9 @@
 {% extends 'base.html.twig' %}
+{% dump %}
 
 {% block body %}
 <main class="container">
-{{ dump }}
+{% dump %}
 	{% if themeSetting('breakingNews_switch') %}
 	{% set brNews = true %}
 	{% set listLength = 21 %}
