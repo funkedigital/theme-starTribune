@@ -37,10 +37,10 @@
 											</div>
 											{% endif %}
 											{% if (item.values.position == 1) or (item.values.position == 2) or (item.values.position == 3) or (item.values.position == 6) or (item.values.position == 7) or (item.values.position == 8) or (item.values.position == 10) or (item.values.position == 11) or (item.values.position == 12) or (item.values.position == 15) or (item.values.position == 16) or (item.values.position == 17) or (item.values.position == 19) or (item.values.position == 20) or (item.values.position == 21) or (item.values.position == 24) or (item.values.position == 25) or (item.values.position == 26) %}
-											{% include 'partials/articleGrid__item.html.twig' with { 'article' : item.content, 'class' : 'articleGrid__item--threeColumns col-4' } %}
+											{% include 'partials/articleGrid__item.html.twig' with { 'article' : item.content, 'class' : 'articleGrid__item--threeColumns col-12 col-lg-4' } %}
 											{% endif %}
 											{% if (item.values.position == 4) or (item.values.position == 5) or (item.values.position == 13) or (item.values.position == 14) or (item.values.position == 22) or (item.values.position == 23)  %}
-											{% include 'partials/articleGrid__item.html.twig' with { 'article' : item.content, 'class' : 'articleGrid__item--twoColumns col-6' } %}
+											{% include 'partials/articleGrid__item.html.twig' with { 'article' : item.content, 'class' : 'articleGrid__item--twoColumns col-12 col-lg-6' } %}
 											{% endif %}
 											{% endif %}
 
