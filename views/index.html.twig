@@ -11,6 +11,7 @@
 	{% endif %}
 	{% cache 'contentListTopNews' ~ listId ~ listLength { gen: contentList } %}
 	{% gimmelist item from contentListItems|limit(listLength) with {contentListName: "Top news"} %}
+	{{ dump(item) }}
 	{% if loop.first %}
 	{% if brNews %}
 	{% include 'partials/breaking-news.html.twig' with { 'article': item.content } %}
