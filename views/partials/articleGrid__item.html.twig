@@ -29,7 +29,7 @@
   {% endfor %}
 
   <a href="{{ url(article) }}">
-   {% dump article %}
+   {{ dump(article) }}
     {% if articleKicker %}<span class="articleGrid__kicker">{{ articleKicker }}</span>{% endif %}
       <p class="articleGrid__text">
       {{ article.featureMedia.body|striptags|upper|safeTruncate(160,"...") }}
