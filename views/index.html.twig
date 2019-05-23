@@ -4,10 +4,10 @@
 <main class="container">
 	{% if themeSetting('breakingNews_switch') %}
 	{% set brNews = true %}
-	{% set listLength = 28 %}
+	{% set listLength = 23 %}
 	{% else %}
 	{% set brNews = false %}
-	{% set listLength = 27 %}
+	{% set listLength = 22 %}
 	{% endif %}
 	{% cache 'contentListTopNews' ~ listId ~ listLength { gen: contentList } %}
 	{% gimmelist item from contentListItems|limit(listLength) with {contentListName: "Top news"} %}
