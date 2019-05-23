@@ -52,54 +52,55 @@
 										{% endcache %}
 									</div>
 								</div>
+								</div>
 
-								<div class="col-12 col-lg-4">
-											<div class="col-12">
-												<div class="leftCol__item">
-													<div class="articleListSmall articleListSmall--latestNews marginBottom30">
-														<h3 class="sectionHeading">Latest news</h3>
-														{% gimmelist article from articles|start(0)|limit(6)|order('publishedAt','desc')  %}
-														{% include 'partials/articleListSmall__item.html.twig'  %}
-														{% endgimmelist %}
+										<div class="col-12 col-lg-4">
+													<div class="col-12">
+														<div class="leftCol__item">
+															<div class="articleListSmall articleListSmall--latestNews marginBottom30">
+																<h3 class="sectionHeading">Latest news</h3>
+																{% gimmelist article from articles|start(0)|limit(6)|order('publishedAt','desc')  %}
+																{% include 'partials/articleListSmall__item.html.twig'  %}
+																{% endgimmelist %}
+															</div>
+														</div>
+
+														{% container 'frontLeftSidebar' %}
+														<div class="ad marginBottom30 hidden-xs">
+															<img src="{{ asset('theme/img/article_img/ad.png') }}">
+														</div>
+														{% endcontainer %}
+
 													</div>
-												</div>
+													{% include 'elements/most.html.twig' with {'class' : 'marginBottom30'} %}
 
-												{% container 'frontLeftSidebar' %}
-												<div class="ad marginBottom30 hidden-xs">
-													<img src="{{ asset('theme/img/article_img/ad.png') }}">
-												</div>
-												{% endcontainer %}
+													<div class="subscribe subscribe--banner marginBottom30">
+														<h3 class="subscribe__headline">Subscribe</h3>
+														<a href="#" class="subscribe__image"><img
+																src="{{ asset('theme/img/subscribe.png') }}" alt=""></a>
+														<p class="subscribe__text">Your subscription helps support independent
+															investigative journalism</p>
+														<a href="#" class="button button--color">Subscribe</a>
+													</div>
 
+													{% if themeSetting('sidebar_switch') %}
+													{% include 'partials/featured-author.html.twig'  %}
+													{% endif %}
+
+													{% container 'frontSidebar' %}
+
+													<div class="ad hidden-xs marginTop30 marginBottom30">
+														<img src="{{ asset('theme/img/article_img/ad.png') }}">
+													</div>
+
+													<div class="marginTop30 marginBottom30">
+														{% include 'elements/facebook.html.twig' %}
+													</div>
+
+													{% include 'elements/selectedComment.html.twig' with {'class' : 'marginTop30 marginBottom30'} %}
+
+													{% endcontainer %}
 											</div>
-											{% include 'elements/most.html.twig' with {'class' : 'marginBottom30'} %}
-
-											<div class="subscribe subscribe--banner marginBottom30">
-												<h3 class="subscribe__headline">Subscribe</h3>
-												<a href="#" class="subscribe__image"><img
-														src="{{ asset('theme/img/subscribe.png') }}" alt=""></a>
-												<p class="subscribe__text">Your subscription helps support independent
-													investigative journalism</p>
-												<a href="#" class="button button--color">Subscribe</a>
-											</div>
-
-											{% if themeSetting('sidebar_switch') %}
-											{% include 'partials/featured-author.html.twig'  %}
-											{% endif %}
-
-											{% container 'frontSidebar' %}
-
-											<div class="ad hidden-xs marginTop30 marginBottom30">
-												<img src="{{ asset('theme/img/article_img/ad.png') }}">
-											</div>
-
-											<div class="marginTop30 marginBottom30">
-												{% include 'elements/facebook.html.twig' %}
-											</div>
-
-											{% include 'elements/selectedComment.html.twig' with {'class' : 'marginTop30 marginBottom30'} %}
-
-											{% endcontainer %}
-									</div>
 								</div>
 
 						<div class="row">
