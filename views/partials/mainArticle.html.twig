@@ -41,11 +41,11 @@
 
           <div class="mainArticle__text ">
               {% if articleKicker %}<span class="mainArticle__kicker">{{ articleKicker }}</span>{% endif %}
-              <h2 class="mainArticle__headline"><a href="{{ url(article) }}">{{ article.title }}</a></h2>
-            
-            <div class="mainArticle__teaser">
-              <p>{{ article.featureMedia.body|striptags|safeTruncate(200,"...") }}</p>
-            </div>
+                <div class="mainArticle__teaser">
+                  <p class="m-0">{{ article.featureMedia.body|striptags|upper|safeTruncate(200,"...") }}</p>
+                </div>
+                  <h2 class="mainArticle__headline"><a href="{{ url(article) }}">{{ article.title }}</a></h2>
+      
            {#
             <div class="articleMetadata">
               {% if article.authors %}
