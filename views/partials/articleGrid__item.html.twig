@@ -29,9 +29,9 @@
   {% endfor %}
   #}
   <a href="{{ url(article) }}">
-      <p class="articleGrid__kicker">
+      <span class="articleGrid__kicker">
       {{ article.featureMedia.body|striptags|upper|safeTruncate(160,"...") }}
-      </p>
+      </span>
       <h3 class="articleGrid__headline">{{ article.title }}</h3>
   </a>
  {# <div class="articleMetadata">
