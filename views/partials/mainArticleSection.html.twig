@@ -40,11 +40,11 @@
 
             </figure>
 
-          <div class="mainArticle__text col-md-8 col-sm-6 col-xs-12">
-            <a href="{{ url(article) }}">
-              {% if articleKicker %}<span class="mainArticle__kicker mainArticle__kicker--section">{{ articleKicker }}</span>{% endif %}
-              <h2 class="mainArticle__headline">{{ article.title }}</h2>
-            </a>
+          <div class="mainArticleList__text">
+            {% if articleKicker %}<span class="mainArticleList__kicker">{{ articleKicker }}</span>{% endif %}
+            <h2 class="mainArticleList__headline "><a href="{{ url(article) }}">
+              {{ article.title }}
+            </a></h2>
             
             <div class="mainArticle__teaser">
               <p>{{ article.lead|striptags|safeTruncate(200,"...") }}</p>
