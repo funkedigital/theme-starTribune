@@ -46,11 +46,7 @@
             },
             {
                 "name": "Spiele",
-                "slug": "spiele",
-                "type": "collection",
-                "templateName": "category.html.twig",
-                "articlesTemplateName": "article.html.twig",
-                "numberOfArticles": 7
+                "type": "collection"
             },
             {
                 "name": "Opinion",
