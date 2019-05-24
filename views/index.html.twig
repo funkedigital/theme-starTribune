@@ -147,12 +147,12 @@
 								<div class="col-12">
 									<div class="row">
 										<div class="col-12">
-											<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('/gesundheit') }}">Gesundheit</a>
+											<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('politics') }}">Politics</a>
 											</h3>
 										</div>
 										<div class="col-12">
 											<div class="articleGrid row d-flex">
-												{% gimmelist article from articles|start(0)|limit(4)|order('publishedAt','desc') with {'route': '/gesundheit'}  %}
+												{% gimmelist article from articles|start(0)|limit(4)|order('publishedAt','desc') with {'route': '/Pesundheit'}  %}
 												{% include 'partials/articleGrid__item.html.twig' with {'class' : 'col-12 col-md-6 col-lg-3'} %}
 												{% endgimmelist %}
 											</div>		
