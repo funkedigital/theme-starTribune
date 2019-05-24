@@ -45,12 +45,12 @@
                 "numberOfArticles": 2
             },
             {
-                "name": "Business",
-                "slug": "business",
+                "name": "Spiele",
+                "slug": "spiele",
                 "type": "collection",
                 "templateName": "category.html.twig",
                 "articlesTemplateName": "article.html.twig",
-                "numberOfArticles": 4
+                "numberOfArticles": 7
             },
             {
                 "name": "Opinion",
