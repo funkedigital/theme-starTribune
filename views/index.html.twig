@@ -141,9 +141,9 @@
 										</div>
 									</div>
 								</div>
-								{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/gesundheit'}  %}
+								{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/gesundheit'}  %}
 								{% set rend1250 = "/public/img/article_img/1250x600.png" %}
-								{% gimmelist media from articleMedia|limit(1) with {'article': article} %}
+								{% gimmelist media from articleMedia|limit(3) with {'article': article} %}
 								{% set imgCaption = media.body %}
 								{% if media.renditions is iterable %}
 								{% for rendition in media.renditions %}
