@@ -12,7 +12,7 @@
   <main class="container">
     <div class="row">
 
-      <div class="col-md-9 col-sm-12 col-xs-12">
+      <div class="articleGrid col-12 col-md-9">
 
         {# Setup list and pagination parameters #}
         {% set defaultItemsPerPage, itemsPerPage, currentPage = 9, 9, app.request.get('page', 1) %}
@@ -80,7 +80,7 @@
     </div>
   </div>
 
-  <div class="col-xs-12 col-sm-12 col-md-3">
+  <div class="col-12 col-md-3">
 
     {% include 'elements/most.html.twig' with {'class' : 'marginBottom30'} %}
     {% container 'frontSidebar' %}
