@@ -60,8 +60,12 @@
 
   .mainArticleList__headline
     @include letterSpacing()
-    font-size: 2.8rem
-    font-weight: 600
-    margin: 12px 0px
-    &--small
-      font-size: 3.2rem
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 110%;
+    margin: 12px 0 0;
+    @media only screen and (min-width: 768px)
+      font-size: 3.9rem;
+      margin: 12px 0;
+      text-shadow: 1px 1px 1px #000;
+}
