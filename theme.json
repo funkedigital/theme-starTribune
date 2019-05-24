@@ -24,7 +24,7 @@
         },
         "breakingNews_switch": {
             "label": "Turn on/off breaking news layout",
-            "value": false,
+            "value": true,
             "type": "boolean"
         },        
         "primary_color": {
@@ -45,8 +45,12 @@
                 "numberOfArticles": 2
             },
             {
-                "name": "Spiele",
-                "type": "collection"
+                "name": "Business",
+                "slug": "business",
+                "type": "collection",
+                "templateName": "category.html.twig",
+                "articlesTemplateName": "article.html.twig",
+                "numberOfArticles": 4
             },
             {
                 "name": "Opinion",
