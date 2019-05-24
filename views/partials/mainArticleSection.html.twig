@@ -2,12 +2,14 @@
 
 <article class="mainArticleList {{class}}">
 
+{#
   {% set articleKicker = null %}
   {% for keyword in article.keywords %}
     {% if loop.first %}
     {% set articleKicker = keyword %}
     {% endif %}
   {% endfor %}
+#}
 
           <figure class="mainArticleList__image{% if image =='small' %}mainArticle__image--small{% endif %} ">
             {% if article.featureMedia %}
@@ -41,7 +43,7 @@
             </figure>
 
           <div class="mainArticleList__text">
-            {% if articleKicker %}<span class="mainArticleList__kicker">{{ articleKicker }}</span>{% endif %}
+            <span class="mainArticleList__kicker">{{ article.featureMedia.body|striptags|upper|safeTruncate(200,"...") }}</span>
             <h2 class="mainArticleList__headline "><a href="{{ url(article) }}">
               {{ article.title }}
             </a></h2>
