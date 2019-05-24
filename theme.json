@@ -53,12 +53,12 @@
                 "numberOfArticles": 7
             },
             {
-                "name": "Kochen-Backen",
-                "slug": "kochen-backen",
+                "name": "Opinion",
+                "slug": "opinion",
                 "type": "collection",
                 "templateName": "category.html.twig",
-                "articlesTemplateName": "articleGrid__item.html",
-                "numberOfArticles": 7
+                "articlesTemplateName": "article.html.twig",
+                "numberOfArticles": 4
             },
             {
                 "name": "Politics",
