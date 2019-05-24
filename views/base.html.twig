@@ -228,27 +228,24 @@
 <footer class="footer">
   <div class="container">
     <div class="row">
-      <div class="footer__logo col-12 col-sm-2">
-        <a href='/'><img src="{{ themeLogo(asset('/public/img/logo-white.png')) }}"></a>
-        <div class="socialMedia my-3">{# Social Media Links here#}</div>
-      </div>
-      <div class="categoryItems col-12 col-sm10 d-none d-sm-block">
-      {% container 'footerNav' %}
-        <!-- Content of this container is defined by menu widget which is linked to it. Template used for this menu is widgets/menu2.html.twig -->
-      {% endcontainer %}
-      </div>
-      <div class="footer_bottom">
-        <div class="container">
-          <div class="row">
-            <nav class="staticNav col-12 col-sm-8" role="navigation">
-            {#Important Nav Links#}
-            </nav>
+        <div class="footer__logo col-12 col-sm-2">
+          <a href='/'><img src="{{ themeLogo(asset('/public/img/logo-white.png')) }}"></a>
+          <div class="socialMedia my-3">{# Social Media Links here#}</div>
         </div>
-      </div>
-
-
-
-
+        <div class="categoryItems col-12 col-sm10 d-none d-sm-block">
+        {% container 'footerNav' %}
+          <!-- Content of this container is defined by menu widget which is linked to it. Template used for this menu is widgets/menu2.html.twig -->
+        {% endcontainer %}
+        </div>
+        <div class="footer_bottom">
+          <div class="container">
+            <div class="row">
+              <nav class="staticNav col-12 col-sm-8" role="navigation">
+                {#Important Nav Links#}
+              </nav>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </footer>
