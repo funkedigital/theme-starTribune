@@ -225,46 +225,29 @@
 
 <!-- Footer -->
 
-<footer class="footer marginTop30">
+<footer class="footer">
   <div class="container">
     <div class="row">
-
-      <div class="footer__logo col-md-3 col-sm-3 col-xs-12">
-        <a href="{{ url('homepage') }}"><img src="{{ themeLogo(asset('/public/img/logo-white.png')) }}"></a>
+      <div class="footer__logo col-12 col-sm-2">
+        <a href='/'><img src="{{ themeLogo(asset('/public/img/logo-white.png')) }}"></a>
+        <div class="socialMedia my-3">{# Social Media Links here#}</div>
       </div>
-
-{% container 'footerNav' %}
-
-<!-- Content of this container is defined by menu widget which is linked to it. Template used for this menu is widgets/menu2.html.twig -->
-
-{% endcontainer %}
-
-      <div class="footer__section col-sm-2 col-md-2 col-xs-12">
-        <h4 class="footer__sectionHeadline">Social</h4>
-        <ul>
-          <li><a href="https://www.facebook.com/Superdesk/">Facebook</a></li>
-          <li><a href="https://twitter.com/Sourcefabric">Twitter</a></li>
-          <li><a href="https://www.youtube.com/user/Sourcefabric">Youtube</a></li>
-          <li><a href="https://plus.google.com/+SourcefabricOrgHQ">Google+</a></li>
-        </ul>
+      <div class="categoryItems col-12 col-sm10 d-none d-sm-block">
+      {% container 'footerNav' %}
+        <!-- Content of this container is defined by menu widget which is linked to it. Template used for this menu is widgets/menu2.html.twig -->
+      {% endcontainer %}
       </div>
-
-      <div class="footer__subscribe col-sm-3 col-md-3 col-xs-12">
-        <h4 class="footer__sectionHeadline">Subscribe</h4>
-
-        <div class="footer__subscribeForm">
-          <form class="form" method="get" action="/register">
-            <input type="text" name="proposed_email" placeholder="Your email">
-            <button class="footer__subscribeButton button button--color" type="submit">Send</button>
-          </form>
+      <div class="footer_bottom">
+        <div class="container">
+          <div class="row">
+            <nav class="staticNav col-12 col-sm-8" role="navigation">
+            {#Important Nav Links#}
+            </nav>
         </div>
-
-        <div class="footer__text">
-          <p>© 2017 Sourcefabric All Rights Reserved <br>
-          <a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></p>
-        </div>
-
       </div>
+
+
+
 
     </div>
   </div>
