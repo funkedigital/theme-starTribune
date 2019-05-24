@@ -121,7 +121,7 @@
 			{% set currArt = gimme.article.id %}
 				<div class="articleGrid col-md-6 col-sm-6 col-xs-12">
 				{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') if id != currArt %}
-					{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns'} %}
+					{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item col-12 col-md-3'} %}
 				{% endgimmelist %}
 
 				</div>
