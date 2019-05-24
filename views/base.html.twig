@@ -162,14 +162,13 @@
           <img src="" class="weather-icon" alt="Weather Icon" />
           </p>
         </div>
-
+      {#
         {% block logo %}
-        {% dump %}
         <div class="verticalMiddle verticalMiddle col-2 offset-2">
           <a class="header__logo" href="/"><img src="{{ themeLogo(asset('/public/img/logo.png')) }}"></a>
         </div>
         {% endblock %}
-
+      #}
         <div class="header__search verticalMiddle col-4 p-0">
 
           <!--form id="search" name="search_articles" method="GET" action="/search">
