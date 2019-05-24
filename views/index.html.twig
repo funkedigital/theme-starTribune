@@ -111,7 +111,7 @@
 								<div class="row">
 									<div class="col-12">
 										<h3 class="sectionHeadingBold marginTop30"><a
-												href="{{ url('spass-unterhaltung/spiele') }}">Spiele</a></h3>
+												href="{{ path('spass-unterhaltung/spiele') }}">Spiele</a></h3>
 										<div class="row">
 											<div class="articleGrid col-md-6 col-sm-6 col-xs-12">
 												{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/spass-unterhaltung/spiele'}  %}
