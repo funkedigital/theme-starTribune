@@ -44,6 +44,7 @@
                 <div class="mainArticle__teaser d-none d-md-block">
                   <p class="m-0">{{ article.featureMedia.body|striptags|upper|safeTruncate(200,"...") }}</p>
                 </div>
+                {{ dump(article) }}
                   <h2 class="mainArticle__headline"><a href="{{ url(article) }}">{{ article.title }}</a></h2>
       
            {#
