@@ -221,6 +221,9 @@
                 "name": "frontLeftSidebar"
             },
             {
+                "name": "footerSec"
+            },
+            {
                 "name": "listMost",
                 "cssClass": "accordion marginBottom30"
             }
