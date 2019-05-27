@@ -1,4 +1,4 @@
-{% set version = '1558960952610' %}
+{% set version = '1558961014110' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -184,7 +184,6 @@
     </div>
 
   </header>
-  {% dump container %}
 
 {% container 'mainNav' %}
   {#Content of this container is defined by menu widget which is linked to it. Template used for this menu is widgets/menu1.html.twig  #}
@@ -225,12 +224,14 @@
 {% block body %}{% endblock %}
 
 <!-- Footer -->
-  {% dump widgets %}
 
   {% container 'footerNavSec' %}
     <!-- Content of this container is defined by menu widget which is linked to it. Template used for this menu is widgets/menu3.html.twig -->
   {% endcontainer %}
-<footer class="footer">
+
+  {{ include('widgets/footerSec.html.twig') }}
+
+  <footer class="footer">
   <div class="container">
     <div class="row">
         <div class="footer__logo col-12 col-sm-2">
