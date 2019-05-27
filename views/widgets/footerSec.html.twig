@@ -1,10 +1,5 @@
 <ul>
-    {% gimmelist article from articles %}
-
-    {% dump article %}
-
-        <h1>test: {{ article.name }}</h1>
-
-        {% endgimme %}
-
-</ul>
+    {% gimme route with {  slug: 'agbs', name: 'Agbs'} %} <li>{{ route.name }}</li> <!-- Route's name -->
+        <li>{{ route.slug }}</li> <!-- Route's slug -->
+        <li>{{ url(route) }}</li> <!-- Route's url -->
+    {% endgimme %} </ul>
