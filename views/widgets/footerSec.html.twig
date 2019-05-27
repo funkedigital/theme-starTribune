@@ -1,6 +1,9 @@
 <ul>
-    {% gimmelist route from mainNavigation2 %}
-    {% dump route %}
+    {% gimmelist route with {  parent: 'Agbs'} %}
+    <li>{{ route.name }}</li> <!-- Route's name -->
+    <li>{{ route.slug }}</li> <!-- Route's slug -->
+    <li>{{ url(route) }}</li> <!-- Route's url -->
     {% endgimme %}
 
 </ul>
+
