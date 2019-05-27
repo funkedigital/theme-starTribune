@@ -1,9 +1,7 @@
+
+
+
 <ul>
-    {% gimmelist route with {  parent: 'Agbs'} %}
-    <li>{{ route.name }}</li> <!-- Route's name -->
-    <li>{{ route.slug }}</li> <!-- Route's slug -->
-    <li>{{ url(route) }}</li> <!-- Route's url -->
-    {% endgimme %}
+    {% gimmelist item from routes with { parent: "Agbs" } %} <li>{{ item.content.title }}</li> <!-- Article title -->
 
 </ul>
-
