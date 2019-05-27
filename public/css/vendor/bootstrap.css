@@ -39,9 +39,12 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  background-color: red;
+
 }
 
 html {
+  background-color: red;
   font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
