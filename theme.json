@@ -220,10 +220,6 @@
             {
                 "name": "frontLeftSidebar"
             },
-
-            {
-                "name": "footerNavSec"
-            },
             {
                 "name": "listMost",
                 "cssClass": "accordion marginBottom30"
@@ -279,16 +275,6 @@
                     "template_name": "menu2.html.twig"
                 },
                 "containers": ["footerNav"]
-            },
-            {
-                "type": "SWP\\Bundle\\TemplatesSystemBundle\\Widget\\MenuWidgetHandler",
-                "name": "footerSec",
-                "visible": true,
-                "parameters": {
-                    "menu_name": "footerSec",
-                    "template_name": "menu3.html.twig"
-                },
-                "containers": ["footerNavSec"]
             }
         ]
     }

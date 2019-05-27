@@ -1,4 +1,4 @@
-{% set version = '1558963288315' %}
+{% set version = '1558963348496' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -227,9 +227,10 @@
 
   {{ include('widgets/footerSec.html.twig') }}
 
+
   <footer class="footer">
-  <div class="container">
-    <div class="row">
+    <div class="container">
+      <div class="row">
         <div class="footer__logo col-12 col-sm-2">
           <a href='/'><img src="{{ themeLogo(asset('/public/img/logo-white.png')) }}"></a>
         </div>
@@ -250,9 +251,11 @@
             </div>
           </div>
         </div>
+      </div>
+      {{ include('widgets/footerSec.html.twig') }}
+
     </div>
-  </div>
-</footer>
+  </footer>
 
   <script src="/public/dist/all.js"></script>
 
