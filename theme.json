@@ -269,7 +269,7 @@
                 },
                 "containers": ["listMost"]
             },
-            
+
             {
                 "type": "SWP\\Bundle\\TemplatesSystemBundle\\Widget\\MenuWidgetHandler",
                 "name": "footerSec",
