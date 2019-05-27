@@ -208,9 +208,7 @@
             }
         ],
         "containers": [
-            {
-                "name": "footerNav"
-            },
+
             {
                 "name": "mainNav"
             },
