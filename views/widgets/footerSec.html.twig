@@ -1,5 +1,5 @@
 <ul>
-    {% gimme route with {  slug: 'agbs'} %} <li>{{ route.name }}</li> <!-- Route's name -->
+    {% gimmelist route from routes with {  slug: 'agbs'} %} <li>{{ route.name }}</li> <!-- Route's name -->
         <li>{{ route.slug }}</li> <!-- Route's slug -->
         <li>{{ url(route) }}</li> <!-- Route's url -->
     {% endgimme %} </ul>
