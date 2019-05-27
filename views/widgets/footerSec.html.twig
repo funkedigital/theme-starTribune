@@ -1,9 +1,9 @@
 <ul>
-    {% gimme mainnavigation2 %}
+    {% gimmelist article from articles %}
 
-    {% dump mainnavigation2 %}
+    {% dump article %}
 
-        <h1>test: {{ mainnavigation2.title }}</h1>
+        <h1>test: {{ article.name }}</h1>
 
         {% endgimme %}
 
