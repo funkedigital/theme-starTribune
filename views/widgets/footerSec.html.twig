@@ -1,19 +1,4 @@
 
 
-<ul>
-    {% gimme contentList with { contentListName: "mainNavigation2" } %}
-        <li>{{ contentList.name }}</li> <!-- Content list name -->
-        <li>{{ contentList.description }}</li> <!-- Content list description --> <li>{{ contentList.type }}</li> <!-- Content list type) -->
-    {% endgimme %} </ul>
-
-<ul>
-    {% gimmelist item from contentListItems with { contentListName: "mainNavigation2" } %} <li>{{ item.content.title }}</li> <!-- Article title -->
-
-
-    <ul>
-        {% gimmelist item from contentListItems with { contentListName: "footerprim" } %} <li>{{ item.content.title }}</li> <!-- Article title -->
-
-
-
         <ul>
-            {% gimmelist item from contentListItems with { contentListName: "footerPrim" } %} <li>{{ item.content.title }}</li> <!-- Article title -->
+            {% gimmelist item from contentListItems with { contentListName: "footerPrim" } %} <li>{{ item.content.title }}</li>
