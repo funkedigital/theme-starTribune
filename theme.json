@@ -278,7 +278,7 @@
             },
             {
                 "type": "SWP\\Bundle\\TemplatesSystemBundle\\Widget\\MenuWidgetHandler",
-                "name": "footerPrim",
+                "name": "footerSec",
                 "visible": true,
                 "parameters": {
                     "menu_name": "footerSec",
