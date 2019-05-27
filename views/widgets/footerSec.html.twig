@@ -1,18 +1,6 @@
+{% gimmelist article from articles|limit(5)|order('pageViews', 'desc')|dateRange('now', '-1 year') ignoreContext %}
 
-{% block list %}
-
-
-    {% if item.hasChildren and options.depth is not same as(0) and item.displayChildren %}
-        {% import _self as knp_menu %}
-        <div class="footer__section col-sm-4 col-md-4 col-xs-12 hidden-xs">
-            <h4 class="footer__sectionHeadline">Sections</h4>
-            <ul class="footer__sectionTwoColumns">
-                {{ block('children') }}
-            </ul>
-        </div>
-    {% endif %}
-{% endblock %}
+    <h4 class="accordion__sectionHeadline"><a href="{{ url(article) }}">{{ article.title }}</a></h4>
 
 
-
-<h1>footer secondary</h1>
+{% endgimmelist %}
