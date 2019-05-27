@@ -282,7 +282,7 @@
                 "visible": true,
                 "parameters": {
                     "menu_name": "footerSec",
-                    "template_name": "menu2.html.twig"
+                    "template_name": "menu3.html.twig"
                 },
                 "containers": ["footerNavSec"]
             }
