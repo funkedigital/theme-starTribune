@@ -275,6 +275,16 @@
                     "template_name": "menu2.html.twig"
                 },
                 "containers": ["footerNav"]
+            },
+            {
+                "type": "SWP\\Bundle\\TemplatesSystemBundle\\Widget\\MenuWidgetHandler",
+                "name": "footerPrim",
+                "visible": true,
+                "parameters": {
+                    "menu_name": "footerSec",
+                    "template_name": "menu2.html.twig"
+                },
+                "containers": ["footerNav"]
             }
         ]
     }
