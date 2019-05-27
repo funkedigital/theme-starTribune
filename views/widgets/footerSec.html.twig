@@ -1,4 +1,7 @@
 
 
-        <ul>
-            {% gimmelist item from contentListItems with { contentListName: "footerPrim" } %} <li>{{ item.content.title }}</li>
+            {% gimmelist item from contentListItems with { contentListName: "footerPrim" } %}
+
+            {% dump item %}
+
+            {% endgimmelist %}
