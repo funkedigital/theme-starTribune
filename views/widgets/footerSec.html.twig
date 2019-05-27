@@ -1,6 +1,10 @@
-{% gimmelist article from articles|limit(5)|order('pageViews', 'desc')|dateRange('now', '-1 year') ignoreContext %}
+{% gimmelist footerPrim from navigation %}
 
-    <h4 class="accordion__sectionHeadline"><a href="{{ url(article) }}">{{ article.title }}</a></h4>
+{% dump footerPrim %}
+
+
+
+    <h4 class="accordion__sectionHeadline"><a href="{{ url(footerPrim) }}">{{ footerPrim }}</a></h4>
 
 
 {% endgimmelist %}
