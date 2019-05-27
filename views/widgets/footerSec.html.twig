@@ -1,5 +1,11 @@
 <ul>
-    {% gimme route with {  slug: 'agbs', name: 'Agbs'} %} <li>{{ route.name }}</li> <!-- Route's name -->
+    {% gimme route with {  slug: 'agbs'} %} <li>{{ route.name }}</li> <!-- Route's name -->
         <li>{{ route.slug }}</li> <!-- Route's slug -->
         <li>{{ url(route) }}</li> <!-- Route's url -->
+    {% endgimme %} </ul>
+
+<ul>
+    {% gimme contentList with { contentListName: "List1" } %}
+        <li>{{ contentList.name }}</li> <!-- Content list name -->
+        <li>{{ contentList.description }}</li> <!-- Content list description --> <li>{{ contentList.type }}</li> <!-- Content list type) -->
     {% endgimme %} </ul>
