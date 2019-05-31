@@ -7,9 +7,15 @@
 
             <div class="categoryItems col-12 col-sm-10 d-none d-sm-block">
 
-                <ul id="secLine" class="d-flex justify-content-around">
+
+
+
+                <ul class="list-inline d-flex justify-content-around">
+
                     {% gimmelist route from routes with {parent: "Agbs"} %}
                         <li>{{ route.name }}</li>
+                        <li class="list-inline-item">{{ route.name }}</li>
+
                     {% endgimmelist %}
                 </ul>
 
