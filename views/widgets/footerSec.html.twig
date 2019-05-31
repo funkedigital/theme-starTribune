@@ -1,14 +1,27 @@
+
 <div class="secRoutes">
 
-    <div class="categoryItems col-12 col-sm-10 d-none d-sm-block">
 
-        <ul id="secLine">
-            {% gimmelist route from routes with {parent: "Agbs"} %}
-                <li>{{ route.name }}</li>
-                {% endgimmelist %}
-        </ul>
+    <div class="d-flex">
+        <div class="p-2">
 
+            <div class="categoryItems col-12 col-sm-10 d-none d-sm-block">
+
+                <ul id="secLine" class="d-flex justify-content-around">
+                    {% gimmelist route from routes with {parent: "Agbs"} %}
+                        <li>{{ route.name }}</li>
+                    {% endgimmelist %}
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="ml-auto p-2">Copyright something</div>
     </div>
+
+   
 
 </div>
 
