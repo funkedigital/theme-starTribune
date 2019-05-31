@@ -3,8 +3,9 @@
     <div class="categoryItems col-12 col-sm-10 d-none d-sm-block">
 
         <ul>
-            {% gimme route with { name: 'route'} %} <li>{{ route.name }}</li> <!-- Route's name -->
-            {% endgimme %} </ul>
+            {% gimmelist route from routes with {parent: 1} %}
+<li>{{ route.name }}
+                {% endgimmelist %} </ul>
 
     </div>
 
