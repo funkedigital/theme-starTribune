@@ -2,8 +2,10 @@
 
     <div class="categoryItems col-12 col-sm-10 d-none d-sm-block">
 
-       footer secondary
-
+        <ul>
+            {% gimme navigation with { navigationName: "footerPrim" } %}
+                <li>{{ contentList.name }}</li> <!-- Content list name -->
+            {% endgimme %} </ul>
     </div>
 
 </div>
