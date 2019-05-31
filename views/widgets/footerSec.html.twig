@@ -2,7 +2,7 @@
 
     <div class="categoryItems col-12 col-sm-10 d-none d-sm-block">
 
-        <ul>
+        <ul id="secLine">
             {% gimmelist route from routes with {parent: "Agbs"} %}
                 <li>{{ route.name }}</li>
                 {% endgimmelist %}
@@ -16,7 +16,14 @@
 <style>
 
     .secRoutes{
-        background-color: red;
+        position: absolute;
+        width: 100%;
+        left: 0;
+    }
+
+    ul#secLine li {
+        display: inline;
+
     }
 
 
