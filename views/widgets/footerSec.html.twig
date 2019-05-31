@@ -9,7 +9,7 @@
 
                 <ul id="secLine" class="d-flex justify-content-around">
                     {% gimmelist route from routes with {parent: "Agbs"} %}
-                        <li>{{ route.name }}</li>
+                        <li id="routeItem">{{ route.name }}</li>
                     {% endgimmelist %}
                 </ul>
 
@@ -26,6 +26,10 @@
 
 
 <style>
+
+    li#routeItem {
+        margin:0 0 10px 0;
+    }
 
     .ml-auto {
         margin-left: 0!important;
