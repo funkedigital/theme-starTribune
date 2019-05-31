@@ -6,7 +6,14 @@
 
                 <ul id="secLine" class="d-flex justify-content-around">
                     {% gimmelist route from routes with {parent: "Agbs"} %}
-                        <li id="routeItem">{{ url(route) }}</li>
+
+
+                        <li id="routeItem">
+                            <a href={{ url(route) }}>
+                                {{ route.name }}
+                            </a>
+                        </li>
+
                     {% endgimmelist %}
                 </ul>
             </nav>
@@ -16,7 +23,6 @@
         </div>
     </div>
 </div>
-
 
 
 {#    <div class="col-12 d-flex">#}
@@ -41,7 +47,7 @@
 
 <style>
 
-    @media (min-width: 768px){
+    @media (min-width: 768px) {
         .footer .footer__text {
             text-align: right;
         }
@@ -53,6 +59,7 @@
         margin: 5px 0;
         list-style: none;
     }
+
     .footer .footer__bottom {
         background: #212126;
         padding: 15px 0;
