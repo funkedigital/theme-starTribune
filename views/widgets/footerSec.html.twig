@@ -1,29 +1,47 @@
-
-<div class="secRoutes">
-
-    <div class="row">
-
-    <div class="col-12 d-flex">
-        <div class="p-2">
-
-            <div class="categoryItems col-12 col-sm-10 d-none d-sm-block">
-
-                <ul id="secLine" class="d-flex justify-content-around">
-                    {% gimmelist route from routes with {parent: "Agbs"} %}
-                        <li id="routeItem">{{ route.name }}</li>
-                    {% endgimmelist %}
+<div class="footer__bottom">
+    <div class="container">
+        <div class="row">
+            <nav class="staticNav col-sm-8 col-md-8 col-xs-12" role="navigation">
+                <ul>
+                    <li class="first"> <a href="/uslovi-koriscenja">Uslovi korišćenja</a>
+                    </li>
+                    <li> <a href="/pravila-komentarisanja">Pravila komentarisanja i registracija</a>
+                    </li>
+                    <li> <a href="/impressum">Impressum</a>
+                    </li>
+                    <li> <a href="/kontakt">Kontakt</a>
+                    </li>
+                    <li> <a href="/marketing">Marketing</a>
+                    </li>
+                    <li class="last"> <a href="/pisi-ombudsmanu">Piši ombudsmanu</a>
+                    </li>
                 </ul>
-
-            </div>
-
+            </nav>
+            <p class="footer__text col-sm-4 col-md-4 col-xs-12">© 2019 Vijesti All Rights Reserved</p>
         </div>
-
-
-        <p class="footer__text col-sm-4 col-md-4 col-xs-12">Copyright something</p>
-    </div>
-
     </div>
 </div>
+
+
+{#    <div class="col-12 d-flex">#}
+{#        <div class="p-2">#}
+
+{#            <div class="categoryItems col-12 col-sm-10 d-none d-sm-block">#}
+
+{#                <ul id="secLine" class="d-flex justify-content-around">#}
+{#                    {% gimmelist route from routes with {parent: "Agbs"} %}#}
+{#                        <li id="routeItem">{{ route.name }}</li>#}
+{#                    {% endgimmelist %}#}
+{#                </ul>#}
+
+{#            </div>#}
+
+{#        </div>#}
+
+
+{#        <p class="footer__text col-sm-4 col-md-4 col-xs-12">Copyright something</p>#}
+{#    </div>#}
+
 
 
 <style>
