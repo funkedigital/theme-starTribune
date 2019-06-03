@@ -1,281 +1,305 @@
-{% set version = '1559570861964' %}
+{% set version = '1559571166360' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-  Remove this if you use the .htaccess -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>{% block title %}The Tribune Theme for Superdesk Publisher{% endblock %}</title>
-  <meta name="author" content="Sourcefabric">
+    <title>{% block title %}The Tribune Theme for Superdesk Publisher{% endblock %}</title>
+    <meta name="author" content="Sourcefabric">
 
-  <meta name="description" content="Superdesk Publisher is state of the art publishing system.">
-  <meta name="keywords" content="Superdesk, Sourcefabric, open source, media, journalism">
+    <meta name="description" content="Superdesk Publisher is state of the art publishing system.">
+    <meta name="keywords" content="Superdesk, Sourcefabric, open source, media, journalism">
 
-  <meta name="google-site-verification" content="uJB4D5iTxa0pKz2QP1XiHFwa3lFd2F0oTcHd-bHpU2U" />
+    <meta name="google-site-verification" content="uJB4D5iTxa0pKz2QP1XiHFwa3lFd2F0oTcHd-bHpU2U"/>
 
-  <meta name="robots" content="noindex">
+    <meta name="robots" content="noindex">
 
- <!-- RSS & Pingback -->
-  <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="{{ url('rss') }}">
+    <!-- RSS & Pingback -->
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="{{ url('rss') }}">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="shortcut icon" href="/public/img/icons/favicon.ico" />
+    <link rel="shortcut icon" href="/public/img/icons/favicon.ico"/>
 
-  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900|Playfair+Display:400,700,900|Source+Sans+Pro:200,300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900|Playfair+Display:400,700,900|Source+Sans+Pro:200,300,400,600,700"
+          rel="stylesheet">
 
-  <link rel="stylesheet" href="/public/dist/style.css" />
+    <link rel="stylesheet" href="/public/dist/style.css"/>
 
-  {% if themeSetting('primary_color') %}
-    <style>
-      .article .article__text a {
-        border-bottom-color: {{ themeSetting('primary_color') }};
-      }
+    {% if themeSetting('primary_color') %}
+        <style>
+            .article .article__text a {
+                border-bottom-color: {{ themeSetting('primary_color') }};
+            }
 
-      .article .article__entrefilet {
-        background: {{ themeSetting('primary_color') }};
-      }
+            .article .article__entrefilet {
+                background: {{ themeSetting('primary_color') }};
+            }
 
-      .articleMetadata .articleMetadata__updated {
-        background: {{ themeSetting('primary_color') }};
-      }
+            .articleMetadata .articleMetadata__updated {
+                background: {{ themeSetting('primary_color') }};
+            }
 
-      .button--color {
-        background: {{ themeSetting('primary_color') }};
-      }
+            .button--color {
+                background: {{ themeSetting('primary_color') }};
+            }
 
-      .editorialComment {
-        background-color: {{ themeSetting('primary_color') }};
-      }
+            .editorialComment {
+                background-color: {{ themeSetting('primary_color') }};
+            }
 
-      .gallery .gallery__strip {
-        background: {{ themeSetting('primary_color') }};
-      }
+            .gallery .gallery__strip {
+                background: {{ themeSetting('primary_color') }};
+            }
 
-      .navigation ul li a:hover {
-        color: {{ themeSetting('primary_color') }};
-      }
+            .navigation ul li a:hover {
+                color: {{ themeSetting('primary_color') }};
+            }
 
-      .navigation ul li.current a {
-        color: {{ themeSetting('primary_color') }};
-      }
+            .navigation ul li.current a {
+                color: {{ themeSetting('primary_color') }};
+            }
 
-      .okayNav__menu-toggle.icon--active span {
-        background: {{ themeSetting('primary_color') }};
-      }
+            .okayNav__menu-toggle.icon--active span {
+                background: {{ themeSetting('primary_color') }};
+            }
 
-      .pagination ul li.active {
-        border-bottom-color: {{ themeSetting('primary_color') }};
-      }
-      .pagination ul li.active a {
-        color: {{ themeSetting('primary_color') }};
-      }
+            .pagination ul li.active {
+                border-bottom-color: {{ themeSetting('primary_color') }};
+            }
 
-      .sidebarMenu__headline--active {
-        border-bottom-color: {{ themeSetting('primary_color') }};
-      }
-      .trendingTopics ul.trendingTopics__items li:first-child {
-        background: {{ themeSetting('primary_color') }};
-      }
-      .trendingTopics ul li a:hover {
-        color: {{ themeSetting('primary_color') }};
-      }
+            .pagination ul li.active a {
+                color: {{ themeSetting('primary_color') }};
+            }
 
-    </style>
-  {% endif %}
+            .sidebarMenu__headline--active {
+                border-bottom-color: {{ themeSetting('primary_color') }};
+            }
+
+            .trendingTopics ul.trendingTopics__items li:first-child {
+                background: {{ themeSetting('primary_color') }};
+            }
+
+            .trendingTopics ul li a:hover {
+                color: {{ themeSetting('primary_color') }};
+            }
+
+        </style>
+    {% endif %}
 </head>
 <body>
 
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
-  fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
 <script>
-  (function() {
-    var cx = '001959388472599317396:kn-x-ndaexq';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
+    (function () {
+        var cx = '001959388472599317396:kn-x-ndaexq';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
 </script>
 
-  <div class="topBar">
+<div class="topBar">
     <div class="container">
-      <div class="row">
+        <div class="row">
 
-        <div class="topBar__links col-sm-9 col-md-8 col-xs-12">
-          <ul class="pull-left">
-            {% gimmelist article from articles with {'route' : '/about' } %}
-            <li><a href="{{ url(article) }}">{{ article.title }}</a></li>
-            {% endgimmelist %}
-          </ul>
+            <div class="topBar__links col-sm-9 col-md-8 col-xs-12">
+                <ul class="pull-left">
+                    {% gimmelist article from articles with {'route' : '/about' } %}
+                        <li><a href="{{ url(article) }}">{{ article.title }}</a></li>
+                    {% endgimmelist %}
+                </ul>
 
-          <ul class="pull-right">
-          {% if app.user %}
-            <li><a href="#" class="open_user_profile" data-toggle="modal" data-target="#userProfile">Hello {{ app.user.username }}</a></li>
-            <li>|</li>
-            <li><a href="{{ url('security_logout') }}">Logout</a></li>
-          {% else %}
-            <li><a href="#" class="open_user_profile" data-toggle="modal" data-target="#loginPopup">Sign in</a></li>
-            <li>|</li>
-            <li><a href="#" class="open_user_profile" data-toggle="modal" data-target="#registerPopup">Sign up</a></li>
-          {% endif %}
-          </ul>
+                <ul class="pull-right">
+                    {% if app.user %}
+                        <li><a href="#" class="open_user_profile" data-toggle="modal"
+                               data-target="#userProfile">Hello {{ app.user.username }}</a></li>
+                        <li>|</li>
+                        <li><a href="{{ url('security_logout') }}">Logout</a></li>
+                    {% else %}
+                        <li><a href="#" class="open_user_profile" data-toggle="modal" data-target="#loginPopup">Sign
+                                in</a></li>
+                        <li>|</li>
+                        <li><a href="#" class="open_user_profile" data-toggle="modal" data-target="#registerPopup">Sign
+                                up</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+
+            <div class="topBar__social col-sm-3 col-md-4 col-xs-12">
+                <ul>
+                    <li><a href="https://www.facebook.com/Superdesk/"><img src="{{ asset('theme/img/social-fb.svg') }}"></a>
+                    </li>
+                    <li><a href="https://twitter.com/Sourcefabric"><img
+                                    src="{{ asset('theme/img/social-tw.svg') }}"></a></li>
+                    <li><a href="https://www.youtube.com/user/Sourcefabric"><img
+                                    src="{{ asset('theme/img/social-yt.svg') }}"></a></li>
+                    <li><a href="{{ url('rss') }}"><img src="{{ asset('theme/img/social-rss.svg') }}"></a></li>
+                </ul>
+            </div>
+
         </div>
-
-        <div class="topBar__social col-sm-3 col-md-4 col-xs-12">
-          <ul>
-            <li><a href="https://www.facebook.com/Superdesk/"><img src="{{ asset('theme/img/social-fb.svg') }}"></a></li>
-            <li><a href="https://twitter.com/Sourcefabric"><img src="{{ asset('theme/img/social-tw.svg') }}"></a></li>
-            <li><a href="https://www.youtube.com/user/Sourcefabric"><img src="{{ asset('theme/img/social-yt.svg') }}"></a></li>
-            <li><a href="{{ url('rss') }}"><img src="{{ asset('theme/img/social-rss.svg') }}"></a></li>
-          </ul>
-        </div>
-
-      </div>
     </div>
-  </div>
+</div>
 
- <header class="header my-0">
+<header class="header my-0">
 
     <div class="container my-0">
 
-      <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between">
 
-        <div class="verticalMiddle col-2 p-0">
-          <p class="header__weather row text-center justify-content-center">
-            <span class="weather-temperature col-12"></span>
-            <span class="header__weather__info col-12">
+            <div class="verticalMiddle col-2 p-0">
+                <p class="header__weather row text-center justify-content-center">
+                    <span class="weather-temperature col-12"></span>
+                    <span class="header__weather__info col-12">
               <span class="weather-place"></span> <br>
               <span class="weather-description"></span>
             </span>
-          <img src="" class="weather-icon" alt="Weather Icon" />
-          </p>
-        </div>
-      
-        {% block logo %}
-        <div class="verticalMiddle verticalMiddle col-2 offset-2">
-          <a class="header__logo" href="/"><img src="{{ themeLogo(asset('/public/img/logo.png')) }}"></a>
-        </div>
-        {% endblock %}
+                    <img src="" class="weather-icon" alt="Weather Icon"/>
+                </p>
+            </div>
 
-        {{ include('widgets/inc/searchBox.html.twig') }}
+            {% block logo %}
+                <div class="verticalMiddle verticalMiddle col-2 offset-2">
+                    <a class="header__logo" href="/"><img src="{{ themeLogo(asset('/public/img/logo.png')) }}"></a>
+                </div>
+            {% endblock %}
 
-        
-      </div>
+            {{ include('widgets/inc/searchBox.html.twig') }}
+
+
+        </div>
 
     </div>
 
-  </header>
+</header>
 
 {% container 'mainNav' %}
-  {#Content of this container is defined by menu widget which is linked to it. Template used for this menu is widgets/menu1.html.twig  #}
+    {#Content of this container is defined by menu widget which is linked to it. Template used for this menu is widgets/menu1.html.twig  #}
 {% endcontainer %}
 
-        {# Trending topics is array of first in a row keyword of three latest articles #}
-        {% cache 'subMenu' { time:0 } %}
-        {% set trendingTopics = [] %}
-        {% set i = 0 %}
-        {% gimmelist article from articles|order('publishedAt','desc')|limit(3) ignoreContext %}
-          {% for keyword in article.keywords %}
+{# Trending topics is array of first in a row keyword of three latest articles #}
+{% cache 'subMenu' { time:0 } %}
+    {% set trendingTopics = [] %}
+    {% set i = 0 %}
+    {% gimmelist article from articles|order('publishedAt','desc')|limit(3) ignoreContext %}
+        {% for keyword in article.keywords %}
             {% if loop.first and (keyword not in trendingTopics) %}
-            {% set trendingTopics = trendingTopics|merge([keyword]) %}
-            {% set i = i+1 %}
+                {% set trendingTopics = trendingTopics|merge([keyword]) %}
+                {% set i = i+1 %}
             {% endif %}
-          {% endfor %}
-        {% endgimmelist %}
+        {% endfor %}
+    {% endgimmelist %}
 
-{% if i > 0 %}
-  <div class="trendingTopics my-0">
-    <div class="container">
-      <div class="okayNav-header">
-        <nav role="navigation" id="topics" class="okayNav">
-          <ul class="trendingTopics__items">
-            <li>Trending topics</li>
-            {% for topic in trendingTopics %}
-            <li><a href="{{ url('trending') }}?topic={{ topic|lower }}">{{ topic }}</a></li>
-            {% endfor %}
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </div>
-{% endif %}  
+    {% if i > 0 %}
+        <div class="trendingTopics my-0">
+            <div class="container">
+                <div class="okayNav-header">
+                    <nav role="navigation" id="topics" class="okayNav">
+                        <ul class="trendingTopics__items">
+                            <li>Trending topics</li>
+                            {% for topic in trendingTopics %}
+                                <li><a href="{{ url('trending') }}?topic={{ topic|lower }}">{{ topic }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    {% endif %}
 
-      {% endcache %}
+{% endcache %}
 
 {% block body %}{% endblock %}
 
 <!-- Footer -->
 
-  <footer class="footer" style="padding-bottom: 0">
+<footer class="footer" style="padding-bottom: 0">
     <div class="container">
-      <div class="row">
-        <div class="footer__logo col-12 col-sm-2">
-          <a href='/'><img src="{{ themeLogo(asset('/public/img/logo-white.png')) }}"></a>
-        </div>
-        <div class="categoryItems col-12 col-sm-10 d-none d-sm-block">
-
-          {% container 'footerNav' %}
-            <!-- Content of this container is defined by menu widget which is linked to it. Template used for this menu is widgets/menu2.html.twig -->
-          {% endcontainer %}
-
-        </div>
-        <div class="socialMedia col-12">{# Social Media Links here#}</div>
-        <div class="footer_bottom" style=" width: 100%; ">
-          <div class="container">
-            <div class="row">
-              <nav class="staticNav col-12 col-sm-12" role="navigation">
-                {{ include('widgets/inc/footerSec.html.twig') }}
-              </nav>
+        <div class="row">
+            <div class="footer__logo col-12 col-sm-2">
+                <a href='/'><img src="{{ themeLogo(asset('/public/img/logo-white.png')) }}"></a>
             </div>
-          </div>
+            <div class="categoryItems col-12 col-sm-10 d-none d-sm-block">
+
+                {% container 'footerNav' %}
+                    <!-- Content of this container is defined by menu widget which is linked to it. Template used for this menu is widgets/menu2.html.twig -->
+                {% endcontainer %}
+
+            </div>
+            <div class="socialMedia col-12">{# Social Media Links here#}</div>
+            <div class="footer_bottom" style=" width: 100%; ">
+                <div class="container-fluid secFoot">
+
+                    <div class="container">
+                        <div class="row">
+                            <nav class="staticNav col-12 col-sm-12" role="navigation">
+                                {{ include('widgets/inc/footerSec.html.twig') }}
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
 
     </div>
 
+</footer>
 
-  </footer>
-
-  <script src="/public/dist/all.js"></script>
+<script src="/public/dist/all.js"></script>
 
 <script id="dsq-count-scr" src="//superdeskdailynews.disqus.com/count.js" async></script>
 
 <script type="text/javascript">
-// Weather script: https://github.com/michael-lynch/open-weather
+    // Weather script: https://github.com/michael-lynch/open-weather
 
-    $(function() {
-      $('.weather-temperature').openWeather({
-        key: 'ffccf64d91c2144d8018e8c5fc4a2e0d',
-        city: 'Berlin',
-        units: 'c',
-        descriptionTarget: '.weather-description',
-        minTemperatureTarget: '.weather-min-temperature',
-        maxTemperatureTarget: '.weather-max-temperature',
-        placeTarget: '.weather-place',
-        iconTarget: '.weather-icon',
-        customIcons: '{{ asset('/public/img/icons/weather/') }}',
-        success: function() {
-          $('.topBar__weather').show();
-        },
-        error: function() {
-          console.log("These aren't the droids you're looking for.");
-        }
-      });
+    $(function () {
+        $('.weather-temperature').openWeather({
+            key: 'ffccf64d91c2144d8018e8c5fc4a2e0d',
+            city: 'Berlin',
+            units: 'c',
+            descriptionTarget: '.weather-description',
+            minTemperatureTarget: '.weather-min-temperature',
+            maxTemperatureTarget: '.weather-max-temperature',
+            placeTarget: '.weather-place',
+            iconTarget: '.weather-icon',
+            customIcons: '{{ asset('/public/img/icons/weather/') }}',
+            success: function () {
+                $('.topBar__weather').show();
+            },
+            error: function () {
+                console.log("These aren't the droids you're looking for.");
+            }
+        });
 
     });
 </script>
 
-  </body>
-  </html>
+<style>
+
+    .secFoot {
+        padding: 0;
+        margin: 0;
+        background-color: rebeccapurple;
+        position: absolute;
+        left: 0;
+    }
+</style>
+
+</body>
+</html>
