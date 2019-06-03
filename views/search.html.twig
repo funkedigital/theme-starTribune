@@ -6,7 +6,6 @@
 	{% dump searchResults %}
 
 	<main class="container">
-		<div class="row">
 
 
 				{% set itemsPerPage, currentPage = 8, app.request.get('page', 1) %} {% set start = ((currentPage - 1) * itemsPerPage) %}
@@ -44,7 +43,6 @@
 						</div>
 					</div>
 
-				</div>
 
 
 
