@@ -71,7 +71,7 @@
 
             {% set totalResult = (loop.totalLength/3)|round(0, 'floor') %}
 
-            {% dump (totalResult/itemsPerPage)|round(0, 'ceil') } only %}
+            {% dump (totalResult/itemsPerPage)|round(0, 'ceil') only %}
 
             {% if loop.last %}
                 {% include 'widgets/inc/pagination.html.twig' with { currentFilters: {}|merge(app.request.query.all()), currentPage: currentPage,
