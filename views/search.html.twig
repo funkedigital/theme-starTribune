@@ -36,8 +36,13 @@
 
                         {% for author in gimme.article.authors %}
 
-                            <p class="mb-1 text-muted blog-post-meta">January 1, 2014 by <a class="text-muted"
-                                                                                            href="{{ url('Authors', { 'authorSlug' : author.slug }) }}">{{ author.name }}</a>
+                            <p class="mb-1 text-muted blog-post-meta">
+
+                                {{ article.publishedAt|date("d F Y, H:i \\h") }}
+
+                                By
+
+                                <a class="text-muted" href="{{ url('Authors', { 'authorSlug' : author.slug }) }}">{{ author.name }}</a>
                             </p>
 
 
@@ -64,7 +69,7 @@
                 </div>
             </div>
 
-{% dump loop %}
+{% dump loop.last %}
             {% if loop.last %}
                 {% include 'widgets/inc/pagination.html.twig' with { currentFilters: {}|merge(app.request.query.all()), currentPage: currentPage,
                     paginationPath: gimme.route,
