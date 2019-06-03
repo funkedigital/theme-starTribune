@@ -4,12 +4,12 @@
 
 
         <ul>
-    {% gimmelist item from routes %}
+    {% gimmelist route from routes %}
+    {% dump route %}
 
-        {% if item.hasChildren and options.depth is not same as(0) and item.displayChildren %}
+        {% if route.hasChildren and options.depth is not same as(0) and item.displayChildren %}
             {% import _self as knp_menu %}
 
-            {% dump item %}
 
 
             <div class="footer__section col-sm-4 col-md-4 col-xs-12 hidden-xs">
