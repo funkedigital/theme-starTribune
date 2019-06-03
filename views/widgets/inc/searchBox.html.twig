@@ -13,6 +13,11 @@
 <script>
 
 
-    document.getElementById("searchInp").value = "Johnny Bravo";
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const myParam = urlParams.get('q');
+    document.getElementById("searchInp").value = myParam;
+
+    alert(myParam);
 
 </script>
