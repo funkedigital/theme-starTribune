@@ -69,7 +69,7 @@
                 </div>
             </div>
 
-{% dump loop.last %}
+{% dump loop.totalLength %}
             {% if loop.last %}
                 {% include 'widgets/inc/pagination.html.twig' with { currentFilters: {}|merge(app.request.query.all()), currentPage: currentPage,
                     paginationPath: gimme.route,
