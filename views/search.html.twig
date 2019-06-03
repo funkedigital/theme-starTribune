@@ -69,7 +69,9 @@
                 </div>
             </div>
 
-{% dump loop.totalLength %}
+{% dump (loop.totalLength/itemsPerPage)|round(0, 'floor') %}
+
+            
             {% if loop.last %}
                 {% include 'widgets/inc/pagination.html.twig' with { currentFilters: {}|merge(app.request.query.all()), currentPage: currentPage,
                     paginationPath: gimme.route,
