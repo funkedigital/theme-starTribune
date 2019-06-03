@@ -26,8 +26,6 @@
 				{% dump article %}
 
 
-
-
 					<div class="col-md-8 col-centered">
 						<div class="card flex-md-row mb-4 h-md-250 border-left-0 border-top-0 border-right-0">
 							<div class="card-body d-flex flex-column align-items-start">
@@ -37,12 +35,10 @@
 								</h3>
 								<div class="mb-1 text-muted">Nov 12</div>
 								<p class="card-text mb-auto">text here </p>
-								<a href="#">Continue reading</a>
+								<p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
 							</div>
 
 							<div class="col-md-3 px-10 align-items-center justify-content-center">
-
-
 
 								{% if article.featureMedia %}
 									{% gimme rendition with { 'media': article.featureMedia, 'name': '1250x600', 'fallback': 'original' } %}
@@ -56,13 +52,9 @@
 									{% endgimme %}
 								{% endif %}
 
-
 							</div>
 						</div>
 					</div>
-
-
-
 
 
 					{% if loop.last %}
