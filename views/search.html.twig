@@ -38,7 +38,7 @@
 
 								{% for author in gimme.article.authors %}
 
-									<p class="mb-1 text-muted blog-post-meta">January 1, 2014 by <a href="{{ url('Authors', { 'authorSlug' : author.slug }) }}">{{ author.name }}</a></p>
+									<p class="mb-1 text-muted blog-post-meta">January 1, 2014 by <a class="text-muted" href="{{ url('Authors', { 'authorSlug' : author.slug }) }}">{{ author.name }}</a></p>
 
 
 								{% endfor %}
@@ -88,7 +88,6 @@
 		.article-img {
 			max-width: max-content;
 		}
-
 
 	</style>
 
