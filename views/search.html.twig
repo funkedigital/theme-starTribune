@@ -15,7 +15,7 @@
 					<input type="search" id="filter_search" name="q">
 				</form>
 				{% set itemsPerPage, currentPage = 8, app.request.get('page', 1) %} {% set start = ((currentPage - 1) * itemsPerPage) %}
-				{% gimmelist article from searchResults|limit(app.request.get('limit', ˓→10))|order(app.request.get('field', 'publishedAt'), app.request.get( ˓→'direction', 'desc')) with {
+				{% gimmelist article from searchResults|limit(app.request.get('limit', 10))|order(app.request.get('field', 'publishedAt'), app.request.get('direction', 'desc')) with {
 					term: app.request.get('q', ''),
 					page: app.request.get('page', 1),
 					routes: app.request.get('route', []),
