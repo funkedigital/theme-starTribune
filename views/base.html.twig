@@ -1,4 +1,4 @@
-{% set version = '1559545803171' %}
+{% set version = '1559545881459' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -169,17 +169,9 @@
         </div>
         {% endblock %}
 
-        <div class="header__search verticalMiddle col-4 p-0">
+        {{ include('widgets/inc/searchInp.html.twig') }}
 
-          <!--form id="search" name="search_articles" method="GET" action="/search">
-            <input type="text" name="q" placeholder="search" value="">
-            <button type="submit">Submit</button>
-          </form-->
-
-          <gcse:searchbox-only></gcse:searchbox-only>
-        </div>
-       
-
+        
       </div>
 
     </div>
