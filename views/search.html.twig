@@ -28,7 +28,7 @@
             <div class="col-md-8 col-centered">
                 <div class="card flex-md-row mb-4 h-md-250 border-left-0 border-top-0 border-right-0">
                     <div class="card-body d-flex flex-column align-items-start">
-                        <strong class="d-inline-block mb-2 text-primary">{{ article.route.name }}</strong>
+                        <strong class="d-inline-block mb-2 text-primary tag">{{ article.route.name }}</strong>
                         <h3 class="mb-0">
                             <a class="text-dark" href="{{ url(article) }}">{{ article.title }}</a>
                         </h3>
@@ -96,7 +96,7 @@
             max-width: max-content;
         }
 
-        .text-primary{
+        .tag{
             color: unset;
         }
 
