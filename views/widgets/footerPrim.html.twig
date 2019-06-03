@@ -2,9 +2,14 @@
 
 {% block list %}
 
-    {% gimme contentList %}
-       {% dump contentList %}
-    {% endgimme %}
+
+        <ul>
+    {% gimmelist route from routes %}
+            {% dump route %}
+
+
+            <li>{{ route.name }}</li>
+    {% endgimmelist %} </ul>
 
 {#        {% if item.hasChildren and options.depth is not same as(0) and item.displayChildren %}#}
 {#            {% import _self as knp_menu %}#}
