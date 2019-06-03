@@ -12,12 +12,8 @@
 
 <script>
 
-
-
     const urlParams = new URLSearchParams(window.location.search);
-    const myParam = urlParams.get('q');
-    document.getElementById("searchInp").value = myParam;
-
-    alert(myParam);
+    const queryParam = urlParams.get('q');
+    document.getElementById("searchInp").value = queryParam;
 
 </script>
