@@ -9,6 +9,7 @@
 		<div class="row">
 			<div class="article article--noMargin col-md-9 col-sm-12 col-xs-12">
 
+				{% dump searchResults %}
 
 				{% set itemsPerPage, currentPage = 8, app.request.get('page', 1) %} {% set start = ((currentPage - 1) * itemsPerPage) %}
 				{% gimmelist article from searchResults|limit(app.request.get('limit', 10))|order(app.request.get('field', 'publishedAt'), app.request.get('direction', 'desc')) with {
@@ -24,8 +25,15 @@
 					statuses: app.request.get('status', []),
 					metadata: app.request.get('metadata', []),
 					} %}
-					<h4>{{ article.title }}</h4> <p>{{ article.lead }}</p>
-				{% if loop.last %}
+
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">{{ article.title }}</li>
+					</ul>
+
+
+
+
+					{% if loop.last %}
 {#				{% include '_tpl/pagination.html.twig' with { currentFilters: {}|merge(app.request.query.all()), currentPage: currentPage,#}
 {#					paginationPath: gimme.route,#}
 {#					lastPage: (loop.totalLength/itemsPerPage)|round(0, 'ceil') } only %}#}
