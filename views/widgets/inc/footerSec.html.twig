@@ -1,28 +1,11 @@
-<div class="secRoutes">
-    <div class="container" style="background: #212126;">
-        <div class="row">
-
-            <nav class="staticNav col-sm-8 col-md-8 col-xs-12" role="navigation">
-
-                <ul id="secLine" class="d-flex justify-content-around">
-                    {% gimmelist route from routes with {parent: "Agbs"} %}
-
-
-                        <li id="routeItem">
-                            <a href={{ url(route) }}>
-                                {{ route.name }}
-                            </a>
-                        </li>
-
-                    {% endgimmelist %}
-                </ul>
-            </nav>
-            <p class="footer__text col-sm-4 col-md-4 col-xs-12">© 2019 BildFrau All Rights Reserved</p>
-
-
-        </div>
-    </div>
-</div>
+<footer>
+    <p class="pull-left">© Company 2014</p>
+    <ul class="list-inline">
+        <li class="list-inline-item">Lorem ipsum</li>
+        <li class="list-inline-item">Phasellus iaculis</li>
+        <li class="list-inline-item">Nulla volutpat</li>
+    </ul>
+</footer>
 
 {#<div class="container" style="background: #212126;">#}
 {#<div class="pull-left">#}
