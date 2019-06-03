@@ -5,7 +5,7 @@
 
         <ul>
     {% gimmelist route from routes %}
-    {% dump route %}
+    {% dump route.children %}
 
         {% if route.hasChildren and options.depth is not same as(0) and item.displayChildren %}
             {% import _self as knp_menu %}
