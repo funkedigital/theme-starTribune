@@ -48,6 +48,9 @@
 									{% gimme rendition with { 'media': article.featureMedia, 'name': '1250x600', 'fallback': 'original' } %}
 									{% dump path(rendition) %}
 
+										<img  class="img-fluid" src="{{ path(rendition) }}" alt="{{ imgCaption }}" width="230" height="150" }}" />
+										<figcaption>{{ imgCaption }}</figcaption>
+
 										{% set rend1250 = path(rendition) %}
 										{% set imgCaption = article.featureMedia.description %}
 									{% endgimme %}
@@ -58,8 +61,7 @@
 
 
 
-									<img  class="img-fluid" src="{{ rend1250 }}" alt="{{ imgCaption }}" width="230" height="150" }}" />
-									<figcaption>{{ imgCaption }}</figcaption>
+
 
 								{% endgimme %}
 
