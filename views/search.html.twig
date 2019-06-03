@@ -44,10 +44,10 @@
 
 
 
-								{% if gimme.article.featureMedia %}
-									{% gimme rendition with { 'media': gimme.article.featureMedia, 'name': '1250x600', 'fallback': 'original' } %}
+								{% if article.featureMedia %}
+									{% gimme rendition with { 'media': article.featureMedia, 'name': '1250x600', 'fallback': 'original' } %}
 										{% set rend1250 = path(rendition) %}
-										{% set imgCaption = gimme.article.featureMedia.description %}
+										{% set imgCaption = article.featureMedia.description %}
 									{% endgimme %}
 								{% endif %}
 
