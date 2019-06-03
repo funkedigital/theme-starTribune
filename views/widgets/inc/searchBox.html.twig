@@ -1,17 +1,16 @@
 <div class="header__search verticalMiddle col-4 p-0">
-
-    <!--form id="search" name="search_articles" method="GET" action="/search">
+    <form id="search" name="search_articles" method="GET" action="/app_dev.php/search">
       <input type="text" name="q" placeholder="search" value="">
       <button type="submit">Submit</button>
-    </form-->
-
-    <form name="filter" method="get">
-        <input type="search" id="filter_search" name="q">
-        <button type="submit">Submit</button>
-
     </form>
+
+{#    <form name="filter" method="get">#}
+{#        <input type="search" id="filter_search" name="q">#}
+{#        <button type="submit">Submit</button>#}
+
+{#    </form>#}
 
     {% dump searchResults %}
 
-    <gcse:searchbox-only></gcse:searchbox-only>
+{#    <gcse:searchbox-only></gcse:searchbox-only>#}
 </div>
