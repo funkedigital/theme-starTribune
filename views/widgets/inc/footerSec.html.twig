@@ -1,38 +1,39 @@
-{#<div class="secRoutes">#}
-{#    <div class="container" style="background: #212126;">#}
-{#        <div class="row">#}
+<div class="secRoutes">
+    <div class="container" style="background: #212126;">
+        <div class="row">
 
-{#            <nav class="staticNav col-sm-8 col-md-8 col-xs-12" role="navigation">#}
+            <nav class="staticNav col-sm-8 col-md-8 col-xs-12" role="navigation">
 
-{#                <ul id="secLine" class="d-flex justify-content-around">#}
-{#                    {% gimmelist route from routes with {parent: "Agbs"} %}#}
-
-
-{#                        <li id="routeItem">#}
-{#                            <a href={{ url(route) }}>#}
-{#                                {{ route.name }}#}
-{#                            </a>#}
-{#                        </li>#}
-
-{#                    {% endgimmelist %}#}
-{#                </ul>#}
-{#            </nav>#}
-{#            <p class="footer__text col-sm-4 col-md-4 col-xs-12">© 2019 BildFrau All Rights Reserved</p>#}
+                <ul id="secLine" class="d-flex justify-content-around">
+                    {% gimmelist route from routes with {parent: "Agbs"} %}
 
 
-{#        </div>#}
-{#    </div>#}
+                        <li id="routeItem">
+                            <a href={{ url(route) }}>
+                                {{ route.name }}
+                            </a>
+                        </li>
+
+                    {% endgimmelist %}
+                </ul>
+            </nav>
+            <p class="footer__text col-sm-4 col-md-4 col-xs-12">© 2019 BildFrau All Rights Reserved</p>
+
+
+        </div>
+    </div>
+</div>
+
+{#<div class="container" style="background: #212126;">#}
+{#<div class="pull-left">#}
+{#    <ul class="list-inline">#}
+{#        <li><a href="#">Pricing</a></li>#}
+{#        <li><a href="#">Contact</a></li>#}
+{#        <li><a href="#">Terms</a></li>#}
+{#    </ul>#}
 {#</div>#}
-<div class="container" style="background: #212126;">
-<div class="pull-left">
-    <ul class="list-inline">
-        <li><a href="#">Pricing</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Terms</a></li>
-    </ul>
-</div>
-<p class="pull-right">© Company 2019</p>
-</div>
+{#<p class="pull-right">© Company 2019</p>#}
+{#</div>#}
 
 <style>
 
