@@ -53,10 +53,14 @@
 
 								{% gimme rendition with { 'name': '1250x600', 'fallback': 'original' } %}
 									{% set rend1250 = path(rendition) %}
+
+
+									<img  class="img-fluid" src="{{ rend1250 }}" alt="{{ imgCaption }}" width="230" height="150" }}" />
+									<figcaption>{{ imgCaption }}</figcaption>
+
 								{% endgimme %}
 
-								<img  class="img-fluid" src="{{ rend1250 }}" alt="{{ imgCaption }}" width="230" height="150" }}" />
-								<figcaption>{{ imgCaption }}</figcaption>
+
 
 
 							</div>
