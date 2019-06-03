@@ -78,7 +78,6 @@
                 {% include 'widgets/inc/pagination.html.twig' with { currentFilters: {}|merge(app.request.query.all()), currentPage: currentPage,
                     paginationPath: gimme.route,
                     lastPage: (totalResult/itemsPerPage)|round(0, 'ceil') } only %}
-                Showing {{ searchResults|length }} out of {{ totalResult }} articles.
             {% endif %}
 
         {% endgimmelist %}
