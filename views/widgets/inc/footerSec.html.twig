@@ -3,7 +3,7 @@
     {% gimmelist route from routes with {parent: "Agbs"} %}
 
 
-        <li id="routeItem">
+        <li class="list-inline-item">
             <a href={{ url(route) }}>
                 {{ route.name }}
             </a>
@@ -21,46 +21,6 @@
 <style>
 
 
-
-    .staticNav ul {
-        padding-left: 0;
-        margin: 5px 0;
-        list-style: none;
-    }
-
-    .staticNav ul li {
-        font-size: 1.4rem;
-        opacity: .5;
-        display: inline-block;
-        width: auto;
-        margin-right: 20px;
-    }
-
-
-    li#routeItem {
-        font-size: 1.4rem;
-        opacity: .5;
-        display: inline-block;
-        width: auto;
-
-        clear: both;
-        overflow: hidden;
-        white-space: nowrap;
-    }
-
-    li#routeItem a {
-        background-color: transparent;
-    }
-
-    li#routeItem:hover a {
-        color: #FFFFFF;
-    }
-
-
-    ul#secLine li {
-        display: inline;
-
-    }
 
 
 </style>
