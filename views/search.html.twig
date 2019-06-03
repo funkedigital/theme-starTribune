@@ -1,95 +1,96 @@
-
 {% extends 'base.html.twig' %}
 
 {% block body %}
 
-	{% dump searchResults %}
+    {% dump searchResults %}
 
-	<main class="container">
-
-
-				{% set itemsPerPage, currentPage = 8, app.request.get('page', 1) %} {% set start = ((currentPage - 1) * itemsPerPage) %}
-				{% gimmelist article from searchResults|limit(app.request.get('limit', 10))|order(app.request.get('field', 'publishedAt'), app.request.get('direction', 'desc')) with {
-					term: app.request.get('q', ''),
-					page: app.request.get('page', 1),
-					routes: app.request.get('route', []),
-					term: app.request.get('q', ''),
-					publishedBefore: app.request.get('publishedBefore'),
-					publishedAfter: app.request.get('publishedAfter'),
-					publishedAt: app.request.get('publishedAt'),
-					sources: app.request.get('source', []),
-					authors: app.request.get('author', []),
-					statuses: app.request.get('status', []),
-					metadata: app.request.get('metadata', []),
-					} %}
-
-				{% dump article %}
+    <main class="container">
 
 
-					<div class="col-md-8 col-centered">
-						<div class="card flex-md-row mb-4 h-md-250 border-left-0 border-top-0 border-right-0">
-							<div class="card-body d-flex flex-column align-items-start">
-								<strong class="d-inline-block mb-2 text-primary">{{ article.route.name }}</strong>
-								<h3 class="mb-0">
-									<a class="text-dark" href="{{ url(article) }}">{{ article.title }}</a>
-								</h3>
-								<p class="card-text mb-auto">text here </p>
+        {% set itemsPerPage, currentPage = 8, app.request.get('page', 1) %} {% set start = ((currentPage - 1) * itemsPerPage) %}
+        {% gimmelist article from searchResults|limit(app.request.get('limit', 10))|order(app.request.get('field', 'publishedAt'), app.request.get('direction', 'desc')) with {
+            term: app.request.get('q', ''),
+            page: app.request.get('page', 1),
+            routes: app.request.get('route', []),
+            term: app.request.get('q', ''),
+            publishedBefore: app.request.get('publishedBefore'),
+            publishedAfter: app.request.get('publishedAfter'),
+            publishedAt: app.request.get('publishedAt'),
+            sources: app.request.get('source', []),
+            authors: app.request.get('author', []),
+            statuses: app.request.get('status', []),
+            metadata: app.request.get('metadata', []),
+        } %}
+
+        {% dump article %}
 
 
-								{% for author in gimme.article.authors %}
-
-									<p class="mb-1 text-muted blog-post-meta">January 1, 2014 by <a class="text-muted" href="{{ url('Authors', { 'authorSlug' : author.slug }) }}">{{ author.name }}</a></p>
-
-
-								{% endfor %}
-
-
-
-
-							</div>
-
-							<div class="col-md-3 px-10 align-items-center justify-content-center">
-
-								{% if article.featureMedia %}
-									{% gimme rendition with { 'media': article.featureMedia, 'name': '1250x600', 'fallback': 'original' } %}
-									{% dump path(rendition) %}
-
-										<img  class="img-fluid article-img" src="{{ path(rendition) }}" alt="{{ imgCaption }}" width="230" height="150" }}" />
-										<figcaption>{{ imgCaption }}</figcaption>
-
-										{% set rend1250 = path(rendition) %}
-										{% set imgCaption = article.featureMedia.description %}
-									{% endgimme %}
-								{% endif %}
-
-							</div>
-						</div>
-					</div>
+            <div class="col-md-8 col-centered">
+                <div class="card flex-md-row mb-4 h-md-250 border-left-0 border-top-0 border-right-0">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">{{ article.route.name }}</strong>
+                        <h3 class="mb-0">
+                            <a class="text-dark" href="{{ url(article) }}">{{ article.title }}</a>
+                        </h3>
+                        <p class="card-text mb-auto">text here </p>
 
 
-					{% if loop.last %}
-{#				{% include '_tpl/pagination.html.twig' with { currentFilters: {}|merge(app.request.query.all()), currentPage: currentPage,#}
-{#					paginationPath: gimme.route,#}
-{#					lastPage: (loop.totalLength/itemsPerPage)|round(0, 'ceil') } only %}#}
-				Showing {{ searchResults|length }} out of {{ loop.totalLength }} articles. {% endif %}
-				{% endgimmelist %}
+                        {% for author in gimme.article.authors %}
+
+                            <p class="mb-1 text-muted blog-post-meta">January 1, 2014 by <a class="text-muted"
+                                                                                            href="{{ url('Authors', { 'authorSlug' : author.slug }) }}">{{ author.name }}</a>
+                            </p>
 
 
+                        {% endfor %}
 
-	</main>
 
-	<style>
+                    </div>
 
-		.col-centered {
-			float: none;
-			margin: 0 auto;
-		}
+                    <div class="col-md-3 px-10 align-items-center justify-content-center">
 
-		.article-img {
-			max-width: max-content;
-		}
+                        {% if article.featureMedia %}
+                            {% gimme rendition with { 'media': article.featureMedia, 'name': '1250x600', 'fallback': 'original' } %}
+                            {% dump path(rendition) %}
 
-	</style>
+                                <img class="img-fluid article-img" src="{{ path(rendition) }}" alt="{{ imgCaption }}"
+                                     width="230" height="150" }}" />
+                                <figcaption>{{ imgCaption }}</figcaption>
+
+                                {% set rend1250 = path(rendition) %}
+                                {% set imgCaption = article.featureMedia.description %}
+                            {% endgimme %}
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+
+
+            {% if loop.last %}
+                {% include '_tpl/pagination.html.twig' with { currentFilters: {}|merge(app.request.query.all()), currentPage: currentPage,
+                    paginationPath: gimme.route,
+                    lastPage: (loop.totalLength/itemsPerPage)|round(0, 'ceil') } only %}
+                Showing {{ searchResults|length }} out of {{ loop.totalLength }} articles.
+            {% endif %}
+
+        {% endgimmelist %}
+
+
+    </main>
+
+    <style>
+
+        .col-centered {
+            float: none;
+            margin: 0 auto;
+        }
+
+        .article-img {
+            max-width: max-content;
+        }
+
+    </style>
 
 
 {% endblock %}

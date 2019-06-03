@@ -1,0 +1,43 @@
+{#
+    Parameters:
+      * nbPages (int): number of pages
+      * currentPage (int): current pages
+      * url (string): route name & query (string): route parameter
+        ex: list/page-5?q=myFilter (5 = page and query = myFilter)
+#}
+
+{% spaceless %}
+    {% if nbPages > 1 %}
+
+        {# Number of page around current page+1 #}
+        {% set nearbyPagesLimit = 4 %}
+
+        <div>
+            <ul class="pagination">
+                {% if currentPage != 1 %}
+                    <li>
+                        <a href="{{ path(url, { 'page': 1, 'q': query }) }}">First</a>
+                    </li>
+                {% endif %}
+                {% for i in 1..nbPages %}
+                    {% if 0 == (currentPage - nearbyPagesLimit) - loop.index %} {# dot before #}
+                        <li class="disabled"><a href="#">...</a></li>
+                    {% elseif 0 == (currentPage + nearbyPagesLimit) - loop.index %} {# dot after #}
+                        <li class="disabled"><a href="#">...</a></li>
+                    {% elseif 0 < (currentPage - nearbyPagesLimit) - loop.index %} {# hide all before #}
+                    {% elseif 0 > (currentPage + nearbyPagesLimit) - loop.index %} {# hide all after #}
+                    {% else %}
+                        <li {% if currentPage == loop.index  %} class="active"{% endif %}>
+                            <a href="{{ path(url, { 'page': loop.index, 'q': query }) }}">{{ loop.index }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                {% if currentPage != nbPages %}
+                    <li>
+                        <a href="{{ path(url, { 'page': nbPages, 'q': query }) }}">Last</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    {% endif %}
+{% endspaceless %}
