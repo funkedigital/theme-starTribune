@@ -7,7 +7,7 @@
 
 
         {% set itemsPerPage, currentPage = 8, app.request.get('page', 1) %} {% set start = ((currentPage - 1) * itemsPerPage) %}
-        {% gimmelist article from searchResults|limit(app.request.get('limit', 200))|order(app.request.get('field', 'publishedAt'), app.request.get('direction', 'desc')) with {
+        {% gimmelist article from searchResults|limit(app.request.get('limit', 10))|order(app.request.get('field', 'publishedAt'), app.request.get('direction', 'desc')) with {
             term: app.request.get('q', ''),
             page: app.request.get('page', 1),
             routes: app.request.get('route', []),
@@ -69,14 +69,14 @@
                 </div>
             </div>
 
-{% dump (loop.totalLength/3)|round(0, 'floor') %}
+            {% set totalResult = (loop.totalLength/3)|round(0, 'floor') %}
 
 
             {% if loop.last %}
                 {% include 'widgets/inc/pagination.html.twig' with { currentFilters: {}|merge(app.request.query.all()), currentPage: currentPage,
                     paginationPath: gimme.route,
-                    lastPage: (loop.totalLength/itemsPerPage)|round(0, 'ceil') } only %}
-                Showing {{ searchResults|length }} out of {{ loop.totalLength }} articles.
+                    lastPage: (totalResult/itemsPerPage)|round(0, 'ceil') } only %}
+                Showing {{ searchResults|length }} out of {{ totalResult }} articles.
             {% endif %}
 
         {% endgimmelist %}
