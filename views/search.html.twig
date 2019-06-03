@@ -69,7 +69,7 @@
 
             {% if loop.last %}
                 {% include 'widgets/inc/pagination.html.twig' with { currentFilters: {}|merge(app.request.query.all()), currentPage: currentPage,
-                    paginationPath: gimme.route,nbPages: loop.totalLength,
+                    paginationPath: gimme.route,
                     lastPage: (loop.totalLength/itemsPerPage)|round(0, 'ceil') } only %}
                 Showing {{ searchResults|length }} out of {{ loop.totalLength }} articles.
             {% endif %}
