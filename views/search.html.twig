@@ -31,7 +31,7 @@
                         <h3 class="mb-0">
                             <a class="text-dark" href="{{ url(article) }}">{{ article.title }}</a>
                         </h3>
-                        <p class="card-text mb-auto">text here </p>
+                        <p class="card-text mb-auto">{{ imgCaption }}</p>
 
 
                         {% for author in gimme.article.authors %}
@@ -58,7 +58,7 @@
 
                                 <img class="img-fluid article-img" src="{{ path(rendition) }}" alt="{{ imgCaption }}"
                                      width="230" height="150" }}" />
-                                <figcaption>{{ imgCaption }}</figcaption>
+{#                                <figcaption>{{ imgCaption }}</figcaption>#}
 
                                 {% set rend1250 = path(rendition) %}
                                 {% set imgCaption = article.featureMedia.description %}
