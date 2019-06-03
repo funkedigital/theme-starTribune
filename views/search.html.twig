@@ -48,7 +48,7 @@
 									{% gimme rendition with { 'media': article.featureMedia, 'name': '1250x600', 'fallback': 'original' } %}
 									{% dump path(rendition) %}
 
-										<img  class="img-fluid" src="{{ path(rendition) }}" alt="{{ imgCaption }}" width="230" height="150" }}" />
+										<img  class="img-fluid article-img" src="{{ path(rendition) }}" alt="{{ imgCaption }}" width="230" height="150" }}" />
 										<figcaption>{{ imgCaption }}</figcaption>
 
 										{% set rend1250 = path(rendition) %}
@@ -109,12 +109,7 @@
 		}
 
 		.article-img {
-			position: absolute;
-			top: 0;
-			right: 12px;
-			bottom: 0;
-			width: 17%;
-			margin: auto;
+			max-width: max-content;
 		}
 
 		.hed {
