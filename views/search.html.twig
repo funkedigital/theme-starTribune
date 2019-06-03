@@ -57,7 +57,7 @@
                         {% if article.featureMedia %}
                             {% gimme rendition with { 'media': article.featureMedia, 'name': '1250x600', 'fallback': 'original' } %}
 
-                                <img class="img-fluid article-img" src="{{ path(rendition) }}" alt="{{ imgCaption }}"
+                                <img class="article-img" src="{{ path(rendition) }}" alt="{{ imgCaption }}"
                                      width="230" height="150" }}" />
 {#                                <figcaption>{{ imgCaption }}</figcaption>#}
 
