@@ -1,7 +1,7 @@
 <div class="header__search verticalMiddle col-4 p-0">
 
     <form id="search" name="search_articles" method="GET" action="/app_dev.php/search">
-        <input type="text" name="q" placeholder="search" value="">
+        <input id="searchInp" type="text" name="q" placeholder="search" value="">
         <button type="submit">Submit</button>
     </form>
     <input type="text" name="q" placeholder="boo" value="">
@@ -13,6 +13,6 @@
 <script>
 
 
-    alert('boo');
+    document.getElementById("searchInp").value = "Johnny Bravo";
 
 </script>
