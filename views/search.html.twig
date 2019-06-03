@@ -2,7 +2,6 @@
 
 {% block body %}
 
-    {% dump searchResults %}
 
     <main class="container">
 
@@ -23,7 +22,6 @@
         } %}
 
         {% dump article %}
-        {% dump currentPage %}
 
 
             <div class="col-md-8 col-centered">
@@ -52,7 +50,6 @@
 
                         {% if article.featureMedia %}
                             {% gimme rendition with { 'media': article.featureMedia, 'name': '1250x600', 'fallback': 'original' } %}
-                            {% dump path(rendition) %}
 
                                 <img class="img-fluid article-img" src="{{ path(rendition) }}" alt="{{ imgCaption }}"
                                      width="230" height="150" }}" />
