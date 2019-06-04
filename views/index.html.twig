@@ -132,21 +132,19 @@
 									<div class="col-12">
 										<h3 class="sectionHeadingBold marginTop30"><a href='/diaet-ernaehrung'> DIÄT </a></h3>
 									</div>
-									<div class="col-12">
-										<div class="articleGrid row">
-											{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/diaet-ernaehrung'}  %}
-											{% if loop.index == 1 %}
-											<div class="articleGrid col-12 col-sm-6">
-											{% include 'partials/mainArticleList.html.twig' with {'class' : 'col-12 col-sm-6', 'image':'small', 'deck': 'none'} %}
-											</div>
-											{% else %}
-											<div class="articleListSmall col-12 col-sm-6">
-												{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleListSmall col-12 col-sm-6'} %}
-											</div>
-											{% endif %}
-											{% endgimmelist %}
+									<div class="articleGrid ">
+										{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/diaet-ernaehrung'}  %}
+										{% if loop.index == 1 %}
+										<div class="articleGrid col-12 col-sm-6">
+										{% include 'partials/mainArticleList.html.twig' with {'class' : 'col-12 col-sm-6', 'image':'small', 'deck': 'none'} %}
 										</div>
-									</div>
+										{% else %}
+										<div class="articleListSmall col-12 col-sm-6">
+											{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleListSmall col-12 col-sm-6'} %}
+										</div>
+										{% endif %}
+										{% endgimmelist %}
+										</div>
 								</div>
 							<div class="row">
 								<div class="col-12">
