@@ -114,19 +114,19 @@
 		</article>
 
 		<div class="row">
-			<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="col-12">
 				<h3 class="sectionHeadingBold marginTop30"><a href="{{path(gimme.article.route)}}">More from {{ gimme.article.route.name|capitalize }}</a></h3>
 				<div class="row">
 
 			{% set currArt = gimme.article.id %}
-				<div class="articleGrid col-md-6 col-sm-6 col-xs-12">
+				<div class="articleGrid col-12 col-sm-6">
 				{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') if id != currArt %}
 					{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns'} %}
 				{% endgimmelist %}
 
 				</div>
 
-				<div class="articleListSmall col-md-6 col-sm-6 col-xs-12">
+				<div class="articleListSmall col-12 col-sm-6">
 				{% gimmelist article from articles|start(1)|limit(4)|order('publishedAt','desc') %}
 					{% include 'partials/articleListSmall__item.html.twig'  %}
 				{% endgimmelist %}
@@ -135,22 +135,22 @@
 		</div>
 	</div>
 
-	<div class="banner greyBackground marginBottom30 col-md-12 col-sm-12 col-xs-12">
+	<div class="banner greyBackground marginBottom30 col-12">
 		<div class="row">
-			<div class="col-md-6 col-sm-6 col-xs-6">
+			<div class="col-6">
 				<h2>Subscribe headline</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu enim in velit bibendum gravida nec et odio.</p>
 				<a class="button button--blue" href="#">Subscribe</a>
 			</div>
 
-			<div class="banner__image col-md-6 col-sm-6 col-xs-6">
+			<div class="banner__image col-6">
 				<a href="#"><img src="{{asset('theme/img/subscribe_image.png')}}"></a>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="col-md-3 col-sm-12 col-xs-12 pull-right">
+<div class="col-12 col-md-3 pull-right">
 
 	{% include 'elements/most.html.twig' with {'class' : 'marginBottom30'} %}
 
