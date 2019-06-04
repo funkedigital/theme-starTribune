@@ -136,7 +136,7 @@
 										{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/diaet-ernaehrung'}  %}
 										{% if loop.index == 1 %}
 										<div class="articleGrid col-12 col-sm-6">
-										{% include 'partials/mainArticleList.html.twig' with {'class' : 'col-12 col-sm-6', 'image':'small', 'deck': 'none'} %}
+										{% include 'partials/mainArticleList.html.twig' with {'class' : 'articleGrid__item--fourColumns col-12 col-sm-6', 'image':'small', 'deck': 'none'} %}
 										</div>
 										{% else %}
 										<div class="articleListSmall col-12 col-sm-6">
