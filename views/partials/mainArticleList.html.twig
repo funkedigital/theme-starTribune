@@ -1,8 +1,6 @@
 {% cache 'mainArticleList'~class {gen: article} %}
 <article class="mainArticleList {{class}}">
-
             <figure class="mainArticleList__image {% if image =='small' %}mainArticleList__image--small{% endif %} ">
-
   {% if article.featureMedia %}
     {% gimme rendition with { 'media': article.featureMedia, 'name': '610x380', 'fallback': 'original' } %}
       {% set rend610 = path(rendition) %}
