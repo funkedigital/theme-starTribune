@@ -247,12 +247,16 @@
 
     </div>
         <div class="footer_bottom py-4">
-            <nav class="col-12 col-sm-8 staticNav" role="navigation">
+            <div class="container">
                 <div class="row">
-                    {{ include('widgets/inc/footerSec.html.twig') }}
+                    <nav class="staticNav col-12 col-sm-8" role="navigation">
+                        <div class="row">
+                            {{ include('widgets/inc/footerSec.html.twig') }}
+                        </div>
+                    </nav>
+                    <p class="col-12 col-sm-4 d-flex align-items-center justify-content-center justify-content-sm-end m-0">© Company 2019</p>
                 </div>
-            </nav>
-            <p class="col-12 col-sm-4 d-flex align-items-center justify-content-center justify-content-sm-end m-0">© Company 2019</p>
+            </div>
         </div>
 </footer>
 
