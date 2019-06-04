@@ -1,5 +1,7 @@
 {# cache 'gridItem'~class {gen: article} #}
 {% if article.featureMedia %}
+{{ dump(article) }}
+
   {% gimme rendition with { 'media': article.featureMedia, 'name': '610x380', 'fallback': 'original' } %}
     {% set rend610 = path(rendition) %}
     {% set imgCaption = article.featureMedia.description %}
