@@ -135,11 +135,14 @@
 									<div class="col-12">
 										<div class="articleGrid row">
 											{% gimmelist article from articles|start(0)|limit(3)|order('publishedAt','desc') with {'route': '/diaet-ernaehrung'}  %}
-											{{ dump(article) }}
 											{% if loop.index == 1 %}
+											<div class="articleGrid col-12 col-sm-6">
 											{% include 'partials/mainArticleList.html.twig' with {'class' : 'col-12 col-sm-6', 'image':'small', 'deck': 'none'} %}
+											</div>
 											{% else %}
-											{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleListSmall col-12 col-sm-6'} %}
+											<div class="articleListSmall col-12 col-sm-6">
+												{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleListSmall col-12 col-sm-6'} %}
+											</div>
 											{% endif %}
 											{% endgimmelist %}
 										</div>
