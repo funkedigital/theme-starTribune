@@ -1,11 +1,12 @@
 <div class="header__search verticalMiddle col-4 p-0">
-
-    <form id="search" name="search_articles" method="GET" action="/app_dev.php/search">
-        <input id="searchInp" type="text" name="q" placeholder="search" value="">
-        <button type="submit">Submit</button>
-    </form>
-
-
+    <div class="search__innr">
+        <label class="searchBox" for="searchInp" >
+            <form id="search" name="search_articles" method="GET" action="/app_dev.php/search">
+                <input id="searchInp" type="text" name="q" placeholder="search" value="">
+            </form>
+            <p>Search</p>
+        </label>
+    </div>
 </div>
 
 <script>
@@ -15,3 +16,12 @@
     document.getElementById("searchInp").value = queryParam;
 
 </script>
+
+<div class="cntr">
+	<div class="cntr-innr">
+	  <label class="search" for="inpt_search">
+			<input id="inpt_search" type="text" />
+		</label>
+		<p>Hover to see the magic.</p>
+	</div>
+</div>
