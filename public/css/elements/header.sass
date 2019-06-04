@@ -59,10 +59,19 @@
     margin-bottom: 0px
 
   .header__search
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    background: red;
+    width: 238px;
+    height: 42px;
     font-family: $fontSerif
     font-size: 3.6rem
     text-align: right
     font-style: italic
+    transition: .2s width;
+    -webkit-transition: .2s width;
     input
       max-width: 270px
       text-align: right
