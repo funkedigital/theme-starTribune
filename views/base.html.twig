@@ -243,22 +243,18 @@
 
             </div>
             <div class="socialMedia col-12">{# Social Media Links here#}</div>
-            <div class="footer_bottom" style=" width: 100%; ">
-                <div class="container-fluid secFoot">
-
-                    <div class="container" style="background-color: #212126">
-                        <div class="row">
-                            <nav class="staticNav col-12 col-sm-12" role="navigation">
-                                {{ include('widgets/inc/footerSec.html.twig') }}
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
     </div>
-
+        <div class="footer_bottom">
+            <div class="container">
+                <div class="row">
+                    <nav class="staticNav col-12 col-sm-12" role="navigation">
+                        {{ include('widgets/inc/footerSec.html.twig') }}
+                    </nav>
+                </div>
+            </div>
+        </div>
 </footer>
 
 <script src="/public/dist/all.js"></script>
@@ -289,17 +285,6 @@
 
     });
 </script>
-
-<style>
-
-    .secFoot {
-        padding: 0;
-        margin: 0;
-        background-color: #212126;
-        position: absolute;
-        left: 0;
-    }
-</style>
 
 </body>
 </html>
