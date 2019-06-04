@@ -163,7 +163,7 @@
 
         <div class="d-flex justify-content-between">
 
-            <div class="col-2 p-0">
+            <div class="d-none d-sm-block col-2 p-0">
                 <p class="header__weather row text-center justify-content-center">
                     <span class="weather-temperature col-12"></span>
                     <span class="header__weather__info col-12">
@@ -175,7 +175,7 @@
             </div>
 
             {% block logo %}
-                <div class="col-2 offset-2">
+                <div class="col-12 col-sm-2 offset-0 offset-sm-2">
                     <a class="header__logo" href="/"><img src="{{ themeLogo(asset('/public/img/logo.png')) }}"></a>
                 </div>
             {% endblock %}
