@@ -2,36 +2,12 @@
 
     {% gimmelist route from routes with {parent: "Agbs"} %}
 
-
         <li class="list-inline-item legal align-middle">
             <a href={{ url(route) }}>
                 {{ route.name }}
             </a>
         </li>
 
-
-
     {% endgimmelist %}
 
 </ul>
-
-<style>
-
-
-
-
-    li.legal {
-        font-size: 1.4rem;
-        opacity: .5;
-        display: inline-block;
-        width: auto;
-
-        clear: both;
-        overflow: hidden;
-        white-space: nowrap;
-    }
-
-
-
-
-</style>
