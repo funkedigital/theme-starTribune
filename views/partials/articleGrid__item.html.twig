@@ -1,9 +1,8 @@
 {# cache 'gridItem'~class {gen: article} #}
 {% if article.featureMedia %}
-  {% gimme rendition with { 'media': article.featureMedia, 'name': '216p', 'fallback': 'original' } %}
+  {% gimme rendition with { 'media': article.featureMedia, 'name': 'hero-tribune', 'fallback': 'original' } %}
     {% set rend610 = path(rendition) %}
     {% set imgCaption = article.featureMedia.description %}
-        {% set test = article.featureMedia %}
   {% endgimme %}
 {% else %}
   {% gimmelist media from articleMedia|limit(1) with {'article': article} %}
@@ -17,7 +16,6 @@
   <a class="articleGrid__image articleGrid__image--smallMobile" href="{{ url(article) }}">
     <figure>
       <img src="{{ rend610 }}" alt="{{ imgCaption }}" />
-      <p>{{ test }}</p>
     </figure>
   </a>
  {#
