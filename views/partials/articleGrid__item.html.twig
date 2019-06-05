@@ -5,17 +5,16 @@
     {% set imgCaption = article.featureMedia.description %}
   {% endgimme %}
 {% elseif articleMedia %}
-  {#
+  {# checks if there is any other media besides feature #}
   {% gimmelist media from articleMedia|limit(1) with {'article': article} %}
     {% set imgCaption = media.body %}
     {% gimme rendition with { media: media, 'name': '216p', 'fallback': 'original' } %}
          {% set rend610 = path(rendition) %}
     {% endgimme %}
   {% endgimmelist %}
-  #}
-  <p>No1</p>
+
 {% else %}
- <p>No2</p>
+  {% set rend610 ="{{ asset('/public/img/icons/weather/') }}" %}
 {% endif %}
 <article class="{{ class }}">
   <a class="articleGrid__image articleGrid__image--smallMobile" href="{{ url(article) }}">
