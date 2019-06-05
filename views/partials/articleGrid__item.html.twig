@@ -1,14 +1,15 @@
 {# cache 'gridItem'~class {gen: article} #}
 {% if article.featureMedia %}
-  {% dump article.featureMedia %}
   {% gimme rendition with { 'media': article.featureMedia, 'name': '216p', 'fallback': 'original' } %}
     {% set rend610 = path(rendition) %}
     {% set imgCaption = article.featureMedia.description %}
+        <p>123</p>
   {% endgimme %}
 {% else %}
   {% gimmelist media from articleMedia|limit(1) with {'article': article} %}
     {% set imgCaption = media.body %}
     {% gimme rendition with { media: media, 'name': '216p', 'fallback': 'original' } %}
+    <p>456</p>
          {% set rend610 = path(rendition) %}
     {% endgimme %}
   {% endgimmelist %}
