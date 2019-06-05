@@ -15,7 +15,7 @@
 {% else %}
   {% set rend610 = 'public/img/article_img/610x380.png' %}
 {% endif %}
-<article class="{{ class }}">
+<article class="articleGrid__item {{ class }}">
   <a class="articleGrid__image articleGrid__image--smallMobile" href="{{ url(article) }}">
     <figure>
       <img src="{{ rend610 }}" alt="{{ imgCaption }}" />
