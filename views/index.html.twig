@@ -96,9 +96,9 @@
 
 						<div class="row">
 							<div class="col-12">
-								<div class="row">
+								<div class="row mb-4">
 									<div class="col-12">
-										<h3 class="sectionHeadingBold marginTop30">
+										<h3 class="sectionHeadingBold my-3">
 										{#mehdi#}
 										<a href="/kochen-backen">Kochen &amp; Backen</a>
 										</h3>
@@ -112,17 +112,17 @@
 									</div>
 								</div>
 
-								<div class="row">
+								<div class="row mb-4">
 									<div class="col-12">
-										<h3 class="sectionHeadingBold marginTop30"><a
+										<h3 class="sectionHeadingBold my-3"><a
 												href='/spass-unterhaltung/spiele'>Spiele</a></h3>
 										<div class="row">
-											<div class="articleGrid col-md-6 col-sm-6 col-xs-12">
+											<div class="articleGrid col-12 col-md-6">
 												{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/spass-unterhaltung/spiele'}  %}
 												{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns'} %}
 												{% endgimmelist %}
 											</div>
-											<div class="articleListSmall col-md-6 col-sm-6 col-xs-12">
+											<div class="articleListSmall col-12 col-md-6">
 												{% gimmelist article from articles|start(1)|limit(3)|order('publishedAt','desc') with {'route': '/spass-unterhaltung/spiele'}  %}
 												{% include 'partials/articleListSmall__item.html.twig'  %}
 												{% endgimmelist %}
@@ -131,9 +131,9 @@
 									</div>
 								</div>
 
-								<div class="row">
+								<div class="row mb-4">
 									<div class="col-12">
-										<h3 class="sectionHeadingBold marginTop30">
+										<h3 class="sectionHeadingBold my-3">
 											<a href="/gesundheit">Gesundheit</a>
 										</h3>
 									</div>
@@ -146,17 +146,17 @@
 									</div>
 								</div>
 
-								<div class="row">
+								<div class="row mb-4">
 									<div class="col-12">
-										<h3 class="sectionHeadingBold marginTop30"><a
+										<h3 class="sectionHeadingBold my-3"><a
 												href='/spass-unterhaltung/spiele'> DIÄT </a></h3>
 										<div class="row">
-											<div class="articleGrid col-md-6 col-sm-6 col-xs-12">
+											<div class="articleGrid col-12 col-md-6">
 												{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/diaet-ernaehrung'}  %}
 												{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns'} %}
 												{% endgimmelist %}
 											</div>
-											<div class="articleListSmall col-md-6 col-sm-6 col-xs-12">
+											<div class="articleListSmall col-12 col-md-6">
 												{% gimmelist article from articles|start(1)|limit(3)|order('publishedAt','desc') with {'route': '/diaet-ernaehrung'}  %}
 												{% include 'partials/articleListSmall__item.html.twig'  %}
 												{% endgimmelist %}
@@ -164,9 +164,9 @@
 										</div>
 									</div>
 								</div>
-								<div class="row">
+								<div class="row mb-4">
 									<div class="col-12">
-										<h3 class="sectionHeadingBold marginTop30">
+										<h3 class="sectionHeadingBold my-3">
 											<a href="/gesundheit">Mode &amp; Schönheit</a>
 										</h3>
 									</div>
