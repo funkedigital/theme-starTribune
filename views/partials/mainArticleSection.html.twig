@@ -21,8 +21,8 @@
               {% gimme rendition with { 'media': article.featureMedia, 'name': '1250x600', 'fallback': 'original' } %}
                 {% set rend1250 = path(rendition) %}
               {% endgimme %}
-            {% else %}
-                        <div>4567<div>
+            {% elseif media %}
+               <div>4567<div>
               {% gimmelist media from articleMedia|limit(1) with {'article': article} %}
                 {% set imgCaption = media.body %}
                 {% gimme rendition with { media: media, 'name': '610x380', 'fallback': 'original' } %}
@@ -32,6 +32,8 @@
                      {% set rend1250 = path(rendition) %}
                 {% endgimme %}
               {% endgimmelist %}
+            {% else %}
+              <div>89919<div>
             {% endif %}              
 
             <a href="{{ url(article) }}">
