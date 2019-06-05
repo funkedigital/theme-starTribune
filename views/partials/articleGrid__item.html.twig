@@ -6,7 +6,7 @@
   {% endgimme %}
 {% else %}
   {% gimmelist media from articleMedia|limit(1) with {'article': article} %}
-    {{ dump() }}
+    {% dump %}
     {% set imgCaption = media.body %}
     {% gimme rendition with { media: media, 'name': '216p', 'fallback': 'original' } %}
          {% set rend610 = path(rendition) %}
