@@ -3,7 +3,6 @@
             <figure class="mainArticle__image {% if image =='small' %}mainArticle__image--small{% endif %} ">
 
   {% if article.featureMedia %}
-  <div>123</div>
     {% gimme rendition with { 'media': article.featureMedia, 'name': '610x380', 'fallback': 'original' } %}
       {% set rend610 = path(rendition) %}
       {% set imgCaption = article.featureMedia.description %}
