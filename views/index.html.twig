@@ -147,30 +147,30 @@
 								</div>
 
 
-								<div class="row">
-									<div class="col-12">
-										<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('diaet-ernaehrung') }}"> DIÄT </a></h3>
-									</div>
-									<div class="col-12">
-										<div class="row">
-													{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/diaet-ernaehrung'}  %}
-													<div class="articleGrid col-12 col-sm-6">
-														{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns'} %}
-													</div>
-													{% endgimmelist %}
-													<div class="col-12 col-sm-6">
-														<div class="row">
-															{% gimmelist article from articles|start(1)|limit(3) with {'route': '/diaet-ernaehrung'}  %}
-																<div class="articleListSmall col-12">
-																	{%  include 'partials/articleListSmall__item.html.twig'  %}
-																</div>
-															{% endgimmelist %}
-														<div>
-													</div>
-										</div>
-									</div>
-								</div>
-							</div>
+<div class="row">
+	<div class="col-12">
+		<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('diaet-ernaehrung') }}"> DIÄT </a></h3>
+	</div>
+	<div class="col-12">
+		<div class="row">
+			{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/diaet-ernaehrung'}  %}
+			<div class="articleGrid col-12 col-sm-6">
+			{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns'} %}
+			</div>
+			{% endgimmelist %}
+			<div class="col-12 col-sm-6">
+				<div class="row">
+				{% gimmelist article from articles|start(1)|limit(3) with {'route': '/diaet-ernaehrung'}  %}
+					<div class="articleListSmall col-12">
+					{%  include 'partials/articleListSmall__item.html.twig'  %}
+					</div>
+					{% endgimmelist %}
+
+
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 								<div class="row">
 										<div class="col-12">
