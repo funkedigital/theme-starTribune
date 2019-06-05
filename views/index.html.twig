@@ -152,16 +152,16 @@
 									<div class="col-12">
 										<h3 class="sectionHeadingBold marginTop30"><a href="{{ url('diaet-ernaehrung') }}"> DIÄT2</a></h3>
 									</div>
-									<div class="articleGrid col-12 col-sm-8">
 										{% gimmelist article from articles|start(0)|limit(1)|order('publishedAt','desc') with {'route': '/diaet-ernaehrung'}  %}
+											<div class="articleGrid col-12 col-sm-8">
 										{% include 'partials/articleGrid__item.html.twig' with {'class' : 'articleGrid__item--fourColumns'} %}
+											</div>
 										{% endgimmelist %}
-									</div>
-									<div class="articleListSmall col-12 col-sm-8">
 										{% gimmelist article from articles|start(1)|limit(3) with {'route': '/diaet-ernaehrung'}  %}
-										{% include 'partials/articleListSmall__item.html.twig'  %}
+											<div class="articleListSmall col-12 col-sm-8">
+											{% include 'partials/articleListSmall__item.html.twig'  %}
+											</div>
 										{% endgimmelist %}
-									</div>
 								</div>
 
 
