@@ -5,13 +5,18 @@
     {% set imgCaption = article.featureMedia.description %}
   {% endgimme %}
 {% else %}
+
+<div>123</div>
+    {% set rend610 = '456' %}
+
+{#
   {% gimmelist media from articleMedia|limit(1) with {'article': article} %}
-  <p>else</p>
     {% set imgCaption = media.body %}
     {% gimme rendition with { media: media, 'name': '216p', 'fallback': 'original' } %}
          {% set rend610 = path(rendition) %}
     {% endgimme %}
   {% endgimmelist %}
+  #}
 {% endif %}
 <article class="{{ class }}">
   <a class="articleGrid__image articleGrid__image--smallMobile" href="{{ url(article) }}">
