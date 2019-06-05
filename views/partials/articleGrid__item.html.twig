@@ -2,7 +2,7 @@
 {% if article.featureMedia %}
   {% gimme rendition with { 'media': article.featureMedia, 'name': '216p', 'fallback': 'original' } %}
     {% set rend610 = path(rendition) %}
-      {{ dump(610) }}
+      {{ dump(rend610) }}
     {% set imgCaption = article.featureMedia.description %}
   {% endgimme %}
 {% else %}
