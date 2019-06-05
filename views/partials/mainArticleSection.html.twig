@@ -21,7 +21,7 @@
                 {% set rend1250 = path(rendition) %}
               {% endgimme %}
             {% elseif media %}
-=              {% gimmelist media from articleMedia|limit(1) with {'article': article} %}
+             {% gimmelist media from articleMedia|limit(1) with {'article': article} %}
                 {% set imgCaption = media.body %}
                 {% gimme rendition with { media: media, 'name': '610x380', 'fallback': 'original' } %}
                      {% set rend610 = path(rendition) %}
