@@ -14,7 +14,7 @@
   {% endgimmelist %}
 
 {% else %}
-  {% set rend610 ='{{ asset('/public/img/next.png') }}' %}
+  {% set rend610 =`{{ asset('/public/img/next.png') }}` %}
 {% endif %}
 <article class="{{ class }}">
   <a class="articleGrid__image articleGrid__image--smallMobile" href="{{ url(article) }}">
