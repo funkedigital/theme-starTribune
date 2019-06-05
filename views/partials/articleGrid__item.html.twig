@@ -4,7 +4,7 @@
     {% set rend610 = path(rendition) %}
     {% set imgCaption = article.featureMedia.description %}
   {% endgimme %}
-{% elseif media %}
+{% elseif articleMedia %}
   {# checks if there is any other media besides feature #}
   {% gimmelist media from articleMedia|limit(1) with {'article': article} %}
     {% set imgCaption = media.body %}
