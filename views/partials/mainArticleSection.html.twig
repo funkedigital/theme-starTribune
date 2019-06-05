@@ -13,7 +13,6 @@
 
           <figure class="mainArticleList__image{% if image =='small' %}mainArticle__image--small{% endif %} ">
             {% if article.featureMedia %}
-            <div>123</div>
               {% gimme rendition with { 'media': article.featureMedia, 'name': '610x380', 'fallback': 'original' } %}
                 {% set rend610 = path(rendition) %}
                 {% set imgCaption = article.featureMedia.description %}
@@ -22,8 +21,7 @@
                 {% set rend1250 = path(rendition) %}
               {% endgimme %}
             {% elseif media %}
-               <div>4567<div>
-              {% gimmelist media from articleMedia|limit(1) with {'article': article} %}
+=              {% gimmelist media from articleMedia|limit(1) with {'article': article} %}
                 {% set imgCaption = media.body %}
                 {% gimme rendition with { media: media, 'name': '610x380', 'fallback': 'original' } %}
                      {% set rend610 = path(rendition) %}
@@ -33,7 +31,8 @@
                 {% endgimme %}
               {% endgimmelist %}
             {% else %}
-              <div>89919<div>
+                    {% set rend610 = 'public/img/article_img/610x380.png' %}
+                    {% set rend1250 = 'public/img/article_img/610x380.png' %}
             {% endif %}              
 
             <a href="{{ url(article) }}">
