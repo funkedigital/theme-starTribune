@@ -10,6 +10,7 @@
       {% set rend1250 = path(rendition) %}
     {% endgimme %}
   {% elseif articleMedia %}
+       <div>This is the first</div>
     {% gimmelist media from articleMedia|limit(1) with {'article': article} %}
       {% set imgCaption = media.body %}
       {% gimme rendition with { media: media, 'name': '610x380', 'fallback': 'original' } %}
@@ -20,7 +21,7 @@
       {% endgimme %}
     {% endgimmelist %}
     {% else %}
-     <div>This is the else</div>
+     <div>This is the second</div>
   {% endif %}
 
               <a href="{{ url(article) }}">
