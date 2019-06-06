@@ -11,7 +11,7 @@
 
                     <ul class="list-unstyled text-small">
 
-                        {% gimmelist subRoute from routes with {parent: route.name} without {name:  "Agbs" } %}
+                        {% gimmelist subRoute from routes without {name:  "Agbs" } with {parent: route.name} %}
 
 
                             <li><a class="text-muted" href={{ url(subRoute) }}>{{ subRoute.name }}</a></li>
