@@ -1,6 +1,6 @@
 {# cache 'gridItem'~class {gen: article} #}
 {% if article.featureMedia %}
-  {% gimme rendition with { 'media': article.featureMedia, 'name': '432p', 'fallback': 'original' } %}
+  {% gimme rendition with { 'media': article.featureMedia, 'name': '376p', 'fallback': 'original' } %}
     {% set rend610 = path(rendition) %}
     {% set imgCaption = article.featureMedia.description %}
   {% endgimme %}
@@ -8,7 +8,7 @@
   {# checks if there is any other media besides feature #}
   {% gimmelist media from articleMedia|limit(1) with {'article': article} %}
     {% set imgCaption = media.body %}
-    {% gimme rendition with { media: media, 'name': '432p', 'fallback': 'original' } %}
+    {% gimme rendition with { media: media, 'name': '376p', 'fallback': 'original' } %}
          {% set rend610 = path(rendition) %}
     {% endgimme %}
   {% endgimmelist %}
