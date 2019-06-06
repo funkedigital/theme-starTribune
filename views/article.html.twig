@@ -66,7 +66,7 @@
 					{% set imgCaption = gimme.article.featureMedia.description %}
 				{% endgimme %}
 			{% else %}
-				<div>red<div>
+      	{% set rend1250 = 'public/img/780x460-bf.jpg' %}
 			{% endif %}
 
 			{% gimme rendition with { 'name': '1250x600', 'fallback': 'original' } %}
