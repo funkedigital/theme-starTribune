@@ -8,29 +8,28 @@
         {#      get the available routes          #}
         {% gimmelist route from routes %}
 
-        {% gimmelist s from routes|limit(1) with {parent: route.name} %}
+            {#      check if the route contains subRoutes          #}
+            {% gimmelist s from routes|limit(1) with {parent: route.name} %}
 
-            {#      exclude sub footer          #}
-            {% if (route.name != "Agbs") %}
+                {#      exclude sub footer          #}
+                {% if (route.name != "Agbs") %}
 
+                    <div class="col-6 col-md">
+                        <h5>{{ route.name }}</h5>
 
-                <div class="col-6 col-md">
-                    <h5>{{ route.name }}</h5>
+                        <ul class="list-unstyled text-small">
 
-                    <ul class="list-unstyled text-small">
+                            {% gimmelist subRoute from routes with {parent: route.name} %}
 
-                        {% gimmelist subRoute from routes with {parent: route.name} %}
+                                <li><a class="text-muted" href={{ url(subRoute) }}>{{ subRoute.name }}</a></li>
 
+                            {% endgimmelist %}
 
-                            <li><a class="text-muted" href={{ url(subRoute) }}>{{ subRoute.name }}</a></li>
+                        </ul>
+                    </div>
+                {% endif %}
 
-                        {% endgimmelist %}
-
-                    </ul>
-                </div>
-            {% endif %}
-
-        {% endgimmelist %}
+            {% endgimmelist %}
 
         {% endgimmelist %}
 
