@@ -6,10 +6,10 @@
             <div class="row">
 {#                {% gimmelist route from routes %}#}
 
-                    {% for route in gimmelist routes %}
+                {% for author in gimme.article.authors %}
 
                 <div class="col-6 col-md">
-                    <h5>{{ route.name }}</h5>
+                    <h5>{{ author.name }}</h5>
                 </div>
 {#                    <ul class="list-unstyled text-small">#}
 
