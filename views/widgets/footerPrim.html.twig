@@ -8,8 +8,13 @@
         {#      get the available routes          #}
         {% gimmelist route from routes %}
 
+
+        {% gimme empty from routes with {parent: route.name} %}
+
+
+
             {#      exclude sub footer          #}
-            {% if route.name != "Agbs" %}
+            {% if (route.name != "Agbs") and (empty) %}
 
 
                 <div class="col-6 col-md">
@@ -28,6 +33,7 @@
                 </div>
             {% endif %}
 
+        {% endgimme %}
 
         {% endgimmelist %}
 
