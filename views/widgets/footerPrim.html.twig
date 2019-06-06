@@ -8,10 +8,7 @@
         {#      get the available routes          #}
         {% gimmelist route from routes %}
 
-
-{#        {% gimmelist s from routes|limit(1) with {parent: route.name} %}#}
-
-
+        {% gimmelist s from routes|limit(1) with {parent: route.name} %}
 
             {#      exclude sub footer          #}
             {% if (route.name != "Agbs") %}
@@ -33,7 +30,7 @@
                 </div>
             {% endif %}
 
-{#        {% endgimmelist %}#}
+        {% endgimmelist %}
 
         {% endgimmelist %}
 
