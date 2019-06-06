@@ -65,6 +65,8 @@
 			    	{% set rend1250 = path(rendition) %}
 					{% set imgCaption = gimme.article.featureMedia.description %}
 				{% endgimme %}
+			{% else %}
+				<div>red<div>
 			{% endif %}
 
 			{% gimme rendition with { 'name': '1250x600', 'fallback': 'original' } %}
