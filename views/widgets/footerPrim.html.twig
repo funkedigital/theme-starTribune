@@ -9,7 +9,7 @@
         {% gimmelist route from routes %}
 
 
-        {% gimmelist s from routes with {parent: route.name}|limit(1) %}
+        {% gimmelist s from routes|start(0)|limit(1)| with {parent: route.name} %}
 
 
 
