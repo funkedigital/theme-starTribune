@@ -1,4 +1,4 @@
-{% set version = '1559831396597' %}
+{% set version = '1559831492233' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -188,9 +188,13 @@
 
 </header>
 
-{% container 'mainNav' %}
-    {#Content of this container is defined by menu widget which is linked to it. Template used for this menu is widgets/menu1.html.twig  #}
-{% endcontainer %}
+{#{% container 'mainNav' %}#}
+{#    #}{#Content of this container is defined by menu widget which is linked to it. Template used for this menu is widgets/menu1.html.twig  #}
+{#{% endcontainer %}#}
+
+
+{{ include('widgets/menu1.html.twig') }}
+
 
 {# Trending topics is array of first in a row keyword of three latest articles #}
 {% cache 'subMenu' { time:0 } %}
