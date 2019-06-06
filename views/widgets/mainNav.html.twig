@@ -1,57 +1,60 @@
 {% extends 'knp_menu.html.twig' %}
 
 {% block list %}
-        {% if item.hasChildren and options.depth is not same as(0) and item.displayChildren %}
-            {% import _self as knp_menu %}
-            <div class="navigation">
-                <nav class="container">
-                <div id="header" class="navigation__header okayNav-header">
-                        <nav role="navigation" id="nav-main" class="okayNav">
-                            <ul>
-                        {{ block('children') }}
-                            </ul>
-                        </nav>
-                    </div><!-- /header -->
+    {#    {% if item.hasChildren and options.depth is not same as(0) and item.displayChildren %}#}
+    {#        {% import _self as knp_menu %}#}
+    {#        <div class="navigation">#}
+    {#            <nav class="container">#}
+    {#            <div id="header" class="navigation__header okayNav-header">#}
+    {#                    <nav role="navigation" id="nav-main" class="okayNav">#}
+    {#                        <ul>#}
+    {#                    {{ block('children') }}#}
+    {#                        </ul>#}
+    {#                    </nav>#}
+    {#                </div><!-- /header -->#}
+    {#            </nav>#}
+    {#        </div>#}
+
+
+
+
+
+
+
+    <nav class="site-header sticky-top py-1">
+        <div class="container d-flex flex-column flex-md-row justify-content-between">
+
+            <div class="navigation py-2 d-none d-md-inline-block">
+                <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+
+                <label for="navi-toggle" class="navigation__button">
+                    <span class="navigation__icon">&nbsp;</span>
+                </label>
+
+                <div class="navigation__background">&nbsp;</div>
+
+                <nav class="navigation__nav">
+                    <ul class="navigation__list">
+                        <li class="navigation__item"><a href="#" class="navigation__link"><span>01</span>About BF</a></li>
+                        <li class="navigation__item"><a href="#" class="navigation__link"><span>02</span>Your benfits</a></li>
+                        <li class="navigation__item"><a href="#" class="navigation__link"><span>03</span>Popular Frauen</a></li>
+                        <li class="navigation__item"><a href="#" class="navigation__link"><span>04</span>Stories</a></li>
+                        <li class="navigation__item"><a href="#" class="navigation__link"><span>05</span>Subscribe now</a></li>
+                    </ul>
                 </nav>
             </div>
 
 
-    <div class="navigation">
-        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+            <a class="py-2 d-none d-md-inline-block" href="#">Product</a>
+            <a class="py-2 d-none d-md-inline-block" href="#">Features</a>
+            <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>
+            <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
+            <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
+            <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>
+        </div>
+    </nav>
 
-        <label for="navi-toggle" class="navigation__button">
-            <span class="navigation__icon">&nbsp;</span>
-        </label>
-
-        <div class="navigation__background">&nbsp;</div>
-
-        <nav class="navigation__nav">
-            <ul class="navigation__list">
-                <li class="navigation__item"><a href="#" class="navigation__link"><span>01</span>About BF</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link"><span>02</span>Your benfits</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link"><span>03</span>Popular Frauen</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link"><span>04</span>Stories</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link"><span>05</span>Subscribe now</a></li>
-            </ul>
-        </nav>
-    </div>
-
-
-
-
-{#    <nav class="site-header sticky-top py-1">#}
-{#        <div class="container d-flex flex-column flex-md-row justify-content-between">#}
-{#            <a class="py-2 d-none d-md-inline-block" href="#">Tour</a>#}
-{#            <a class="py-2 d-none d-md-inline-block" href="#">Product</a>#}
-{#            <a class="py-2 d-none d-md-inline-block" href="#">Features</a>#}
-{#            <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>#}
-{#            <a class="py-2 d-none d-md-inline-block" href="#">Support</a>#}
-{#            <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>#}
-{#            <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>#}
-{#        </div>#}
-{#    </nav>#}
-
-        {% endif %}
+    {#    {% endif %}#}
 
 
     <style>
