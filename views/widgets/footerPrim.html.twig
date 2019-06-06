@@ -6,8 +6,10 @@
             <div class="row">
                 {% gimmelist route from routes without {parent: "Agbs"} %}
 
+                    {{ dump route }}
                 <div class="col-6 col-md">
                     <h5>{{ route.name }}</h5>
+
                     <ul class="list-unstyled text-small">
 
                         {% gimmelist subRoute from routes with {parent: route.name} %}
