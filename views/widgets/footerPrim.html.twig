@@ -4,9 +4,8 @@
 
 
             <div class="row">
-                {% gimmelist route from routes without {parent: "Agbs"} %}
+                {% gimmelist route from routes without {name: "Agbs"} %}
 
-                    {{ dump (route) }}
                 <div class="col-6 col-md">
                     <h5>{{ route.name }}</h5>
 
