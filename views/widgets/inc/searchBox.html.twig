@@ -1,4 +1,4 @@
-<div class="header__search col-12 col-sm-4 d-flex flex-column justify-content-center align-items-center mt-3">
+{#<form class="header__search col-12 col-sm-4 d-flex flex-column justify-content-center align-items-center mt-3">#}
 {#        <label class="searchBox" for="searchInp" >#}
 {#            <form id="search" name="search_articles" method="GET" action="/app_dev.php/search">#}
 {#                <input id="searchInp" type="text" name="q" value="">#}
@@ -6,15 +6,10 @@
 {#        </label>#}
 {#        <p>Search</p>#}
 
-    <div class="form__group">
-        <input type="text" class="form__input" placeholder="Full name" id="name" required>
-        <label for="name" class="form__label">Full name</label>
-    </div>
-
-</div>
-
-
-
+<form id="search" class="form__group" name="search_articles" method="GET" action="/app_dev.php/search">
+    <input type="text" class="form__input" placeholder="" id="name" required>
+    <label for="name" class="form__label">Full name</label>
+</form>
 
 
 <script>
@@ -45,7 +40,7 @@
     }
 
     @media only screen and (max-width: 56.25em) {
-    .form__input {
+        .form__input {
             width: 100%
         }
     }
