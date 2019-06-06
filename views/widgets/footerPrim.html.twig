@@ -3,28 +3,34 @@
 {% block list %}
 
 
-            <div class="row">
-                {% gimmelist route from routes %}
+    <div class="row">
 
-                <div class="col-6 col-md">
-                    <h5>{{ route.name }}</h5>
+        {#      get the available routes          #}
+        {% gimmelist route from routes %}
 
-                    <ul class="list-unstyled text-small">
-
-                        {% gimmelist subRoute from routes with {parent: route.name} %}
+            {% if route.name != "Agbs" %}
 
 
-                            <li><a class="text-muted" href={{ url(subRoute) }}>{{ subRoute.name }}</a></li>
+            <div class="col-6 col-md">
+                <h5>{{ route.name }}</h5>
 
-                        {% endgimmelist %}
+                <ul class="list-unstyled text-small">
 
-                    </ul>
-                </div>
+                    {% gimmelist subRoute from routes with {parent: route.name} %}
 
 
-                {% endgimmelist %}
+                        <li><a class="text-muted" href={{ url(subRoute) }}>{{ subRoute.name }}</a></li>
 
+                    {% endgimmelist %}
+
+                </ul>
             </div>
+            {% endif %}
+
+
+        {% endgimmelist %}
+
+    </div>
 
 
 
