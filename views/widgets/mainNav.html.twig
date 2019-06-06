@@ -16,238 +16,224 @@
     {#        </div>#}
 
 
+    <div class="navigation" >
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon">&nbsp;</span>
+        </label>
+
+        <div class="navigation__background">&nbsp;</div>
+
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="#" class="navigation__link"><span>01</span>About BF</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link"><span>02</span>Your benfits</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link"><span>03</span>Popular Frauen</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link"><span>04</span>Stories</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link"><span>05</span>Subscribe now</a></li>
+            </ul>
+        </nav>
+    </div>
 
 
 
 
-
-    <nav class="site-header sticky-top py-1">
-        <div class="container d-flex flex-column flex-md-row justify-content-between">
-
-            <div class="navigation py-2 d-none d-md-inline-block">
-                <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
-
-                <label for="navi-toggle" class="navigation__button">
-                    <span class="navigation__icon">&nbsp;</span>
-                </label>
-
-                <div class="navigation__background">&nbsp;</div>
-
-                <nav class="navigation__nav">
-                    <ul class="navigation__list">
-                        <li class="navigation__item"><a href="#" class="navigation__link"><span>01</span>About BF</a></li>
-                        <li class="navigation__item"><a href="#" class="navigation__link"><span>02</span>Your benfits</a></li>
-                        <li class="navigation__item"><a href="#" class="navigation__link"><span>03</span>Popular Frauen</a></li>
-                        <li class="navigation__item"><a href="#" class="navigation__link"><span>04</span>Stories</a></li>
-                        <li class="navigation__item"><a href="#" class="navigation__link"><span>05</span>Subscribe now</a></li>
-                    </ul>
-                </nav>
+        <nav class="site-header sticky-top py-1">
+            <div class="container d-flex flex-column flex-md-row justify-content-between">
+                <a class="py-2 d-none d-md-inline-block" href="#">Tour</a>
+                <a class="py-2 d-none d-md-inline-block" href="#">Product</a>
+                <a class="py-2 d-none d-md-inline-block" href="#">Features</a>
+                <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>
+                <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
+                <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
+                <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>
             </div>
-
-
-            <a class="py-2 d-none d-md-inline-block" href="#">Product</a>
-            <a class="py-2 d-none d-md-inline-block" href="#">Features</a>
-            <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>
-            <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
-            <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
-            <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>
-        </div>
-    </nav>
+        </nav>
 
     {#    {% endif %}#}
 
 
-{#    <style>#}
+    <style>
 
-{#        .boo {#}
-{#            position: relative;#}
-{#        }#}
 
-{#        .sticky-top {#}
-{#            z-index: 800;#}
-{#        }#}
+        .navigation__checkbox {
+            display: none
+        }
 
-{#        .navigation__checkbox {#}
-{#            display: none#}
-{#        }#}
+        .navigation__button {
+            background-color: #fff;
+            height: 7rem;
+            width: 7rem;
+            position: fixed;
+            top: 6rem;
+            right: 6rem;
+            border-radius: 50%;
+            z-index: 2000;
+            -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer
+        }
 
-{#        .navigation__button {#}
-{#            background-color: #fff;#}
-{#            height: 7rem;#}
-{#            width: 7rem;#}
-{#            /*position: fixed;*/#}
-{#            position: absolute;#}
-{#            /*top: 6rem;*/#}
-{#            /*right: 6rem;*/#}
-{#            /*border-radius: 50%;*/#}
-{#            z-index: 2000;#}
-{#            -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);#}
-{#            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);#}
-{#            text-align: center;#}
-{#            cursor: pointer#}
-{#        }#}
+        @media only screen and (max-width: 56.25em) {
+            .navigation__button {
+                top: 4rem;
+                right: 4rem
+            }
+        }
 
-{#        @media only screen and (max-width: 56.25em) {#}
-{#            .navigation__button {#}
-{#                top: 4rem;#}
-{#                right: 4rem#}
-{#            }#}
-{#        }#}
+        @media only screen and (max-width: 37.5em) {
+            .navigation__button {
+                top: 3rem;
+                right: 3rem
+            }
+        }
 
-{#        @media only screen and (max-width: 37.5em) {#}
-{#            .navigation__button {#}
-{#                top: 3rem;#}
-{#                right: 3rem#}
-{#            }#}
-{#        }#}
+        .navigation__background {
+            height: 6rem;
+            width: 6rem;
+            border-radius: 50%;
+            position: fixed;
+            top: 6.5rem;
+            right: 6.5rem;
+            background-image: radial-gradient(#ff7730, #CE0001);
+            z-index: 1000;
+            -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+            transition: -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+            transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+            transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1), -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1)
+        }
 
-{#        .navigation__background {#}
-{#            height: 6rem;#}
-{#            width: 6rem;#}
-{#            /*border-radius: 50%;*/#}
-{#            /*position: fixed;*/#}
-{#            position: absolute;#}
-{#            /*top: 6.5rem;*/#}
-{#            /*right: 6.5rem;*/#}
-{#            background-image: radial-gradient(#ff7730, #CE0001);#}
-{#            z-index: 1000;#}
-{#            -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);#}
-{#            transition: -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);#}
-{#            transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);#}
-{#            transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1), -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1)#}
-{#        }#}
+        @media only screen and (max-width: 56.25em) {
+            .navigation__background {
+                top: 4.5rem;
+                right: 4.5rem
+            }
+        }
 
-{#        @media only screen and (max-width: 56.25em) {#}
-{#            .navigation__background {#}
-{#                top: 4.5rem;#}
-{#                right: 4.5rem#}
-{#            }#}
-{#        }#}
+        @media only screen and (max-width: 37.5em) {
+            .navigation__background {
+                top: 3.5rem;
+                right: 3.5rem
+            }
+        }
 
-{#        @media only screen and (max-width: 37.5em) {#}
-{#            .navigation__background {#}
-{#                top: 3.5rem;#}
-{#                right: 3.5rem#}
-{#            }#}
-{#        }#}
+        .navigation__nav {
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1500;
+            opacity: 0;
+            width: 0;
+            -webkit-transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+        }
 
-{#        .navigation__nav {#}
-{#            height: 100vh;#}
-{#            /*position: fixed;*/#}
-{#            position: absolute;#}
-{#            top: 0;#}
-{#            left: 0;#}
-{#            z-index: 1500;#}
-{#            opacity: 0;#}
-{#            width: 0;#}
-{#            -webkit-transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);#}
-{#            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)#}
-{#        }#}
+        .navigation__list {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            list-style: none;
+            text-align: center;
+            width: 100%
+        }
 
-{#        .navigation__list {#}
-{#            position: absolute;#}
-{#            top: 50%;#}
-{#            left: 50%;#}
-{#            -webkit-transform: translate(-50%, -50%);#}
-{#            transform: translate(-50%, -50%);#}
-{#            list-style: none;#}
-{#            text-align: center;#}
-{#            width: 100%;#}
-{#            display: grid;#}
-{#        }#}
+        .navigation__item {
+            margin: 1rem
+        }
 
-{#        .navigation__item {#}
-{#            margin: 1rem#}
-{#        }#}
+        .navigation__link:link, .navigation__link:visited {
+            display: inline-block;
+            font-size: 3rem;
+            font-weight: 300;
+            padding: 1rem 2rem;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+            background-size: 220%;
+            -webkit-transition: all .4s;
+            transition: all .4s
+        }
 
-{#        .navigation__link:link, .navigation__link:visited {#}
-{#            display: inline-block;#}
-{#            font-size: 3rem;#}
-{#            font-weight: 300;#}
-{#            padding: 1rem 2rem;#}
-{#            color: #fff;#}
-{#            text-decoration: none;#}
-{#            text-transform: uppercase;#}
-{#            background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);#}
-{#            background-size: 220%;#}
-{#            -webkit-transition: all .4s;#}
-{#            transition: all .4s#}
-{#        }#}
+        .navigation__link:link span, .navigation__link:visited span {
+            margin-right: 1.5rem;
+            display: inline-block
+        }
 
-{#        .navigation__link:link span, .navigation__link:visited span {#}
-{#            margin-right: 1.5rem;#}
-{#            display: inline-block#}
-{#        }#}
+        .navigation__link:hover, .navigation__link:active {
+            background-position: 100%;
+            color: #ff7730;
+            -webkit-transform: translateX(1rem);
+            transform: translateX(1rem)
+        }
 
-{#        .navigation__link:hover, .navigation__link:active {#}
-{#            background-position: 100%;#}
-{#            color: #ff7730;#}
-{#            -webkit-transform: translateX(1rem);#}
-{#            transform: translateX(1rem)#}
-{#        }#}
+        .navigation__checkbox:checked ~ .navigation__background {
+            -webkit-transform: scale(80);
+            transform: scale(80)
+        }
 
-{#        .navigation__checkbox:checked ~ .navigation__background {#}
-{#            -webkit-transform: scale(80);#}
-{#            transform: scale(80)#}
-{#        }#}
+        .navigation__checkbox:checked ~ .navigation__nav {
+            opacity: 1;
+            width: 100%
+        }
 
-{#        .navigation__checkbox:checked ~ .navigation__nav {#}
-{#            opacity: 1;#}
-{#            width: 100%#}
-{#        }#}
+        .navigation__icon {
+            position: relative;
+            margin-top: 3.5rem
+        }
 
-{#        .navigation__icon {#}
-{#            position: relative;#}
-{#            margin-top: 3.5rem#}
-{#        }#}
+        .navigation__icon, .navigation__icon::before, .navigation__icon::after {
+            width: 3rem;
+            height: 2px;
+            background-color: #333;
+            display: inline-block
+        }
 
-{#        .navigation__icon, .navigation__icon::before, .navigation__icon::after {#}
-{#            width: 3rem;#}
-{#            height: 2px;#}
-{#            background-color: #333;#}
-{#            display: inline-block#}
-{#        }#}
+        .navigation__icon::before, .navigation__icon::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            -webkit-transition: all .2s;
+            transition: all .2s
+        }
 
-{#        .navigation__icon::before, .navigation__icon::after {#}
-{#            content: "";#}
-{#            position: absolute;#}
-{#            left: 0;#}
-{#            -webkit-transition: all .2s;#}
-{#            transition: all .2s#}
-{#        }#}
+        .navigation__icon::before {
+            top: -.8rem
+        }
 
-{#        .navigation__icon::before {#}
-{#            top: -.8rem#}
-{#        }#}
+        .navigation__icon::after {
+            top: .8rem
+        }
 
-{#        .navigation__icon::after {#}
-{#            top: .8rem#}
-{#        }#}
+        .navigation__button:hover .navigation__icon::before {
+            top: -1rem
+        }
 
-{#        .navigation__button:hover .navigation__icon::before {#}
-{#            top: -1rem#}
-{#        }#}
+        .navigation__button:hover .navigation__icon::after {
+            top: 1rem
+        }
 
-{#        .navigation__button:hover .navigation__icon::after {#}
-{#            top: 1rem#}
-{#        }#}
+        .navigation__checkbox:checked + .navigation__button .navigation__icon {
+            background-color: transparent
+        }
 
-{#        .navigation__checkbox:checked + .navigation__button .navigation__icon {#}
-{#            background-color: transparent#}
-{#        }#}
+        .navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+            top: 0;
+            -webkit-transform: rotate(135deg);
+            transform: rotate(135deg)
+        }
 
-{#        .navigation__checkbox:checked + .navigation__button .navigation__icon::before {#}
-{#            top: 0;#}
-{#            -webkit-transform: rotate(135deg);#}
-{#            transform: rotate(135deg)#}
-{#        }#}
+        .navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+            top: 0;
+            -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg)
+        }
 
-{#        .navigation__checkbox:checked + .navigation__button .navigation__icon::after {#}
-{#            top: 0;#}
-{#            -webkit-transform: rotate(-135deg);#}
-{#            transform: rotate(-135deg)#}
-{#        }#}
-
-{#    </style>#}
+    </style>
 
 {% endblock %}
