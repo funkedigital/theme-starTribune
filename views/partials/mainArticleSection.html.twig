@@ -20,7 +20,7 @@
               {% gimme rendition with { 'media': article.featureMedia, 'name': '1250x600', 'fallback': 'original' } %}
                 {% set rend1250 = path(rendition) %}
               {% endgimme %}
-            {% elseif media %}
+            {% elseif articleMedia %}
              {% gimmelist media from articleMedia|limit(1) with {'article': article} %}
                 {% set imgCaption = media.body %}
                 {% gimme rendition with { media: media, 'name': '610x380', 'fallback': 'original' } %}
