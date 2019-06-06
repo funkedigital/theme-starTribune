@@ -9,6 +9,7 @@
         {% gimmelist route from routes %}
 
 
+        {% gimmelist s from routes with {parent: route.name} %}
 
 
 
@@ -32,6 +33,7 @@
                 </div>
             {% endif %}
 
+        {% endgimmelist %}
 
         {% endgimmelist %}
 
