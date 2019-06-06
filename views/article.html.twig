@@ -66,13 +66,13 @@
 					{% set imgCaption = gimme.article.featureMedia.description %}
 				{% endgimme %}
 			{% else %}
-			<div>goes in the else</div>
       	{% set rend1250 = 'public/img/780x460-bf.jpg' %}
 			{% endif %}
-
+			{#
 			{% gimme rendition with { 'name': '1250x600', 'fallback': 'original' } %}
         		{% set rend1250 = path(rendition) %}
 			{% endgimme %}
+			#}
 
         		<img src="{{ rend1250 }}" alt="{{ imgCaption }}" width="930" height="450" }}" />
         		<figcaption>{{ imgCaption }}</figcaption>
