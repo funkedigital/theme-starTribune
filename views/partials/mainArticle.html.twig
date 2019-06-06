@@ -10,7 +10,7 @@
     {% gimme rendition with { 'media': article.featureMedia, 'name': '1250x600', 'fallback': 'original' } %}
       {% set rend1250 = path(rendition) %}
     {% endgimme %}
-  {% else %}
+  {% elseif %}
     {% gimmelist media from articleMedia|limit(1) with {'article': article} %}
       {% set imgCaption = media.body %}
       {% gimme rendition with { media: media, 'name': '610x380', 'fallback': 'original' } %}
@@ -20,6 +20,9 @@
            {% set rend1250 = path(rendition) %}
       {% endgimme %}
     {% endgimmelist %}
+    {% else %}
+      {% set rend610 = 'public/img/376x235-bf.jpeg' %}
+      {% set rend1250 = 'public/img/780x460-bf.jpeg' %}
   {% endif %}
 
               <a href="{{ url(article) }}">
