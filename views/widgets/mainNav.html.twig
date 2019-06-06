@@ -1,38 +1,67 @@
 {% extends 'knp_menu.html.twig' %}
 
 {% block list %}
-    {% if item.hasChildren and options.depth is not same as(0) and item.displayChildren %}
-        {% import _self as knp_menu %}
-        <div class="navigation">
-            <nav class="container">
-            <div id="header" class="navigation__header okayNav-header">
-                    <nav role="navigation" id="nav-main" class="okayNav">
-                        <ul>
-                    {{ block('children') }}
-                        </ul>
-                    </nav>
-                </div><!-- /header -->
-            </nav>
-        </div>
-
-
-
-{#        <div class="nav-scroller py-1 mb-2">#}
-{#            <nav class="nav d-flex justify-content-between">#}
-{#                <a class="p-2 text-muted" href="#">World</a>#}
-{#                <a class="p-2 text-muted" href="#">U.S.</a>#}
-{#                <a class="p-2 text-muted" href="#">Technology</a>#}
-{#                <a class="p-2 text-muted" href="#">Design</a>#}
-{#                <a class="p-2 text-muted" href="#">Culture</a>#}
-{#                <a class="p-2 text-muted" href="#">Business</a>#}
-{#                <a class="p-2 text-muted" href="#">Politics</a>#}
-{#                <a class="p-2 text-muted" href="#">Opinion</a>#}
-{#                <a class="p-2 text-muted" href="#">Science</a>#}
-{#                <a class="p-2 text-muted" href="#">Health</a>#}
-{#                <a class="p-2 text-muted" href="#">Style</a>#}
-{#                <a class="p-2 text-muted" href="#">Travel</a>#}
+{#    {% if item.hasChildren and options.depth is not same as(0) and item.displayChildren %}#}
+{#        {% import _self as knp_menu %}#}
+{#        <div class="navigation">#}
+{#            <nav class="container">#}
+{#            <div id="header" class="navigation__header okayNav-header">#}
+{#                    <nav role="navigation" id="nav-main" class="okayNav">#}
+{#                        <ul>#}
+{#                    {{ block('children') }}#}
+{#                        </ul>#}
+{#                    </nav>#}
+{#                </div><!-- /header -->#}
 {#            </nav>#}
 {#        </div>#}
 
-    {% endif %}
+
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+                <ul class="navbar-nav">
+{#                    <li class="nav-item active">#}
+{#                        <a class="nav-link" href="#">Centered nav only <span class="sr-only">(current)</span></a>#}
+{#                    </li>#}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link disabled" href="#">Disabled</a>#}
+{#                    </li>#}
+
+                </ul>
+            </div>
+        </nav>
+
+
+{#    {% endif %}#}
 {% endblock %}
