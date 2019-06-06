@@ -56,7 +56,9 @@
 
     <style>
 
-
+        .sticky-top{
+            z-index: 800;
+        }
         .navigation__checkbox {
             display: none
         }
@@ -98,7 +100,7 @@
             top: 6.5rem;
             right: 6.5rem;
             background-image: radial-gradient(#ff7730, #CE0001);
-            z-index: 2000;
+            z-index: 1000;
             -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
             transition: -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
             transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
@@ -124,7 +126,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 2000;
+            z-index: 1500;
             opacity: 0;
             width: 0;
             -webkit-transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
