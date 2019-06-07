@@ -2,7 +2,7 @@
 <article class="mainArticleList {{class}}">
             <figure class="mainArticleList__image {% if image =='small' %}mainArticleList__image--small{% endif %} ">
   {% if article.featureMedia %}
-    {% gimme rendition with { 'media': article.featureMedia, 'name': '235p', 'fallback': 'original' } %}
+    {% gimme rendition with { 'media': article.featureMedia, 'name': '460p', 'fallback': 'original' } %}
       {% set rend610 = path(rendition) %}
       {% set imgCaption = article.featureMedia.description %}
     {% endgimme %}
@@ -12,7 +12,7 @@
   {% else %}
     {% gimmelist media from articleMedia|limit(1) with {'article': article} %}
       {% set imgCaption = media.body %}
-      {% gimme rendition with { media: media, 'name': '235p', 'fallback': 'original' } %}
+      {% gimme rendition with { media: media, 'name': '460p', 'fallback': 'original' } %}
            {% set rend610 = path(rendition) %}
       {% endgimme %}
       {% gimme rendition with {media: media,  'name': '460p', 'fallback': 'original' } %}
