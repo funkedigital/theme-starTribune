@@ -1,7 +1,7 @@
 {% extends 'knp_menu.html.twig' %}
 
 {% block list %}
-          {% if item.hasChildren and options.depth is not same as(0) and item.displayChildren %}#}
+          {# {% if item.hasChildren and options.depth is not same as(0) and item.displayChildren %}
               {% import _self as knp_menu %}
               <div class="navigation">
                   <nav class="container">
@@ -13,10 +13,10 @@
                           </nav>
                       </div><!-- /header -->
                   </nav>
-              </div>
+              </div> #}
 
 
-    {# <div class="navigation" >
+     <div class="navigation" >
         <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
 
         <label for="navi-toggle" class="navigation__button">
@@ -243,4 +243,4 @@
 
     </style>
 
-{% endblock %} #}
+{% endblock %} 
