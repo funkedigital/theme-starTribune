@@ -15,6 +15,7 @@
             <li class="pagination__arrows"><a href="{{ path(paginationPath, currentFilters|merge({page: currentPage-1})) }}">«</a></li>
             {% endif %}
 
+
             {% for i in 1..lastPage %}
 
                 {%if i == currentPage %}
